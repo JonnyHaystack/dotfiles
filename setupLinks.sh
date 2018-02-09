@@ -2,7 +2,9 @@
 # Create symlinks for dotfiles so that they will appear in their
 # normal locations.
 
-ln -s vim $HOME/.vim
-ln -s vim/vimrc $HOME/.vimrc
-ln -s inputrc $HOME/.inputrc
-ln -s tmux.conf $HOME/.tmux.conf
+ln -sf .dotfiles/vim $HOME/.vim
+ln -sf .dotfiles/vim/vimrc $HOME/.vimrc
+ln -sf .dotfiles/inputrc $HOME/.inputrc
+ln -sf .dotfiles/tmux.conf $HOME/.tmux.conf
+ln -sf .dotfiles/bash_config $HOME/.bash_config
+ln -sf .dotfiles/bash_aliases $HOME/.bash_aliases
