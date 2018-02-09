@@ -1,0 +1,130 @@
+" General config stuff
+set autoindent softtabstop=2 shiftwidth=2 expandtab
+set backspace=indent,eol,start
+set number
+set colorcolumn=81
+set showmatch
+filetype on
+syntax on
+let mapleader=" "
+set hlsearch
+set encoding=utf-8
+
+" Font
+set guifont=Menlo\ Regular:h18
+
+" Theme
+colorscheme Tomorrow-Night
+
+" Compatibility settings for tmux
+set background=dark
+set t_Co=256
+
+" Ctrl-Enter (NOT WORKING!)
+imap <C-Return> <CR><CR><C-o>k<Tab>
+
+" Save and close shortcuts
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
+
+" Reload .vimrc
+nnoremap <leader>s :source ~/.vimrc<CR>
+
+" I forget what this was meant to do but it screws everything up.
+"nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
+
+nnoremap <Leader><Leader> :e#<CR>
+inoremap jj <ESC>
+
+" Ctrl-j/k deletes blank line below/above, and Alt-j/k inserts.
+" NOT WORKING RIGHT NOW
+"nnoremap <silent><C-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
+"nnoremap <silent><C-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
+"nnoremap <silent><A-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
+"nnoremap <silent><A-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
+
+" Use gc to swap current character with the next without changing cursor
+" position.
+:nnoremap <silent> gc xph
+
+" Use gw to swap current word with the next without changing cursor position.
+:nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>:nohlsearch<CR>
+
+" Syntastic config
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Command-T config
+set wildignore+=*.log,*.sql,*.cache
+noremap <Leader>r :CommandTFlush<CR>
+
+" NerdTree config
+let NERDTreeMapActivateNode='l'
+let NERDTreeShowHidden=1
+nmap <leader>n :NERDTreeToggle<CR>
+nmap <leader>j :NERDTreeFind<CR>
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
+let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
+
+" GitGutter config - always display gutter
+" First checks if gutters are supported in this version of vim
+if exists('&signcolumn')  " Vim 7.4.2201
+  set signcolumn=yes
+else
+  let g:gitgutter_sign_column_always = 1
+endif
+
+" SimpylFold config
+" Show docstrings for folded code
+let g:SimpylFold_docstring_preview=1
+
+" YouCompleteMe config
+" Make sure autocomplete window is closed properly.
+let g:ycm_autoclose_preview_window_after_completion=1
+" Go to definition shortcut.
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
+let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
+let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
+let g:ycm_complete_in_comments = 1 " Completion in comments
+let g:ycm_complete_in_strings = 1 " Completion in string
+
+" UltiSnips config
+let g:UltiSnipsExpandTrigger="<tab>" " Change this if does not work with YCM
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:ultisnips_java_brace_style="nl"
+
+" Airline config
+let g:airline_theme='tomorrow'
+
+
+" Plugin list
+highlight SyntasticErrorLine guibg=#2f0000
+call plug#begin()
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-surround'
+Plug 'easymotion/vim-easymotion'
+Plug 'wincent/command-t'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'airblade/vim-gitgutter'
+Plug 'ervandew/supertab'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'artur-shaik/vim-javacomplete2'
+Plug 'tmhedberg/simpylfold'
+Plug 'valloric/youcompleteme', { 'do': './install.py' }
+Plug 'jmcantrell/vim-virtualenv'
+Plug 'sirver/ultisnips'
+Plug 'honza/vim-snippets'
+call plug#end()
