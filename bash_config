@@ -3,6 +3,6 @@ export TERM=screen-256color
 
 # Add my locally installed programs to path
 
-if [[ $PATH = *"/.local/bin"* ]]; then
+if [[ $PATH != *"/.local/bin"* ]]; then
   export PATH=${HOME}/.local/bin:$PATH
 fi
