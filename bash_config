@@ -4,3 +4,9 @@ export TERM=screen-256color
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+
+# Add my locally installed programs to path
+
+if [[ $PATH = *"/.local/bin"* ]]; then
+  export PATH=${HOME}/.local/bin:$PATH
+fi
