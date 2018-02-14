@@ -107,6 +107,9 @@ let g:ultisnips_java_brace_style="nl"
 " Airline config
 let g:airline_theme='tomorrow'
 
+" auto-pairs config
+let g:AutoPairsMultilineClose = 0
+
 
 " Plugin list
 highlight SyntasticErrorLine guibg=#2f0000
