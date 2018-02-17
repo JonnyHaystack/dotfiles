@@ -5,6 +5,7 @@
 ln -sf .dotfiles/vim $HOME/.vim
 ln -sf .dotfiles/vim/vimrc $HOME/.vimrc
 ln -sf .dotfiles/inputrc $HOME/.inputrc
+ln -sf .dotfiles/tmux $HOME/.tmux
 ln -sf .dotfiles/tmux.conf $HOME/.tmux.conf
 ln -sf .dotfiles/bash_config $HOME/.bash_config
 touch $HOME/.bash_aliases
