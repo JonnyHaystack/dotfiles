@@ -23,6 +23,9 @@ set t_Co=256
 " Ctrl-Enter (NOT WORKING!)
 imap <C-Return> <CR><CR><C-o>k<Tab>
 
+" Toggle paste mode on/off with F2.
+set pastetoggle=<F2>
+
 " Save and close shortcuts
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
