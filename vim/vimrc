@@ -113,9 +113,6 @@ let g:airline_theme='tomorrow'
 " auto-pairs config
 let g:AutoPairsMultilineClose = 0
 
-" MatchTagAlways config
-nnoremap <leader>% :MtaJumpToOtherTag<cr>
-
 " Load matchit.vim
 :source ~/.vim/macros/matchit/plugin/matchit.vim
 
