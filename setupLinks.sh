@@ -8,4 +8,5 @@ ln -sf $HOME/.dotfiles/inputrc $HOME/.inputrc
 ln -sfn $HOME/.dotfiles/tmux $HOME/.tmux
 ln -sf $HOME/.dotfiles/tmux/tmux.conf $HOME/.tmux.conf
 ln -sf $HOME/.dotfiles/bash_config $HOME/.bash_config
+ln -sf $HOME/.dotfiles/gitconfig $HOME/.gitconfig
 touch $HOME/.bash_aliases

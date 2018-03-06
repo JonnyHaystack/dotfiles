@@ -1,0 +1,15 @@
+[user]
+	email = jonathan.s.haylett@gmail.com
+	name = Jonathan Haylett
+[push]
+	default = simple
+[merge]
+	tool = kdiff3
+[mergetool "kdiff3"]
+	path = /usr/bin/kdiff3
+	trustExitCode = false
+[diff]
+	guitool = kdiff3
+[difftool "kdiff3"]
+	path = /usr/bin/kdiff3
+	trustExitCode = false
