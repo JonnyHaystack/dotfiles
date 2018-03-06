@@ -1,3 +1,4 @@
 .netrwhist
 vim/plugged/
 tmux/plugins/
+tmux/resurrect/
