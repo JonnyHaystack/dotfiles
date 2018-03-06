@@ -4,7 +4,7 @@
 [push]
 	default = simple
 [merge]
-	tool = kdiff3
+	tool = vimdiff
 [mergetool "kdiff3"]
 	path = /usr/bin/kdiff3
 	trustExitCode = false
