@@ -135,6 +135,6 @@ Plug 'valloric/youcompleteme', { 'do': './install.py --all' }
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
-"Plug 'raimondi/delimitmate'
 Plug 'jiangmiao/auto-pairs'
+Plug 'valloric/matchtagalways'
 call plug#end()
