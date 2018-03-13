@@ -1,6 +1,3 @@
-# 256 colour support.
-export TERM=screen-256color
-
 # Add my locally installed programs to path
 
 if [[ $PATH != *"/.local/bin"* ]]; then
