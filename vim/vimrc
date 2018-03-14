@@ -53,6 +53,9 @@ inoremap jj <ESC>
 " Use gw to swap current word with the next without changing cursor position.
 :nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>:nohlsearch<CR>
 
+" Use :W to save a file as root if I forgot to use sudoedit.
+command W w !sudo tee % >/dev/null
+
 " Syntastic config
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
