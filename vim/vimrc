@@ -134,7 +134,7 @@ Plug 'ervandew/supertab'
 Plug 'terryma/vim-multiple-cursors'
 "Plug 'artur-shaik/vim-javacomplete2'
 Plug 'tmhedberg/simpylfold'
-Plug 'valloric/youcompleteme', { 'do': './install.py --all' }
+Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer --cs-completer --js-completer --java-completer' }
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
