@@ -56,6 +56,9 @@ inoremap jj <ESC>
 " Use :W to save a file as root if I forgot to use sudoedit.
 command W w !sudo tee % >/dev/null
 
+" Make * stay on selected word.
+nnoremap * :keepjumps normal! mi*`i<CR>
+
 " Syntastic config
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
