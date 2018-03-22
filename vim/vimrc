@@ -127,8 +127,9 @@ let g:AutoPairsMultilineClose = 0
 highlight SyntasticErrorLine guibg=#2f0000
 call plug#begin()
 Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'scrooloose/syntastic'
 Plug 'easymotion/vim-easymotion'
 Plug 'wincent/command-t'
 Plug 'scrooloose/nerdcommenter'
