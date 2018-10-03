@@ -2,12 +2,11 @@
 inoremap jj <Esc>
 set autoindent
 set hlsearch
-let mapleader=" "
 
 " Use gc to swap current character with the next without changing cursor
 " position.
-nnoremap <silent> gc xph
+nnoremap gc xph
 
 " Save and close shortcuts
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader>q :q<CR>
+nnoremap <Space>w :w<CR>
+nnoremap <Space>q :q<CR>
