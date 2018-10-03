@@ -13,6 +13,12 @@ set encoding=utf-8
 " Font
 set guifont=Menlo\ Regular:h18
 
+" GVim options
+:set guioptions-=m  "remove menu bar
+:set guioptions-=T  "remove toolbar
+:set guioptions-=r  "remove right-hand scroll bar
+:set guioptions-=L  "remove left-hand scroll bar
+
 " Theme
 colorscheme Tomorrow-Night
 
@@ -129,6 +135,7 @@ call plug#begin()
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-unimpaired'
 Plug 'scrooloose/syntastic'
 Plug 'easymotion/vim-easymotion'
 Plug 'wincent/command-t'
