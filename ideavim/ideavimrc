@@ -1,0 +1,14 @@
+" General config stuff
+inoremap jj <Esc>
+set autoindent
+set hlsearch
+set surround
+set multiple-cursors
+
+" Use gc to swap current character with the next without changing cursor
+" position.
+nnoremap gc xph
+
+" Save and close shortcuts
+nnoremap <Space>w :w<CR>
+nnoremap <Space>q :q<CR>
