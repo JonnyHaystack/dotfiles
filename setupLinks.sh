@@ -23,4 +23,4 @@ touch $HOME/.bash_aliases
 ln -sf $HOME/.dotfiles/gitconfig $HOME/.gitconfig
 
 # i3
-ln -sfn $HOME/.dotfiles/i3 $HOME/.config/i3
+ln -sfn $HOME/.dotfiles/i3/config $HOME/.config/i3/config
