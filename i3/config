@@ -36,7 +36,7 @@ new_float none
 bindsym $mod+t exec i3-sensible-terminal
 
 # Kill focused window
-bindsym $mod+Control+Q kill
+bindsym $mod+g kill
 
 # Start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -165,6 +165,7 @@ force_display_urgency_hint 0 ms
 
 # Starting things with i3
 # exec --no-startup-id xcompmgr -C &    # Bare compositor to allow transparency
+for_window [class="Launch-fm"] floating enable
 for_window [class="yakuake"] floating enable
 exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
 
