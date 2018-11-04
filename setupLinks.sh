@@ -22,5 +22,9 @@ touch $HOME/.bash_aliases
 # git
 ln -sf $HOME/.dotfiles/gitconfig $HOME/.gitconfig
 
+# plasma
+ln -sf $HOME/.dotfiles/plasma/set_window_manager.sh \
+$HOME/.config/plasma-workspace/env/set_window_manager.sh
+
 # i3
 ln -sfn $HOME/.dotfiles/i3 $HOME/.config/i3
