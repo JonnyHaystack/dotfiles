@@ -28,3 +28,6 @@ $HOME/.config/plasma-workspace/env/set_window_manager.sh
 
 # i3
 ln -sfn $HOME/.dotfiles/i3 $HOME/.config/i3
+
+# alacritty
+ln -sf $HOME/.dotfiles/alacritty.yml $HOME/.config/alacritty/alacritty.yml
