@@ -163,6 +163,9 @@ bar {
 # Possible for urgent workspace feature
 force_display_urgency_hint 0 ms
 
+# Jump to urgent window
+bindsym $mod+x [urgent=latest] focus
+
 # Starting things with i3
 # exec --no-startup-id xcompmgr -C &    # Bare compositor to allow transparency
 for_window [class="Launch-fm"] floating enable
