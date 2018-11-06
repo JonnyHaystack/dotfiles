@@ -7,3 +7,12 @@ fi
 if [[ $PATH != *"${HOME}/bin"* ]]; then
   export PATH=${HOME}/bin:$PATH
 fi
+
+workon() {
+  if (( $# != 1 ))
+  then
+    echo "Usage: workon <envname>"
+  else
+    source ~/.virtualenvs/$1/bin/activate
+  fi
+}
