@@ -10,12 +10,14 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # Assign workspaces to outputs
-workspace 1 output $PRIMARY
-workspace 2 output $SECONDARY
-workspace 3 output $PRIMARY
-workspace 4 output $SECONDARY
-workspace 5 output $PRIMARY
-workspace 6 output $SECONDARY
+#set_from_resource $PRIMARY echo "${MONITORS[0]}"
+#set_from_resource $SECONDARY echo "${MONITORS[1]}"
+#workspace 1 output $PRIMARY
+#workspace 2 output $SECONDARY
+#workspace 3 output $PRIMARY
+#workspace 4 output $SECONDARY
+#workspace 5 output $PRIMARY
+#workspace 6 output $SECONDARY
 
 set $mod Mod4
 
@@ -70,6 +72,12 @@ bindsym $mod+Control+H move left
 bindsym $mod+Control+J move down
 bindsym $mod+Control+K move up
 bindsym $mod+Control+L move right
+
+# Move current workspace to another display
+bindsym $mod+Shift+H move workspace to output left
+bindsym $mod+Shift+J move workspace to output down
+bindsym $mod+Shift+K move workspace to output up
+bindsym $mod+Shift+L move workspace to output right
 
 # Alternatively, you can use the cursor keys:
 bindsym $mod+Control+Left move left
