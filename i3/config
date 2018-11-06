@@ -9,6 +9,14 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+# Assign workspaces to outputs
+workspace 1 output $PRIMARY
+workspace 2 output $SECONDARY
+workspace 3 output $PRIMARY
+workspace 4 output $SECONDARY
+workspace 5 output $PRIMARY
+workspace 6 output $SECONDARY
+
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
