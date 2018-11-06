@@ -23,11 +23,14 @@ touch $HOME/.bash_aliases
 ln -sf $HOME/.dotfiles/gitconfig $HOME/.gitconfig
 
 # plasma
+mkdir -p $HOME/.config/plasma-workspace/env/
 ln -sf $HOME/.dotfiles/plasma/set_window_manager.sh \
 $HOME/.config/plasma-workspace/env/set_window_manager.sh
 
 # i3
-ln -sfn $HOME/.dotfiles/i3 $HOME/.config/i3
+mkdir -p $HOME/.dotfiles/i3/
+ln -sf $HOME/.dotfiles/i3/config $HOME/.config/i3/config
 
 # alacritty
+mkdir -p $HOME/.config/alacritty/
 ln -sf $HOME/.dotfiles/alacritty.yml $HOME/.config/alacritty/alacritty.yml
