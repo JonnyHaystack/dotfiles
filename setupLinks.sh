@@ -31,6 +31,10 @@ $HOME/.config/plasma-workspace/env/set_window_manager.sh
 mkdir -p $HOME/.config/i3/
 ln -sf $HOME/.dotfiles/i3/config $HOME/.config/i3/config
 
+# autorandr
+mkdir -p $HOME/.config/autorandr/
+ln -sf $HOME/.dotfiles/autorandr/postswitch $HOME/.config/autorandr/postswitch
+
 # alacritty
 mkdir -p $HOME/.config/alacritty/
 ln -sf $HOME/.dotfiles/alacritty.yml $HOME/.config/alacritty/alacritty.yml
