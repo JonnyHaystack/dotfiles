@@ -28,7 +28,7 @@ ln -sf $HOME/.dotfiles/plasma/set_window_manager.sh \
 $HOME/.config/plasma-workspace/env/set_window_manager.sh
 
 # i3
-mkdir -p $HOME/.dotfiles/i3/
+mkdir -p $HOME/.config/i3/
 ln -sf $HOME/.dotfiles/i3/config $HOME/.config/i3/config
 
 # alacritty
