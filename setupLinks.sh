@@ -2,6 +2,15 @@
 # Create symlinks for dotfiles so that they will appear in their
 # normal locations.
 
+# scripts
+mkdir $HOME/scripts/
+ln -sfn $HOME/.dotfiles/scripts/i3/ $HOME/scripts/i3
+
+# desktop shortcuts
+mkdir -p $HOME/.local/share/applications/
+ln -sf $HOME/.dotfiles/desktop/pingtest.desktop \
+$HOME/.local/share/applications/pingtest.desktop
+
 # vim
 ln -sfn $HOME/.dotfiles/vim $HOME/.vim
 ln -sf $HOME/.dotfiles/vim/vimrc $HOME/.vimrc
