@@ -3,7 +3,7 @@
 # normal locations.
 
 # scripts
-mkdir $HOME/scripts/
+mkdir -p $HOME/scripts/
 ln -sfn $HOME/.dotfiles/scripts/i3/ $HOME/scripts/i3
 
 # desktop shortcuts
