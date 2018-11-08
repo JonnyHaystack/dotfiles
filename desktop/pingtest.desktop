@@ -4,4 +4,4 @@ GenericName=Ping Test
 Comment=Ping test to google.com
 Categories=Command;Script;
 Name=Ping Test
-Exec=ping google.com
+Exec=/usr/bin/gnome-terminal -e "ping google.com"
