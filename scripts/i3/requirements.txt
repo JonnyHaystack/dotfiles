@@ -1,0 +1,4 @@
+# psutil==5.4.8
+# wmctrl==0.3
+psutil
+wmctrl
