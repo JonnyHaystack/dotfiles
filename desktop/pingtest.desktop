@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+GenericName=Ping Test
+Comment=Ping test to google.com
+Categories=Command;Script;
+Name=Ping Test
+Exec=ping google.com
