@@ -1,0 +1,115 @@
+general {
+        output_format = "i3bar"
+        colors = true
+        interval = 5
+}
+
+order += "ipv6"
+order += "disk /"
+order += "run_watch DHCP"
+order += "path_exists VPN"
+order += "wireless wlp3s0"
+order += "ethernet enp2s0"
+order += "battery 0"
+order += "battery_level"
+order += "static_string screenshot"
+order += "static_string i3lock"
+order += "net_rate"
+order += "online_status"
+order += "keyboard_layout"
+order += "cpu_temperature 0"
+order += "load"
+order += "tztime local"
+order += "tztime berlin"
+
+wireless wlan0 {
+        format_up = "W: (%quality at %essid, %bitrate) %ip"
+        format_down = "W: down"
+}
+
+ethernet eth0 {
+        # if you use %speed, i3status requires the cap_net_admin capability
+        format_up = "E: %ip (%speed)"
+        format_down = "E: down"
+}
+
+net_rate {
+	format = " {down}  {up}"
+	format = "  {total}"
+	precision = 0
+	format_no_connection = ""
+    cache_timeout = 5
+}
+
+battery_level{
+    cache_timeout = 10
+	color_bad = "#FF0000"
+	color_charging = "#FCE94F"
+	color_degraded = "#ff7a00"
+	color_good = "#00FF00"
+
+	format_notify_charging = "charging"
+	format_notify_discharging = "discharging {percent}"
+	hide_when_full = False
+    hide_seconds = True
+	notification = True
+	notify_low_level = True
+	blocks = ""
+	charging_character = ""
+	format = "{percent}% {icon} {time_remaining}"
+	color_charging = "#FFFFFF"
+}
+
+static_string screenshot {
+	format = ""
+	on_click 1 = "exec --no-startup-id maim -s ~/Pictures/Screenshots/img-$(date +%Y-%m-%d)-$(ls ~/Pictures/Screenshots/img* | wc -l).png && notify-send -i screenie 'Screenshot' '~/Pictures/Screenshots'"
+}
+
+static_string i3lock {
+	format = ""
+	on_click 1 = "exec --no-startup-id i3lock -d -e -i /home/haystack/Pictures/wallpaper.jpg -f"
+}
+
+online_status {
+    format_offline = ""
+    format_online = ""
+    timeout = 20
+    url = "http://google.com/"
+}
+
+keyboard_layout {
+    cache_timeout = 5
+    format = "  {layout}"
+    color = "#FFFFFF"
+}
+
+run_watch DHCP {
+        pidfile = "/var/run/dhclient*.pid"
+}
+
+path_exists VPN {
+        # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+        path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+        format = "%Y-%m-%d %H:%M:%S"
+}
+
+tztime berlin {
+        format = "%Y-%m-%d %H:%M:%S %Z"
+        timezone = "Europe/Berlin"
+}
+
+load {
+        format = "%5min"
+}
+
+cpu_temperature 0 {
+        format = "T: %degrees °C"
+        path = "/sys/devices/platform/coretemp.0/temp1_input"
+}
+
+disk "/" {
+        format = "%free"
+}
