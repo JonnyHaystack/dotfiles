@@ -1,9 +1,6 @@
 from __future__ import print_function
 import i3ipc
 import psutil
-import re
-import shlex
-import subprocess
 import sys
 from wmctrl import Window
 
@@ -50,12 +47,13 @@ for con in i3.get_tree():
                 # Get the working directory from the window title (I'm sorry)
                 # and stick it on the end of the command mapping.
                 working_directory = con.name.split(': ', 1)[1]
+                # Change ~ to $HOME because gnome-terminal doesn't seem to
+                # support ~.
+                working_directory = working_directory.replace("~", "$HOME")
                 command = '{0}{1}'.format(
                         window_class_command_mappings[con.window_class][0],
                         working_directory,
                         )
-                # print('Terminal: class = {}, working_directory = {}'.format(
-                    # con.window_class, working_directory))
             else:
                 # If the program is not a terminal, launch it by cd'ing to its
                 # working directory (obtained by psutil) and then executing
