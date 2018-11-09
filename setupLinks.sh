@@ -44,6 +44,10 @@ ln -sf $HOME/.dotfiles/i3/config $HOME/.config/i3/config
 mkdir -p $HOME/.config/i3status/
 ln -sf $HOME/.dotfiles/i3status/config $HOME/.config/i3status/config
 
+# compton
+mkdir -p $HOME/.config/compton/
+ln -sf $HOME/.dotfiles/compton/compton.conf $HOME/.config/compton/compton.conf
+
 # autorandr
 mkdir -p $HOME/.config/autorandr/
 ln -sf $HOME/.dotfiles/autorandr/postswitch $HOME/.config/autorandr/postswitch
