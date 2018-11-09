@@ -3,10 +3,10 @@ general {
   colors = true
   interval = 5
   # These will be used if not supplied by a module
-  color = '#FFFFFF'
-  color_good = '#00FF00'
-  color_bad = '#FF0000'
-  color_degraded = '#FFFF00'
+  color = '#d4d4d4'
+  color_good = '#38d638'
+  color_bad = '#f44336'
+  color_degraded = '#E6D937'
 }
 
 order += "disk /"
@@ -65,10 +65,11 @@ group network {
 
 battery_level {
   cache_timeout = 10
-  color_bad = "#FF0000"
-  color_charging = "#FCE94F"
+  color_charging = "#E6D937"
   color_degraded = "#ff7a00"
-  color_good = "#00FF00"
+  color = "#38d638"
+  threshold_bad = 20
+  threshold_degraded = 70
 
   format_notify_charging = "charging"
   format_notify_discharging = "discharging {percent}"
@@ -90,16 +91,16 @@ volume_status {
   format = "[\?if=is_input |🔊] {percentage}"
   format_muted = "[\?if=is_input |🔇]"
   thresholds = [
-          (0, "#FF0000"),
-          (10, "#FF3800"),
-          (20, "#FF7100"),
-          (30, "#FFAA00"),
-          (40, "#FFE200"),
-          (50, "#E2FF00"),
-          (60, "#A9FF00"),
-          (70, "#71FF00"),
-          (80, "#38FF00"),
-          (90, "#FFFFFF")
+          (0, "#F44336"),
+          (10, "#F06B36"),
+          (20, "#ED9136"),
+          (30, "#EAB636"),
+          (40, "#E6D937"),
+          (50, "#CBE337"),
+          (60, "#A4E037"),
+          (70, "#7EDC37"),
+          (80, "#5AD937"),
+          (90, "#38D638")
       ]
 }
 
@@ -114,8 +115,8 @@ static_string i3lock {
 }
 
 online_status {
-  format_offline = ""
-  format_online = ""
+  format_offline = ""
+  format_online = ""
   timeout = 20
   url = "http://google.com/"
 }
@@ -138,7 +139,7 @@ group tz {
 }
 
 load {
-  format = "%5min"
+  format = " %5min"
 }
 
 cpu_temperature 0 {
