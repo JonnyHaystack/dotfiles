@@ -10,6 +10,7 @@ general {
 }
 
 order += "disk /"
+order += "apt_updates"
 order += "file_status VPN"
 order += "group network"
 order += "online_status"
@@ -23,6 +24,10 @@ order += "static_string i3lock"
 
 disk "/" {
   format = " %free"
+}
+
+apt_updates {
+  format = " {apt}"
 }
 
 file_status VPN {
