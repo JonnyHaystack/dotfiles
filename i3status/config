@@ -140,6 +140,7 @@ group tz {
 
 load {
   format = " %5min"
+  max_threshold = "1"
 }
 
 cpu_temperature 0 {
