@@ -228,6 +228,9 @@ bindsym $mod+n mode "load"
 bar {
         status_command py3status
         tray_output primary
+        colors {
+          background #333333
+        }
 }
 
 # Possible for urgent workspace feature
