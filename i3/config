@@ -171,6 +171,7 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym r mode "default"
+        bindsym $mod+r mode "default"
 }
 
 bindsym $mod+r mode "resize"
@@ -192,6 +193,7 @@ mode "save" {
   bindsym Return mode "default"
   bindsym Escape mode "default"
   bindsym s mode "default"
+  bindsym $mod+s mode "default"
 }
 
 bindsym $mod+s mode "save"
@@ -213,6 +215,7 @@ mode "load" {
   bindsym Return mode "default"
   bindsym Escape mode "default"
   bindsym n mode "default"
+  bindsym $mod+n mode "default"
 }
 
 bindsym $mod+n mode "load"

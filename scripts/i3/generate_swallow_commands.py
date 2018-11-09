@@ -10,9 +10,10 @@ def eprint(*args, **kwargs):
 
 # Command mappings for specific programs whose process command is not the same
 # as the one that should be used to launch it.
+# Format: 'class': ('command', terminal)
 window_class_command_mappings = {
         'Gnome-terminal': ('gnome-terminal --working-directory=', True),
-        # 'Alacritty': ('alacritty', True),
+        'Alacritty': ('alacritty --working-directory ', True),
         }
 
 i3 = i3ipc.Connection()
@@ -46,10 +47,12 @@ for con in i3.get_tree():
             if window_class_command_mappings[con.window_class][1]:
                 # Get the working directory from the window title (I'm sorry)
                 # and stick it on the end of the command mapping.
-                working_directory = con.name.split(': ', 1)[1]
+                # Also remove any non ascii characters.
+                working_directory = con.name.encode('ascii',
+                        'ignore').split(': ')[1]
                 # Change ~ to $HOME because gnome-terminal doesn't seem to
                 # support ~.
-                working_directory = working_directory.replace("~", "$HOME")
+                working_directory = working_directory.replace('~', '$HOME')
                 command = '{0}{1}'.format(
                         window_class_command_mappings[con.window_class][0],
                         working_directory,
@@ -58,7 +61,7 @@ for con in i3.get_tree():
                 # If the program is not a terminal, launch it by cd'ing to its
                 # working directory (obtained by psutil) and then executing
                 # its mapped command.
-                command = 'cd {0}; exec {1}'.format(
+                command = 'cd {0}; {1}&'.format(
                         procinfo.cwd(),
                         window_class_command_mappings[con.window_class][0],
                         )
@@ -67,7 +70,7 @@ for con in i3.get_tree():
             # working directory (obtained by psutil) and then executing the
             # first index of the cmdline (hopefully this will work for almost
             # all programs I use at least).
-            command = 'cd {0}; exec {1}'.format(
+            command = 'cd {0}; {1}&'.format(
                     procinfo.cwd(),
                     procinfo.cmdline()[0],
                     )

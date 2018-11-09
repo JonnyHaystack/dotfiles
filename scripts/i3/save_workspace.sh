@@ -10,4 +10,5 @@ then
   echo '#!/bin/bash' > ~/.i3/workspace_$1.sh
   python ~/scripts/i3/generate_swallow_commands.py $1 \
     >> ~/.i3/workspace_$1.sh
+  chmod +x ~/.i3/workspace_$1.sh
 fi
