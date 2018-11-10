@@ -17,6 +17,10 @@ ln -sf $HOME/.dotfiles/vim/vimrc $HOME/.vimrc
 ln -sf $HOME/.dotfiles/vrapper/vrapperrc $HOME/.vrapperrc
 ln -sf $HOME/.dotfiles/ideavim/ideavimrc $HOME/.ideavimrc
 
+# neovim
+mkdir -p $HOME/.config/nvim/
+ln -sf $HOME/.dotfiles/nvim/init.vim $HOME/.config/nvim/init.vim
+
 # .inputrc
 ln -sf $HOME/.dotfiles/inputrc $HOME/.inputrc
 

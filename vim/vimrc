@@ -26,21 +26,16 @@ colorscheme Tomorrow-Night
 set background=dark
 set t_Co=256
 
-" Ctrl-Enter (NOT WORKING!)
-imap <C-Return> <CR><CR><C-o>k<Tab>
-
 " Toggle paste mode on/off with F2.
 set pastetoggle=<F2>
 
 " Save and close shortcuts
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
+nnoremap <leader><S-q> :q!<CR>
 
 " Reload .vimrc
 nnoremap <leader>s :source ~/.vimrc<CR>
-
-" I forget what this was meant to do but it screws everything up.
-"nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 
 nnoremap <Leader><Leader> :e#<CR>
 inoremap jj <ESC>
@@ -61,18 +56,6 @@ inoremap jj <ESC>
 
 " Use :W to save a file as root if I forgot to use sudoedit.
 command W w !sudo tee % >/dev/null
-
-" Syntastic config
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-" Enable Java classpath config files.
-let g:syntastic_java_javac_config_file_enabled = 1
 
 " Command-T config
 set wildignore+=*.log,*.sql,*.cache
@@ -99,22 +82,72 @@ endif
 " Show docstrings for folded code
 let g:SimpylFold_docstring_preview=1
 
-" YouCompleteMe config
-" Make sure autocomplete window is closed properly.
-let g:ycm_autoclose_preview_window_after_completion=1
-" Go to definition shortcut.
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
-let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
-let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
-let g:ycm_complete_in_comments = 1 " Completion in comments
-let g:ycm_complete_in_strings = 1 " Completion in string
+if has('nvim')
+  " ALE config
+  let g:ale_completion_enabled = 1
+  map <leader>d :ALEDetail<CR>
+  nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+  nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-" UltiSnips config
-let g:UltiSnipsExpandTrigger="<tab>" " Change this if does not work with YCM
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:ultisnips_java_brace_style="nl"
+  " Deoplete config
+  let g:deoplete#enable_at_startup = 1
+  inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+  " LanguageClient config
+  let g:LanguageClient_serverCommands = {
+      \ 'c': ['clangd'],
+      \ 'cpp': ['clangd'],
+      \ 'python': ['pyls'],
+      \ }
+
+  function SetLSPShortcuts()
+    nnoremap <leader>ld :call LanguageClient#textDocument_definition()<CR>
+    nnoremap <leader>lr :call LanguageClient#textDocument_rename()<CR>
+    nnoremap <leader>lf :call LanguageClient#textDocument_formatting()<CR>
+    nnoremap <leader>lt :call LanguageClient#textDocument_typeDefinition()<CR>
+    nnoremap <leader>lx :call LanguageClient#textDocument_references()<CR>
+    nnoremap <leader>la :call LanguageClient_workspace_applyEdit()<CR>
+    nnoremap <leader>lc :call LanguageClient#textDocument_completion()<CR>
+    nnoremap <leader>lh :call LanguageClient#textDocument_hover()<CR>
+    nnoremap <leader>ls :call LanguageClient_textDocument_documentSymbol()<CR>
+    nnoremap <leader>lm :call LanguageClient_contextMenu()<CR>
+  endfunction()
+
+  augroup LSP
+    autocmd!
+    autocmd FileType cpp,c,python call SetLSPShortcuts()
+  augroup END
+else
+  " Syntastic config
+  set statusline+=%#warningmsg#
+  set statusline+=%{SyntasticStatuslineFlag()}
+  set statusline+=%*
+
+  let g:syntastic_always_populate_loc_list = 1
+  let g:syntastic_auto_loc_list = 1
+  let g:syntastic_check_on_open = 1
+  let g:syntastic_check_on_wq = 0
+  " Enable Java classpath config files.
+  let g:syntastic_java_javac_config_file_enabled = 1
+
+  " YouCompleteMe config
+  " Make sure autocomplete window is closed properly.
+  let g:ycm_autoclose_preview_window_after_completion=1
+  " Go to definition shortcut.
+  map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+  let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
+  let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
+  let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
+  let g:ycm_complete_in_comments = 1 " Completion in comments
+  let g:ycm_complete_in_strings = 1 " Completion in string
+
+  " UltiSnips config
+  let g:UltiSnipsExpandTrigger="<tab>" " Change this if does not work with YCM
+  let g:UltiSnipsJumpForwardTrigger="<c-b>"
+  let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+  let g:ultisnips_java_brace_style="nl"
+endif
 
 " Airline config
 let g:airline_theme='tomorrow'
@@ -136,7 +169,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
-Plug 'scrooloose/syntastic'
 Plug 'easymotion/vim-easymotion'
 Plug 'wincent/command-t'
 Plug 'scrooloose/nerdcommenter'
@@ -144,14 +176,27 @@ Plug 'scrooloose/nerdtree'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
-Plug 'ervandew/supertab'
+if has ('nvim')
+  Plug 'w0rp/ale'
+  Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+  " Multi-entry selection UI. FZF
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
+else
+  Plug 'scrooloose/syntastic'
+  Plug 'ervandew/supertab'
+  Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer --cs-completer --js-completer --java-completer' }
+  Plug 'sirver/ultisnips'
+  Plug 'honza/vim-snippets'
+endif
 Plug 'terryma/vim-multiple-cursors'
-"Plug 'artur-shaik/vim-javacomplete2'
 Plug 'tmhedberg/simpylfold'
-Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer --cs-completer --js-completer --java-completer' }
 Plug 'jmcantrell/vim-virtualenv'
-Plug 'sirver/ultisnips'
-Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'valloric/matchtagalways'
 call plug#end()
