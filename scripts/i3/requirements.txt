@@ -2,3 +2,4 @@
 # wmctrl==0.3
 psutil
 wmctrl
+i3ipc
