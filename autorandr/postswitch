@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sleep 2
+sleep 2s
 
 IFS=':' read -r -a MONITORS <<< "$AUTORANDR_MONITORS"
 

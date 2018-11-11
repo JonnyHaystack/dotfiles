@@ -79,7 +79,7 @@ battery_level {
   notify_low_level = True
   blocks = ""
   charging_character = ""
-  format = "{percent}% {icon} {time_remaining}"
+  format = "{icon} {percent}% ({time_remaining})"
 }
 
 volume_status {
