@@ -13,6 +13,8 @@ gaps inner 10
 gaps outer 0
 smart_gaps on
 
+mouse_warping none
+
 # Enable automatic back-and-forth when switching to the current workspace
 workspace_auto_back_and_forth yes
 
@@ -226,13 +228,14 @@ bar {
         status_command py3status
         tray_output primary
         height 30
+        separator_symbol "  "
         colors {
           background #333333
         }
 }
 
 # Start compton
-exec --no-startup-id compton -b --config ~/.config/compton/compton.conf
+exec --no-startup-id compton -b --config /home/haystack/.config/compton/compton.conf
 
 # Possible for urgent workspace feature
 force_display_urgency_hint 0 ms
