@@ -12,11 +12,9 @@ ln -sf $HOME/.dotfiles/desktop/pingtest.desktop \
   $HOME/.local/share/applications/pingtest.desktop
 
 # fonts
-mkdir -p $HOME/.local/share/fonts/
-ln -sf $HOME/.dotfiles/fonts/fa-regular-400.ttf \
-  $HOME/.local/share/fonts/fa-regular-400.ttf
-ln -sf $HOME/.dotfiles/fonts/MaterialIcons-Regular.ttf \
-  $HOME/.local/share/fonts/MaterialIcons-Regular.ttf
+mkdir -p $HOME/.fonts/
+ln -sf $HOME/.dotfiles/fonts/* \
+  $HOME/.fonts/
 
 # vim
 ln -sfn $HOME/.dotfiles/vim $HOME/.vim
