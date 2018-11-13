@@ -5,6 +5,7 @@ Currently this includes:
 - bash configuration files
 - .inputrc
 - tmux configuration files
+- fonts
 # Setting up on new machine
 1. Add the new machine's SSH key to my GitHub account.
 2. Clone this repo.
@@ -17,3 +18,4 @@ This will create symlinks so that all my config files appear in their correct lo
 - Put machine independent bash configuration in .bash_config 
 - Put machine specific aliases in .bash_aliases
 - Put machine specific configuration in .bashrc
+5. For fonts to work, run `fc-cache -fv`

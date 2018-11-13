@@ -9,7 +9,14 @@ ln -sfn $HOME/.dotfiles/scripts/i3 $HOME/scripts/i3
 # desktop shortcuts
 mkdir -p $HOME/.local/share/applications/
 ln -sf $HOME/.dotfiles/desktop/pingtest.desktop \
-$HOME/.local/share/applications/pingtest.desktop
+  $HOME/.local/share/applications/pingtest.desktop
+
+# fonts
+mkdir -p $HOME/.local/share/fonts/
+ln -sf $HOME/.dotfiles/fonts/fa-regular-400.ttf \
+  $HOME/.local/share/fonts/fa-regular-400.ttf
+ln -sf $HOME/.dotfiles/fonts/MaterialIcons-Regular.ttf \
+  $HOME/.local/share/fonts/MaterialIcons-Regular.ttf
 
 # vim
 ln -sfn $HOME/.dotfiles/vim $HOME/.vim
