@@ -9,17 +9,17 @@ general {
   color_degraded = '#E6D937'
 }
 
-order += "disk /"
 order += "apt_updates"
 order += "file_status VPN"
-order += "group network"
 order += "online_status"
+order += "disk /"
 order += "cpu_temperature 0"
 order += "load"
-order += "static_string screenshot"
+order += "group network"
 order += "battery_level"
 order += "volume_status"
 order += "group tz"
+order += "static_string screenshot"
 order += "static_string i3lock"
 
 disk "/" {
@@ -32,7 +32,7 @@ apt_updates {
 
 file_status VPN {
   # path exists when a VPN tunnel launched by nmcli/nm-applet is active
-  format = ""
+  format = ""
   path = "/proc/sys/net/ipv4/conf/tun0"
 }
 
@@ -79,7 +79,7 @@ battery_level {
   notify_low_level = True
   blocks = ""
   charging_character = ""
-  format = "{icon} {percent}% ({time_remaining})"
+  format = "{percent}% {icon} {time_remaining}"
 }
 
 volume_status {
@@ -110,7 +110,7 @@ static_string screenshot {
 }
 
 static_string i3lock {
-  format = ""
+  format = "   "
   on_click 1 = "exec --no-startup-id i3lock -d -e -i ~/Pictures/wallpaper.jpg -f"
 }
 
@@ -122,7 +122,7 @@ online_status {
 }
 
 group tz {
-  format = "{output}"
+  format = "  {output}"
   tztime local {
     format = "%Y-%m-%d %H:%M:%S"
   }
@@ -145,5 +145,5 @@ load {
 
 cpu_temperature 0 {
   format = " %degrees °C"
-  path = "/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input"
+  path = "/sys/devices/platform/coretemp.0/hwmon/hwmon*/temp1_input"
 }
