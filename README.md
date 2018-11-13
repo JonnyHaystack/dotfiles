@@ -1,10 +1,16 @@
 # My dotfiles
 This repo contains my Linux configuration files (or "dotfiles").
 Currently this includes:
-- vim configuration files
-- bash configuration files
+- vim configuration
+- bash configuration
 - .inputrc
-- tmux configuration files
+- tmux configuration
+- git configuration
+- plasma desktop and i3 (gaps) configuration
+- py3status configuration
+- compton configuration
+- autorandr configuration
+- alacritty configuration
 - fonts
 # Setting up on new machine
 1. Add the new machine's SSH key to my GitHub account.
