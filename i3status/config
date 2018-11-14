@@ -44,8 +44,8 @@ group network {
   }
 
   wireless wlp3s0 {
-    format_up = " : %ip on %essid (%quality)"
-    format_down = " : down"
+    format_up = "  %ip on %essid (%quality)"
+    format_down = "  down"
   }
 
   ethernet enp2s0 {
