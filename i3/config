@@ -56,9 +56,11 @@ bindsym $mod+g kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec "i3-dmenu-desktop --dmenu=\\"(cat ; (stest -flx $(echo $PATH | tr : ' ') | sort -u)) | dmenu -i\\""
+#bindsym $mod+d exec i3-dmenu-desktop
+#bindsym $mod+d exec "i3-dmenu-desktop --dmenu=\\"(cat ; (stest -flx $(echo $PATH | tr : ' ') | sort -u)) | dmenu -i\\""
 # Alternatively, j4-dmenu-desktop
-#bindsym $mod+d exec "j4-dmenu-desktop --dmenu=\\"(cat ; (stest -flx $(echo $PATH | tr : ' ') | sort -u)) | dmenu -i\\" --term=\\"i3-sensible-terminal\\""
+#bindsym $mod+d exec "j4-dmenu-desktop
+bindsym $mod+d exec "j4-dmenu-desktop --dmenu=\\"(cat ; (stest -flx $(echo $PATH | tr : ' ') | sort -u)) | dmenu -i\\" --term=\\"i3-sensible-terminal\\""
 
 # Change focus
 bindsym $mod+h focus left
@@ -225,12 +227,13 @@ bindsym $mod+n mode "load"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+        i3bar_command i3bar -t
         status_command py3status
         tray_output primary
         height 30
         separator_symbol "  "
         colors {
-          background #333333
+          background #333333E0
         }
 }
 
