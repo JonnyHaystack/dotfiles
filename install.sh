@@ -63,3 +63,11 @@ ln -sf $HOME/.dotfiles/autorandr/postswitch $HOME/.config/autorandr/postswitch
 # alacritty
 mkdir -p $HOME/.config/alacritty/
 ln -sf $HOME/.dotfiles/alacritty.yml $HOME/.config/alacritty/alacritty.yml
+
+# qutebrowser
+mkdir -p $HOME/.config/qutebrowser/
+ln -sf $HOME/.dotfiles/qutebrowser/config.py $HOME/.config/qutebrowser/config.py
+
+# rofi
+mkdir -p $HOME/.config/rofi/
+ln -sf $HOME/.dotfiles/rofi/config $HOME/.config/rofi/config

@@ -15,7 +15,7 @@ Currently this includes:
 # Setting up on new machine
 1. Add the new machine's SSH key to my GitHub account.
 2. Clone this repo.
-3. Once cloned, I can run the script "setupLinks.sh".
+3. Once cloned, I can run the script "install.sh".
 This will create symlinks so that all my config files appear in their correct locations.
 4. For the bash configuration, I must do the following:
 - Make sure .bash_profile sources .bashrc
