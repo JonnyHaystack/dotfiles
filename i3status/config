@@ -106,7 +106,7 @@ volume_status {
 
 static_string screenshot {
   format = ""
-  on_click 1 = "exec --no-startup-id maim -s ~/Pictures/Screenshots/img-$(date +%Y-%m-%d)-$(ls ~/Pictures/Screenshots/img* | wc -l).png && notify-send -i screenie 'Screenshot' '~/Pictures/Screenshots'"
+  on_click 1 = "exec --no-startup-id maim --hidecursor -s ~/Pictures/Screenshots/img-$(date +%Y-%m-%d)-$(ls ~/Pictures/Screenshots/img* | wc -l).png && notify-send -i screenie 'Screenshot' '~/Pictures/Screenshots'"
 }
 
 static_string i3lock {
