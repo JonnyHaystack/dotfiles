@@ -42,7 +42,7 @@ ln -sf $HOME/.dotfiles/gitconfig $HOME/.gitconfig
 # plasma
 mkdir -p $HOME/.config/plasma-workspace/env/
 ln -sf $HOME/.dotfiles/plasma/set_window_manager.sh \
-$HOME/.config/plasma-workspace/env/set_window_manager.sh
+  $HOME/.config/plasma-workspace/env/set_window_manager.sh
 
 # i3
 mkdir -p $HOME/.config/i3/
@@ -65,8 +65,13 @@ mkdir -p $HOME/.config/alacritty/
 ln -sf $HOME/.dotfiles/alacritty.yml $HOME/.config/alacritty/alacritty.yml
 
 # qutebrowser
-mkdir -p $HOME/.config/qutebrowser/
+mkdir -p $HOME/.config/qutebrowser/bookmarks/
+mkdir -p $HOME/.local/share/qutebrowser/userscripts/
 ln -sf $HOME/.dotfiles/qutebrowser/config.py $HOME/.config/qutebrowser/config.py
+ln -sf $HOME/.dotfiles/qutebrowser/userscripts/dmenu-open \
+  $HOME/.local/share/qutebrowser/userscripts/dmenu-open
+ln -sf $HOME/.dotfiles/qutebrowser/userscripts/bookmarksync \
+  $HOME/.local/share/qutebrowser/userscripts/bookmarksync
 
 # rofi
 mkdir -p $HOME/.config/rofi/

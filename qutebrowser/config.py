@@ -1,10 +1,21 @@
 # My configuration
 
 # Aliases
-c.aliases["fill"] = "spawn --userscript qute-lastpass -d 'rofi -dmenu -i'"
+c.aliases['fill'] = 'spawn --userscript qute-lastpass -d "rofi -dmenu -i"'
+c.aliases['sync'] = 'spawn --userscript bookmarksync'
+
+# Bindings
+config.bind('<Alt-M>', 'hint links spawn mpv {hint-url}')
+config.bind(',o', 'spawn --userscript dmenu-open')
+config.bind(',O', 'spawn --userscript dmenu-open --tab')
+
+c.tabs.padding = {'top': 3, 'bottom': 3, 'left': 5, 'right': 5}
 
 # Smooth scrolling
 c.scrolling.smooth = True
+
+# Lazy restore
+c.session.lazy_restore = True
 
 # Fonts
 c.fonts.statusbar = '13pt monospace'

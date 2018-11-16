@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd $HOME/.qutebrowser-bookmarks/
+./sync.sh
