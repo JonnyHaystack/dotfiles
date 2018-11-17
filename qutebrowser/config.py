@@ -6,6 +6,7 @@ c.aliases['sync'] = 'spawn --userscript bookmarksync'
 
 # Bindings
 config.bind('<Alt-M>', 'hint links spawn mpv {hint-url}')
+config.bind('gD', 'set-cmd-text -s :tab-give')
 config.bind(',o', 'spawn --userscript dmenu-open')
 config.bind(',O', 'spawn --userscript dmenu-open --tab')
 
