@@ -9,6 +9,8 @@ config.bind('<Alt-M>', 'hint links spawn mpv {hint-url}')
 config.bind('gD', 'set-cmd-text -s :tab-give')
 config.bind(',o', 'spawn --userscript dmenu-open')
 config.bind(',O', 'spawn --userscript dmenu-open --tab')
+config.bind('M', 'bookmark-add;;spawn --userscript bookmarksync')
+config.bind('cM', 'bookmark-del;;spawn --userscript bookmarksync')
 
 c.tabs.padding = {'top': 3, 'bottom': 3, 'left': 5, 'right': 5}
 
