@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if transmission-remote "$1" -a "$2"; then
+  echo "message-info \"Torrent added successfully.\"" >> "$QUTE_FIFO"
+else
+  echo "message-error \"Failed to add torrent!\"" >> "$QUTE_FIFO"
+fi

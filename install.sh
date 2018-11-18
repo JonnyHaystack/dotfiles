@@ -4,7 +4,10 @@
 
 # scripts
 mkdir -p $HOME/scripts/
+mkdir -p $HOME/bin/
 ln -sfn $HOME/.dotfiles/scripts/i3 $HOME/scripts/i3
+ln -sf $HOME/.dotfiles/scripts/dmenu-custom.sh $HOME/bin/dmenu-custom
+ln -sf $HOME/.dotfiles/scripts/dmenu-lpass.sh $HOME/bin/dmenu-lpass
 
 # desktop shortcuts
 mkdir -p $HOME/.local/share/applications/
@@ -68,10 +71,8 @@ ln -sf $HOME/.dotfiles/alacritty.yml $HOME/.config/alacritty/alacritty.yml
 mkdir -p $HOME/.config/qutebrowser/bookmarks/
 mkdir -p $HOME/.local/share/qutebrowser/userscripts/
 ln -sf $HOME/.dotfiles/qutebrowser/config.py $HOME/.config/qutebrowser/config.py
-ln -sf $HOME/.dotfiles/qutebrowser/userscripts/dmenu-open \
-  $HOME/.local/share/qutebrowser/userscripts/dmenu-open
-ln -sf $HOME/.dotfiles/qutebrowser/userscripts/bookmarksync \
-  $HOME/.local/share/qutebrowser/userscripts/bookmarksync
+ln -sf $HOME/.dotfiles/qutebrowser/userscripts/* \
+  $HOME/.local/share/qutebrowser/userscripts/
 
 # rofi
 mkdir -p $HOME/.config/rofi/

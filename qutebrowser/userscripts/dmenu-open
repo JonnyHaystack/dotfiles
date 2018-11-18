@@ -3,7 +3,7 @@ url=$({
     cat "$QUTE_CONFIG_DIR"/bookmarks/urls
     awk '{ tmp = $1; $1 = $2; $2 = tmp; print $0 }' "$QUTE_CONFIG_DIR"/quickmarks
     sqlite3 -separator ' ' "$QUTE_DATA_DIR"/history.sqlite 'SELECT url, title FROM CompletionHistory'
-} | dmenu -i -l 10 -p "open $* " | cut -d ' ' -f 1)
+} | ~/bin/dmenu-custom -l 10 -p "open $* " | cut -d ' ' -f 1)
 
 if [ $? = 0 ] && [ -n "$url" ]; then
     printf 'open %s %s\n' "$*" "$url" >>"$QUTE_FIFO"
