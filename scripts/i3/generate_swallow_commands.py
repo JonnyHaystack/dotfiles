@@ -14,6 +14,7 @@ def eprint(*args, **kwargs):
 window_class_command_mappings = {
         'Gnome-terminal': 'gnome-terminal',
         'Alacritty': 'alacritty',
+        'qutebrowser': 'qutebrowser',
         }
 
 # Specify which window classes are terminals so that we know to extract the
@@ -51,7 +52,7 @@ for con in i3.get_tree():
             # Get the working directory from the window title (I'm sorry).
             # Also remove any non ascii characters.
             working_directory = con.name.encode('ascii',
-                    'ignore').split(': ')[1]
+                    'ignore').split(':')[1].strip()
             # Change ~ to $HOME.
             working_directory = working_directory.replace('~', '$HOME')
 
