@@ -20,7 +20,11 @@ workspace_auto_back_and_forth yes
 
 # Assign applications to workspaces
 #  xprop | grep "CLASS"
-assign [class="Launch-fm"] 8
+#  wmctrl -lxp
+#  i3-save-tree
+for_window [title="Ishiiruka"] move container to workspace 8
+for_window [title="Dolphin Netplay"] move container to workspace 8
+for_window [title="^Dolphin$"] move container to workspace 10; workspace 10
 
 set $mod Mod4
 
@@ -57,10 +61,10 @@ bindsym $mod+g kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 #bindsym $mod+d exec i3-dmenu-desktop
-#bindsym $mod+d exec "i3-dmenu-desktop --dmenu=\\"(cat ; (stest -flx $(echo $PATH | tr : ' ') | sort -u)) | ~/bin/dmenu-custom -l 10\\""
+bindsym $mod+d exec "i3-dmenu-desktop --dmenu=\\"(cat ; (stest -flx $(echo $PATH | tr : ' ') | sort -u)) | ~/bin/dmenu-custom -l 10\\""
 # Alternatively, j4-dmenu-desktop
 #bindsym $mod+d exec "j4-dmenu-desktop
-bindsym $mod+d exec "j4-dmenu-desktop --dmenu=\\"(cat ; (stest -flx $(echo $PATH | tr : ' ') | sort -u)) | ~/bin/dmenu-custom -l 10\\" --term=\\"i3-sensible-terminal\\""
+#bindsym $mod+d exec "j4-dmenu-desktop --dmenu=\\"(cat ; (stest -flx $(echo $PATH | tr : ' ') | sort -u)) | ~/bin/dmenu-custom -l 10\\" --term=\\"i3-sensible-terminal\\""
 
 # Alternative: rofi
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu -font "Helvetica Neue 15" '
