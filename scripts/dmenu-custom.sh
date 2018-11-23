@@ -1,3 +1,3 @@
 #!/bin/sh
 
-cat | dmenu -i -fn 'Helvetica Neue:pixelsize=13' $*
+cat | exec dmenu -i -fn 'Helvetica Neue:pixelsize=13' $*
