@@ -23,6 +23,9 @@ c.tabs.padding = {'top': 3, 'bottom': 3, 'left': 5, 'right': 5}
 # Smooth scrolling
 c.scrolling.smooth = True
 
+# Always restore open sites when qutebrowser is reopened.
+c.auto_save.session = True
+
 # Lazy restore
 c.session.lazy_restore = True
 
