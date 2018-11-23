@@ -1,23 +1,36 @@
+import os
+
 # My configuration
 
 # Aliases
 c.aliases['fill'] = ('spawn --userscript qute-lastpass -d '
-        '"~/bin/dmenu-custom -l 10"')
+        '"%s/bin/dmenu-custom -l 10"' % os.environ['HOME'])
 c.aliases['sync'] = 'spawn --userscript bookmarksync'
 
 # Bindings
+# mpv
 config.bind('<Alt-M>', 'spawn mpv {url}')
+config.bind(';V', 'hint --rapid links userscript mpv-playlist')
+# Give tab
 config.bind('gD', 'set-cmd-text -s :tab-give')
+# dmenu-open
 config.bind(',o', 'spawn --userscript dmenu-open')
 config.bind(',O', 'spawn --userscript dmenu-open --tab')
+# Add/remove bookmark and sync
 config.bind('M', 'bookmark-add;;spawn --userscript bookmarksync')
 config.bind('cM', 'bookmark-del;;spawn --userscript bookmarksync;;message-info '
         '"Deleted bookmark"')
+# Remote add torrent
 config.bind('tf', 'hint links spawn --userscript torrent-add '
         '192.168.1.104:9091 {hint-url}')
+config.bind(';T', 'hint --rapid links spawn --userscript torrent-add '
+        '192.168.1.104:9091 {hint-url}')
+# Open selected form field in editor
 config.bind('I', 'open-editor')
 
+# Editor command
 c.editor.command = ['alacritty', '-e', 'nvim', '{}']
+# Tab title padding
 c.tabs.padding = {'top': 3, 'bottom': 3, 'left': 5, 'right': 5}
 
 # Smooth scrolling

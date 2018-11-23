@@ -1,0 +1,21 @@
+#!/bin/sh
+
+playlist_file=/tmp/mpv-playlist
+
+bind_esc() {
+    printf 'bind --mode hint <Escape> %s' "$*"
+}
+
+if [ "$QUTE_MODE" = 'hints' ]; then
+    if ! [ -f "$playlist_file" ]; then
+	    touch "$playlist_file"
+	    printf 'leave-mode\n' >>"$QUTE_FIFO"
+	    printf '%s ;; leave-mode ;; %s\n' "$(bind_esc spawn --userscript mpv-playlist)" "$(bind_esc leave-mode)" >>"$QUTE_FIFO"
+	    printf 'hint --rapid links userscript mpv-playlist\n' >>"$QUTE_FIFO"
+    fi
+
+    printf '%s\n' "$QUTE_URL" >>"$playlist_file"
+elif [ -r "$playlist_file" ]; then
+    mpv --playlist "$playlist_file"
+    rm "$playlist_file"
+fi
