@@ -6,16 +6,18 @@ c.aliases['fill'] = ('spawn --userscript qute-lastpass -d '
 c.aliases['sync'] = 'spawn --userscript bookmarksync'
 
 # Bindings
-config.bind('<Alt-M>', 'hint links spawn mpv {hint-url}')
+config.bind('<Alt-M>', 'spawn mpv {url}')
 config.bind('gD', 'set-cmd-text -s :tab-give')
 config.bind(',o', 'spawn --userscript dmenu-open')
 config.bind(',O', 'spawn --userscript dmenu-open --tab')
 config.bind('M', 'bookmark-add;;spawn --userscript bookmarksync')
 config.bind('cM', 'bookmark-del;;spawn --userscript bookmarksync;;message-info '
         '"Deleted bookmark"')
-config.bind('ta', 'hint links spawn --userscript torrent-add '
+config.bind('tf', 'hint links spawn --userscript torrent-add '
         '192.168.1.104:9091 {hint-url}')
+config.bind('I', 'open-editor')
 
+c.editor.command = ['alacritty', '-e', 'nvim', '{}']
 c.tabs.padding = {'top': 3, 'bottom': 3, 'left': 5, 'right': 5}
 
 # Smooth scrolling
