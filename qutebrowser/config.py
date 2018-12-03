@@ -8,28 +8,45 @@ c.aliases['fill'] = ('spawn --userscript qute-lastpass -d '
 c.aliases['sync'] = 'spawn --userscript bookmarksync'
 
 # Bindings
+# LastPass fill
+config.bind('<Ctrl-F>', 'fill')
+config.bind('<Ctrl-F>', 'fill', mode='insert')
 # mpv
 config.bind('<Alt-M>', 'spawn mpv {url}')
-config.bind(';V', 'hint --rapid links userscript mpv-playlist')
+config.bind(';m', 'hint links spawn mpv {hint-url}')
+config.bind(';M', 'hint --rapid links userscript mpv-playlist')
 # Give tab
 config.bind('gD', 'set-cmd-text -s :tab-give')
+# Open in private window
+# Ctrl+Shift+N opens a private window on homepage
+config.bind(',p', 'set-cmd-text -s :open -p')
 # dmenu-open
 config.bind(',o', 'spawn --userscript dmenu-open')
 config.bind(',O', 'spawn --userscript dmenu-open --tab')
 # Add/remove bookmark and sync
-config.bind('M', 'bookmark-add;;spawn --userscript bookmarksync')
-config.bind('cM', 'bookmark-del;;spawn --userscript bookmarksync;;message-info '
-        '"Deleted bookmark"')
+config.bind('M', 'bookmark-add ;; spawn --userscript bookmarksync')
+config.bind('cM', 'bookmark-del ;; spawn --userscript bookmarksync ;; '
+        'message-info "Deleted bookmark"')
 # Remote add torrent
 config.bind('tf', 'hint links spawn --userscript torrent-add '
         '192.168.1.104:9091 {hint-url}')
 config.bind(';T', 'hint --rapid links spawn --userscript torrent-add '
         '192.168.1.104:9091 {hint-url}')
 # Open selected form field in editor
-config.bind('I', 'open-editor')
+config.bind('<Ctrl-I>', 'open-editor')
+config.bind('<Ctrl-I>', 'open-editor', mode='insert')
+# Save current window as
+config.bind('ws', 'set-cmd-text -s :w -o')
+# Restore window
+config.bind('wr', 'set-cmd-text -s :session-load -t')
+
+
+# Tab title format.
+c.tabs.title.format = '{private}{audio}{index}: {title}'
 
 # Editor command
-c.editor.command = ['alacritty', '-e', 'nvim', '{}']
+c.editor.command = [os.environ['TERMINAL'], '-e', 'nvim', '{}']
+
 # Tab title padding
 c.tabs.padding = {'top': 3, 'bottom': 3, 'left': 5, 'right': 5}
 
