@@ -13,7 +13,7 @@ gaps inner 10
 gaps outer 0
 smart_gaps on
 
-mouse_warping none
+#mouse_warping none
 
 # Enable automatic back-and-forth when switching to the current workspace
 workspace_auto_back_and_forth yes
@@ -51,6 +51,8 @@ new_float none
 
 # Start a terminal
 bindsym $mod+t exec i3-sensible-terminal
+# Take screenshot
+bindsym Print exec --no-startup-id "maim --hidecursor -s ~/Pictures/Screenshots/img-$(date +%Y-%m-%d)-$(ls ~/Pictures/Screenshots/img* | wc -l).png && notify-send -i screenie 'Screenshot' '~/Pictures/Screenshots'"
 
 # Kill focused window
 bindsym $mod+g kill
@@ -276,6 +278,9 @@ for_window [class="krunner"] floating enable, border none
 for_window [class="Kmix"] floating enable, border none
 for_window [class="Klipper"] floating enable, border none
 for_window [class="Plasmoidviewer"] floating enable, border none
+
+# Don't let KDE notifications steal focus
+no_focus [class="plasmashell"]
 
 # Set wallpaper
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
