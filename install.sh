@@ -2,6 +2,8 @@
 # Create symlinks for dotfiles so that they will appear in their
 # normal locations.
 
+mkdir -p $HOME/.config/
+
 # scripts
 mkdir -p $HOME/scripts/
 mkdir -p $HOME/bin/
