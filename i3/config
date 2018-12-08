@@ -53,6 +53,8 @@ new_float none
 bindsym $mod+t exec i3-sensible-terminal
 # Take screenshot
 bindsym Print exec --no-startup-id "maim --hidecursor -s ~/Pictures/Screenshots/img-$(date +%Y-%m-%d)-$(ls ~/Pictures/Screenshots/img* | wc -l).png && notify-send -i screenie 'Screenshot' '~/Pictures/Screenshots'"
+# Pause/play mpv
+bindsym $mod+y exec --no-startup-id "echo '{ \\"command\\": [\\"cycle\\", \\"pause\\"] }' | socat - /tmp/mpvsocket"
 
 # Kill focused window
 bindsym $mod+g kill
@@ -205,7 +207,7 @@ mode "save" {
   bindsym 9 exec "~/scripts/i3/save_workspace.sh 9"
   bindsym 0 exec "~/scripts/i3/save_workspace.sh 0"
 
-  # Back to normal: Enter, Escape, or r
+  # Back to normal: Enter, Escape, or s
   bindsym Return mode "default"
   bindsym Escape mode "default"
   bindsym s mode "default"
@@ -227,7 +229,7 @@ mode "load" {
   bindsym 9 exec "~/scripts/i3/load_workspace.sh 9"
   bindsym 0 exec "~/scripts/i3/load_workspace.sh 0"
 
-  # Back to normal: Enter, Escape, or r
+  # Back to normal: Enter, Escape, or n
   bindsym Return mode "default"
   bindsym Escape mode "default"
   bindsym n mode "default"
