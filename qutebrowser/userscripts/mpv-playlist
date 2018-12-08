@@ -16,6 +16,6 @@ if [ "$QUTE_MODE" = 'hints' ]; then
 
     printf '%s\n' "$QUTE_URL" >>"$playlist_file"
 elif [ -r "$playlist_file" ]; then
-    mpv --playlist "$playlist_file"
+    mpv --input-ipc-server=/tmp/mpvsocket --playlist "$playlist_file"
     rm "$playlist_file"
 fi

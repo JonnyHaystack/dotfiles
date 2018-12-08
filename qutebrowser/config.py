@@ -12,8 +12,9 @@ c.aliases['sync'] = 'spawn --userscript bookmarksync'
 config.bind('<Ctrl-F>', 'fill')
 config.bind('<Ctrl-F>', 'fill', mode='insert')
 # mpv
-config.bind('<Alt-M>', 'spawn mpv {url}')
-config.bind(';m', 'hint links spawn mpv {hint-url}')
+config.bind('<Alt-M>', 'spawn mpv --input-ipc-server=/tmp/mpvsocket {url}')
+config.bind(';m', 'hint links spawn mpv --input-ipc-server=/tmp/mpvsocket '
+        '{hint-url}')
 config.bind(';M', 'hint --rapid links userscript mpv-playlist')
 # Give tab
 config.bind('gD', 'set-cmd-text -s :tab-give')
@@ -29,14 +30,14 @@ config.bind('cM', 'bookmark-del ;; spawn --userscript bookmarksync ;; '
         'message-info "Deleted bookmark"')
 # Remote add torrent
 config.bind('tf', 'hint links spawn --userscript torrent-add '
-        '192.168.1.104:9091 {hint-url}')
+        '192.168.1.100:9091 {hint-url}')
 config.bind(';T', 'hint --rapid links spawn --userscript torrent-add '
         '192.168.1.104:9091 {hint-url}')
 # Open selected form field in editor
 config.bind('<Ctrl-I>', 'open-editor')
 config.bind('<Ctrl-I>', 'open-editor', mode='insert')
 # Save current window as
-config.bind('ws', 'set-cmd-text -s :w -o')
+config.bind('ws', 'set-cmd-text -s :session-save -o')
 # Restore window
 config.bind('wr', 'set-cmd-text -s :session-load -t')
 
