@@ -49,13 +49,6 @@ for_window [class="^.*"] border pixel 4
 # Set default border styles
 new_float none
 
-# Start a terminal
-bindsym $mod+t exec i3-sensible-terminal
-# Take screenshot
-bindsym Print exec --no-startup-id "maim --hidecursor -s ~/Pictures/Screenshots/img-$(date +%Y-%m-%d)-$(ls ~/Pictures/Screenshots/img* | wc -l).png && notify-send -i screenie 'Screenshot' '~/Pictures/Screenshots'"
-# Pause/play mpv
-bindsym $mod+y exec --no-startup-id "echo '{ \\"command\\": [\\"cycle\\", \\"pause\\"] }' | socat - /tmp/mpvsocket"
-
 # Kill focused window
 bindsym $mod+g kill
 
@@ -75,6 +68,18 @@ bindsym $mod+d exec "i3-dmenu-desktop --dmenu=\\"(cat ; (stest -flx $(echo $PATH
 
 # Start dmenu-lpass script
 bindsym $mod+m exec ~/bin/dmenu-lpass
+
+# Start a terminal
+bindsym $mod+t exec i3-sensible-terminal
+
+# Take screenshot
+bindsym Print exec --no-startup-id "maim --hidecursor -s ~/Pictures/Screenshots/img-$(date +%Y-%m-%d)-$(ls ~/Pictures/Screenshots/img* | wc -l).png && notify-send -i screenie 'Screenshot' '~/Pictures/Screenshots'"
+
+# Pause/play mpv
+bindsym $mod+y exec --no-startup-id "echo '{ \\"command\\": [\\"cycle\\", \\"pause\\"] }' | socat - /tmp/mpvsocket"
+
+# Launch networkmanager_dmenu
+bindsym $mod+b exec networkmanager_dmenu
 
 # Change focus
 bindsym $mod+h focus left
