@@ -61,13 +61,21 @@ c.auto_save.session = True
 c.session.lazy_restore = True
 
 # Fonts
-c.fonts.statusbar = '13pt monospace'
 c.fonts.completion.category = '12pt monospace'
 c.fonts.completion.entry = '12pt monospace'
-c.fonts.tabs = '12pt monospace'
+c.fonts.debug_console = '12pt monospace'
+c.fonts.downloads = '12pt monospace'
 c.fonts.hints = '12pt monospace'
 c.fonts.keyhint = '11pt monospace'
+c.fonts.messages.error = '12pt monospace'
+c.fonts.messages.info = '10pt monospace'
+c.fonts.messages.warning = '10pt monospace'
 c.fonts.prompts = '13pt sans-serif'
+c.fonts.statusbar = '13pt monospace'
+c.fonts.tabs = '12pt monospace'
+
+# Dvorak hint characters
+c.hints.chars = 'aoeuidhtn'
 
 
 # base16-qutebrowser (https://github.com/theova/base16-qutebrowser)
