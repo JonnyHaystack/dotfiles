@@ -66,6 +66,9 @@ bindsym $mod+d exec "i3-dmenu-desktop --dmenu=\\"(cat ; (stest -flx $(echo $PATH
 # Alternative: rofi
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu -font "Helvetica Neue 15" '
 
+# Non-i3 bindings
+# -----------------------------------------------------
+
 # Start dmenu-lpass script
 bindsym $mod+m exec ~/bin/dmenu-lpass
 
@@ -80,6 +83,8 @@ bindsym $mod+y exec --no-startup-id "echo '{ \\"command\\": [\\"cycle\\", \\"pau
 
 # Launch networkmanager_dmenu
 bindsym $mod+b exec networkmanager_dmenu
+
+# -----------------------------------------------------
 
 # Change focus
 bindsym $mod+h focus left
