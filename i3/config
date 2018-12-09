@@ -286,3 +286,8 @@ no_focus [class="plasmashell"]
 
 # Set wallpaper
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
+
+# Autostart apps
+exec --no-startup-id yakuake
+exec --no-startup-id nm-applet
+exec --no-startup-id redshift-gtk
