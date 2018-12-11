@@ -62,13 +62,18 @@ ln -sf $HOME/.dotfiles/i3status/config $HOME/.config/i3status/config
 mkdir -p $HOME/.config/compton/
 ln -sf $HOME/.dotfiles/compton/compton.conf $HOME/.config/compton/compton.conf
 
+# dunst
+mkdir -p $HOME/.config/dunst/
+ln -sf $HOME/.dotfiles/dunst/dunstrc $HOME/.config/dunst/dunstrc
+
 # autorandr
 mkdir -p $HOME/.config/autorandr/
 ln -sf $HOME/.dotfiles/autorandr/postswitch $HOME/.config/autorandr/postswitch
 
 # alacritty
 mkdir -p $HOME/.config/alacritty/
-ln -sf $HOME/.dotfiles/alacritty.yml $HOME/.config/alacritty/alacritty.yml
+ln -sf $HOME/.dotfiles/alacritty/alacritty.yml \
+  $HOME/.config/alacritty/alacritty.yml
 
 # qutebrowser
 mkdir -p $HOME/.config/qutebrowser/bookmarks/
