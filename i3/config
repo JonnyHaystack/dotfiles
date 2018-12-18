@@ -337,6 +337,10 @@ no_focus [class="plasmashell"]
 # Set wallpaper
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.png
 
+# Start light-locker
+exec --no-startup-id light-locker
+exec --no-startup-id xss-lock -- $LOCKER
+
 # Autostart apps
 exec --no-startup-id yakuake
 exec --no-startup-id udiskie -s
