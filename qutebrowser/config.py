@@ -84,6 +84,9 @@ c.zoom.default = 65
 # Dvorak hint characters
 c.hints.chars = 'aoeuidhtn'
 
+# Enable DRM content (qt5-webengine-widevine from AUR must be installed)
+c.qt.args = ['ppapi-widevine-path=/usr/lib/qt/plugins/ppapi/libwidevinecdmadapter.so']
+
 
 # base16-qutebrowser (https://github.com/theova/base16-qutebrowser)
 # Base16 qutebrowser template by theova
