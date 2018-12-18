@@ -4,9 +4,12 @@ background = #222
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
-foreground-alt = #555
+foreground-alt = #666
 primary = #ffb52a
 secondary = #e60053
+good = #38d638
+bad = #f44336
+degraded = #e6d937
 alert = #bd2c40
 
 [bar/bottom]
@@ -36,7 +39,6 @@ module-margin-right = 2
 
 ;font-0 = fixed:pixelsize=13;1
 ;font-1 = unifont:fontformat=truetype:size=13:antialias=false;0
-;font-2 = siji:pixelsize=13;1
 font-0 = NotoSans-Regular:size=13;0
 font-1 = unifont:size=11;-3
 font-2 = FontAwesome5FreeRegular:size=13;0
@@ -45,10 +47,11 @@ font-4 = FontAwesome5FreeSolid:size=13;0
 font-5 = NotoSans-Regular:size=13;-1
 font-6 = MaterialIcons:size=15;-1
 font-7 = Termsynu:size=13:antialias=false;0
+font-8 = siji:pixelsize=13;1
 
 modules-left = i3
 modules-center = mpd
-modules-right = updates-arch-combined vpn-openvpn-isrunning filesystem memory cpu info-pingrtt battery temperature date screenshot lock powermenu
+modules-right = updates-arch-combined vpn-openvpn-isrunning filesystem memory cpu info-pingrtt battery pulseaudio temperature date screenshot lock powermenu
 
 tray-position = right
 tray-padding = 2
@@ -224,7 +227,7 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+format-underline = ${colors.bad}
 label = %percentage:2%%
 
 [module/memory]
@@ -292,28 +295,42 @@ label = %date% %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
-label-volume-foreground = ${root.foreground}
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
+ramp-volume-foreground = ${colors.foreground-alt}
+ramp-volume-0 = %{u#F44336}%{+u}
+ramp-volume-1 = %{u#F06B36}%{+u}
+ramp-volume-2 = %{u#ED9136}%{+u}
+ramp-volume-3 = %{u#EAB636}%{+u}
+ramp-volume-4 = %{u#E6D937}%{+u}
+ramp-volume-5 = %{u#CBE337}%{+u}
+ramp-volume-6 = %{u#A4E037}%{+u}
+ramp-volume-7 = %{u#7EDC37}%{+u}
+ramp-volume-8 = %{u#5AD937}%{+u}
+ramp-volume-9 = %{u#38D638}%{+u}
 
-label-muted = 🔇 muted
-label-muted-foreground = #666
+label-muted = 
+label-muted-foreground = ${colors.foreground-alt}
+label-muted-underline = ${colors.bad}
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+bar-volume-foreground-0 = #F44336
+bar-volume-foreground-1 = #F06B36
+bar-volume-foreground-2 = #ED9136
+bar-volume-foreground-3 = #EAB636
+bar-volume-foreground-4 = #E6D937
+bar-volume-foreground-5 = #CBE337
+bar-volume-foreground-6 = #A4E037
+bar-volume-foreground-7 = #7EDC37
+bar-volume-foreground-8 = #5AD937
+bar-volume-foreground-9 = #38D638
 bar-volume-gradient = false
 bar-volume-indicator = |
-bar-volume-indicator-font = 2
+bar-volume-indicator-font = 8
 bar-volume-fill = ─
-bar-volume-fill-font = 2
+bar-volume-fill-font = 8
 bar-volume-empty = ─
-bar-volume-empty-font = 2
+bar-volume-empty-font = 8
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/alsa]
@@ -351,14 +368,14 @@ adapter = AC0
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+format-charging-underline = ${colors.degraded}
 
-format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-underline = #ff7a00
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+format-full-underline = ${colors.good}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -375,11 +392,6 @@ animation-charging-4 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-3 = 
-animation-discharging-4 = 
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
