@@ -21,6 +21,8 @@ config.bind('gD', 'set-cmd-text -s :tab-give')
 # Open in private window
 # Ctrl+Shift+N opens a private window on homepage
 config.bind(',p', 'set-cmd-text -s :open -p')
+# Open link in private tab with ;p
+config.bind(';p', 'hint links run open -p {hint-url}')
 # dmenu-open
 config.bind(',o', 'spawn --userscript dmenu-open')
 config.bind(',O', 'spawn --userscript dmenu-open --tab')
@@ -56,6 +58,7 @@ c.scrolling.smooth = True
 
 # Always restore open sites when qutebrowser is reopened.
 c.auto_save.session = True
+c.session.default_name = 'default'
 
 # Lazy restore
 c.session.lazy_restore = True
