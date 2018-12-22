@@ -74,6 +74,10 @@ c.fonts.prompts = '13pt sans-serif'
 c.fonts.statusbar = '13pt monospace'
 c.fonts.tabs = '12pt monospace'
 
+# HiDPI configuration
+c.qt.highdpi = True
+c.zoom.default = 65
+
 # Dvorak hint characters
 c.hints.chars = 'aoeuidhtn'
 
