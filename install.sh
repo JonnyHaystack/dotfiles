@@ -14,13 +14,11 @@ ln -sf $HOME/.dotfiles/scripts/open_url_in_instance.sh $HOME/bin/
 
 # desktop shortcuts
 mkdir -p $HOME/.local/share/applications/
-ln -sf $HOME/.dotfiles/desktop/pingtest.desktop \
-  $HOME/.local/share/applications/pingtest.desktop
+ln -sf $HOME/.dotfiles/desktop/* $HOME/.local/share/applications/
 
 # fonts
 mkdir -p $HOME/.fonts/
-ln -sf $HOME/.dotfiles/fonts/* \
-  $HOME/.fonts/
+ln -sf $HOME/.dotfiles/fonts/* $HOME/.fonts/
 
 # vim
 ln -sfn $HOME/.dotfiles/vim $HOME/.vim
@@ -58,6 +56,10 @@ ln -sf $HOME/.dotfiles/i3/config $HOME/.config/i3/config
 mkdir -p $HOME/.config/i3status/
 ln -sf $HOME/.dotfiles/i3status/config $HOME/.config/i3status/config
 
+# polybar
+mkdir -p $HOME/.config/polybar/
+ln -sf $HOME/.dotfiles/polybar/* $HOME/.config/polybar/
+
 # compton
 mkdir -p $HOME/.config/compton/
 ln -sf $HOME/.dotfiles/compton/compton.conf $HOME/.config/compton/compton.conf
@@ -85,3 +87,7 @@ ln -sf $HOME/.dotfiles/qutebrowser/userscripts/* \
 # rofi
 mkdir -p $HOME/.config/rofi/
 ln -sf $HOME/.dotfiles/rofi/config $HOME/.config/rofi/config
+
+# mpv
+mkdir -p $HOME/.config/mpv/
+ln -sf $HOME/.dotfiles/mpv/input.conf $HOME/.config/mpv/input.conf
