@@ -25,7 +25,7 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 4
+border-size = 0
 border-color = #00000000
 
 padding-left = 0
@@ -34,13 +34,21 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=13;1
-font-1 = unifont:fontformat=truetype:size=13:antialias=false;0
-font-2 = siji:pixelsize=13;1
+;font-0 = fixed:pixelsize=13;1
+;font-1 = unifont:fontformat=truetype:size=13:antialias=false;0
+;font-2 = siji:pixelsize=13;1
+font-0 = NotoSans-Regular:size=13;0
+font-1 = unifont:size=11;-3
+font-2 = FontAwesome5FreeRegular:size=13;0
+font-3 = FontAwesome5FreeBrands:size=13;0
+font-4 = FontAwesome5FreeSolid:size=13;0
+font-5 = NotoSans-Regular:size=13;-1
+font-6 = MaterialIcons:size=15;-1
+font-7 = Termsynu:size=13:antialias=false;0
 
 modules-left = i3
 modules-center = mpd
-modules-right = filesystem xbacklight pulseaudio memory cpu wlan battery temperature date powermenu
+modules-right = updates-arch-combined vpn-openvpn-isrunning filesystem memory cpu info-pingrtt battery temperature date screenshot lock powermenu
 
 tray-position = right
 tray-padding = 2
@@ -60,6 +68,31 @@ tray-padding = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+[module/vpn-openvpn-isrunning]
+type = custom/script
+exec = ~/polybar-scripts/vpn-openvpn-isrunning.sh
+interval = 5
+
+[module/info-pingrtt]
+type = custom/script
+exec = ~/polybar-scripts/info-pingrtt.sh
+interval = 0.5
+
+[module/updates-arch-combined]
+type = custom/script
+exec = ~/polybar-scripts/updates-arch-combined.sh
+interval = 600
+
+[module/screenshot]
+type = custom/text
+content = 
+click-left = maim --hidecursor -s ~/Pictures/Screenshots/img-$(date +%Y-%m-%d)-$(ls ~/Pictures/Screenshots/img* | wc -l).png && notify-send -i screenie 'Screenshot' '~/Pictures/Screenshots'
+
+[module/lock]
+type = custom/text
+content = 
+click-left = $LOCKER
 
 [module/xwindow]
 type = internal/xwindow
@@ -83,12 +116,12 @@ label-indicator-underline = ${colors.secondary}
 
 [module/filesystem]
 type = internal/fs
-interval = 25
+interval = 30
 
 mount-0 = /
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
+label-mounted =  %free%
+label-unmounted = 
 label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/bspwm]
@@ -189,7 +222,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage:2%%
@@ -197,7 +230,7 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 label = %percentage_used%%
@@ -323,31 +356,38 @@ format-charging-underline = #ffb52a
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-4 = 
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
+interval = 1
+thermal-zone = 1
+warn-temperature = 90
 
 format = <ramp> <label>
 format-underline = #f50a4d
@@ -358,9 +398,11 @@ label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
 ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]

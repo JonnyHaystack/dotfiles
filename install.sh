@@ -59,6 +59,7 @@ ln -sf $HOME/.dotfiles/i3status/config $HOME/.config/i3status/config
 # polybar
 mkdir -p $HOME/.config/polybar/
 ln -sf $HOME/.dotfiles/polybar/* $HOME/.config/polybar/
+ln -sfn $HOME/.dotfiles/polybar/scripts $HOME/polybar-scripts
 
 # compton
 mkdir -p $HOME/.config/compton/
