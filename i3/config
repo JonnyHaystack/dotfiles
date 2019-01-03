@@ -103,7 +103,7 @@ set $Locker $LOCKER && sleep 1
 # Power management
 set $mode_system (l) lock, (e) logout, (s) suspend, (S) shutdown, (r) reboot
 mode "$mode_system" {
-  bindsym l exec --no-startup-id $Locker, mode "default"
+  bindsym l exec --no-startup-id $LOCKER, mode "default"
   bindsym e exec --no-startup-id i3-msg exit, mode "default"
   bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
   bindsym Shift+S exec --no-startup-id systemctl poweroff -i, mode "default"
@@ -284,18 +284,22 @@ bindsym $mod+n mode "load"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        i3bar_command i3bar
-        status_command py3status
-        position bottom
+#bar {
+        #i3bar_command i3bar -t
+        #status_command py3status
+        #position bottom
 
-        tray_output primary
-        height 30
-        separator_symbol "  "
-        colors {
-          background #333333
-        }
-}
+        #tray_output primary
+        #height 30
+        #separator_symbol "  "
+        #colors {
+          #background #33333300
+        #}
+#}
+# Start polybar
+exec --no-startup-id $HOME/.config/polybar/launch.sh
+# Restart polybar
+bindsym $mod+Control+P exec $HOME/.config/polybar/launch.sh
 
 # Start compton
 exec --no-startup-id compton -b --config $HOME/.config/compton/compton.conf
@@ -335,5 +339,9 @@ exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.png
 
 # Autostart apps
 exec --no-startup-id yakuake
+exec --no-startup-id udiskie -s
+exec --no-startup-id kdeconnect-indicator
+exec --no-startup-id volumeicon
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift-gtk
+exec --no-startup-id unclutter
