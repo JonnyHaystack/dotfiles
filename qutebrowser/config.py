@@ -42,6 +42,8 @@ config.bind('<Ctrl-I>', 'open-editor', mode='insert')
 config.bind('ws', 'set-cmd-text -s :session-save -o')
 # Restore window
 config.bind('wr', 'set-cmd-text -s :session-load -t')
+# Delete saved session
+config.bind('wd', 'set-cmd-text -s :session-delete ')
 
 
 # Tab title format.
