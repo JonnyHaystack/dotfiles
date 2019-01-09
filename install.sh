@@ -91,4 +91,7 @@ ln -sf $HOME/.dotfiles/rofi/config $HOME/.config/rofi/config
 
 # mpv
 mkdir -p $HOME/.config/mpv/
+mkdir -p $HOME/.config/mpv/scripts/
 ln -sf $HOME/.dotfiles/mpv/input.conf $HOME/.config/mpv/input.conf
+ln -sf $HOME/.dotfiles/mpv/scripts/youtube-quality.lua \
+  $HOME/.config/mpv/scripts/youtube-quality.lua
