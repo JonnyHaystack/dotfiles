@@ -98,14 +98,12 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 # Touchpad controls
 bindsym XF86TouchpadToggle exec $HOME/bin/toggletouchpad.sh # toggle touchpad
 
-set $Locker $LOCKER && sleep 1
-
 # Power management
 set $mode_system (l) lock, (e) logout, (s) suspend, (S) shutdown, (r) reboot
 mode "$mode_system" {
   bindsym l exec --no-startup-id $LOCKER, mode "default"
   bindsym e exec --no-startup-id i3-msg exit, mode "default"
-  bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+  bindsym s exec --no-startup-id systemctl suspend, mode "default"
   bindsym Shift+S exec --no-startup-id systemctl poweroff -i, mode "default"
   bindsym r exec --no-startup-id systemctl reboot, mode "default"
 
