@@ -51,10 +51,12 @@ for con in i3.get_tree():
         if con.window_class in terminals:
             # Get the working directory from the window title (I'm sorry).
             # Also remove any non ascii characters.
-            working_directory = con.name.encode('ascii',
-                    'ignore').split(':')[1].strip()
-            # Change ~ to $HOME.
-            working_directory = working_directory.replace('~', '$HOME')
+            working_directory = ""
+            tokens = con.name.encode('ascii', 'ignore').split(':')
+            if len(tokens) >= 2:
+                working_directory = tokens[1].strip()
+                # Change ~ to $HOME.
+                working_directory = working_directory.replace('~', '$HOME')
 
         # Create command to launch program.
         # If there is a special command mapping for this program.
