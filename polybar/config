@@ -16,7 +16,7 @@ alert = #bd2c40
 monitor = ${env:MONITOR:eDP-1-1}
 bottom = true
 width = 100%
-height = 30
+height = 32
 ;offset-x = 1%
 ;offset-y = 1%
 ;radius = 6.0
@@ -37,15 +37,15 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = NotoSans-Regular:size=13;0
-font-1 = unifont:size=11;-3
-font-2 = FontAwesome5FreeRegular:size=13;0
-font-3 = FontAwesome5FreeBrands:size=13;0
-font-4 = FontAwesome5FreeSolid:size=13;0
-font-5 = NotoSans-Regular:size=13;-1
-font-6 = MaterialIcons:size=15;-1
-font-7 = Termsynu:size=13:antialias=false;0
-font-8 = siji:pixelsize=13;1
+font-0 = NotoSans-Regular:size=13;3
+font-1 = unifont:size=11;0
+font-2 = FontAwesome5FreeRegular:size=13;3
+font-3 = FontAwesome5FreeBrands:size=13;3
+font-4 = FontAwesome5FreeSolid:size=13;3
+font-5 = NotoSans-Regular:size=13;2
+font-6 = MaterialIcons:size=15;2
+font-7 = Termsynu:size=13:antialias=false;3
+font-8 = siji:pixelsize=13;4
 
 modules-left = i3
 modules-center = mpd
@@ -57,9 +57,6 @@ tray-padding = 2
 ;tray-background = #0063ff
 
 wm-restack = i3
-
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
 
 cursor-click = pointer
 cursor-scroll = ns-resize
