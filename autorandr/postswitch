@@ -17,3 +17,9 @@ do
     i3-msg "[workspace=\"^(2|4|6|8|0)\"] move workspace to output $i"
   fi
 done
+
+# Reset wallpaper
+feh --bg-fill ~/Pictures/wallpaper.png
+
+# Restart polybar
+~/.config/polybar/launch.sh
