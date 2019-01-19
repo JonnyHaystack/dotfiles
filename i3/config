@@ -346,7 +346,6 @@ exec --no-startup-id lxqt-policykit-agent
 exec --no-startup-id yakuake
 exec --no-startup-id udiskie -s
 exec --no-startup-id kdeconnect-indicator
-exec --no-startup-id volumeicon
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift-gtk
 exec --no-startup-id unclutter
