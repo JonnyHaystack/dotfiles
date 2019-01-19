@@ -336,8 +336,11 @@ no_focus [class="plasmashell"]
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.png
 
 # Start light-locker
-exec --no-startup-id light-locker
+exec --no-startup-id light-locker --no-lock-on-suspend
 exec --no-startup-id xss-lock -- $LOCKER
+
+# Start authentication agent
+exec --no-startup-id lxqt-policykit-agent
 
 # Autostart apps
 exec --no-startup-id yakuake
@@ -347,3 +350,4 @@ exec --no-startup-id volumeicon
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift-gtk
 exec --no-startup-id unclutter
+exec --no-startup-id gmediarender
