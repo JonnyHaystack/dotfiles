@@ -71,6 +71,7 @@ tray-position =
 type = custom/script
 exec = ~/polybar-scripts/vpn-openvpn-isrunning.sh
 interval = 5
+click-left = sudo nordvpn stop || sudo nordvpn start
 
 [module/info-pingrtt]
 type = custom/script
@@ -263,7 +264,7 @@ label = %date% %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <ramp-volume> <label-volume>
+format-volume = %{A3:pavucontrol:}<ramp-volume> <label-volume>
 label-volume = %percentage%%
 ramp-volume-foreground = ${colors.foreground-alt}
 ramp-volume-0 = %{u#F44336}
