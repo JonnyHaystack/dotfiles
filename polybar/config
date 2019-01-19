@@ -366,7 +366,7 @@ animation-discharging-framerate = 750
 [module/temperature]
 type = internal/temperature
 interval = 3
-thermal-zone = ${env:CPU-THERMAL-ZONE:0}
+thermal-zone = ${env:CPU_THERMAL_ZONE:0}
 warn-temperature = 90
 
 format = <ramp> <label>
