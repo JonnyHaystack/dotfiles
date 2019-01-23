@@ -54,15 +54,15 @@ new_float none
 bindsym $mod+g kill
 
 # Start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu_run
+#bindsym $mod+d exec --no-startup-id dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 #bindsym $mod+d exec i3-dmenu-desktop
-bindsym $mod+d exec "i3-dmenu-desktop --dmenu=\\"(cat ; (stest -flx $(echo $PATH | tr : ' ') | sort -u)) | ~/bin/dmenu-custom -l 10\\""
+bindsym $mod+d exec --no-startup-id "i3-dmenu-desktop --dmenu=\\"(cat ; (stest -flx $(echo $PATH | tr : ' ') | sort -u)) | ~/bin/dmenu-custom -l 10\\""
 # Alternatively, j4-dmenu-desktop
-#bindsym $mod+d exec "j4-dmenu-desktop
-#bindsym $mod+d exec "j4-dmenu-desktop --dmenu=\\"(cat ; (stest -flx $(echo $PATH | tr : ' ') | sort -u)) | ~/bin/dmenu-custom -l 10\\" --term=\\"i3-sensible-terminal\\""
+#bindsym $mod+d exec --no-startup-id "j4-dmenu-desktop
+#bindsym $mod+d exec --no-startup-id "j4-dmenu-desktop --dmenu=\\"(cat ; (stest -flx $(echo $PATH | tr : ' ') | sort -u)) | ~/bin/dmenu-custom -l 10\\" --term=\\"i3-sensible-terminal\\""
 
 # Alternative: rofi
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu -font "Helvetica Neue 15" '
@@ -71,20 +71,20 @@ bindsym $mod+d exec "i3-dmenu-desktop --dmenu=\\"(cat ; (stest -flx $(echo $PATH
 # -----------------------------------------------------
 
 # Start dmenu-lpass script
-bindsym $mod+m exec ~/bin/dmenu-lpass
+bindsym $mod+m exec --no-startup-id ~/bin/dmenu-lpass
 
 # Start a terminal
-bindsym $mod+t exec i3-sensible-terminal
+bindsym $mod+t exec --no-startup-id i3-sensible-terminal
 
 # Take screenshot
 bindsym Print exec --no-startup-id "maim --hidecursor -s ~/Pictures/Screenshots/img-$(date +%Y-%m-%d)-$(ls ~/Pictures/Screenshots/img* | wc -l).png && notify-send -i screenie 'Screenshot' '~/Pictures/Screenshots'"
 
 # Pause/play mpv
 bindsym $mod+y exec --no-startup-id "echo '{ \\"command\\": [\\"cycle\\", \\"pause\\"] }' | socat - /tmp/mpvsocket"
-bindsym XF86AudioPlay --no-startup-id "echo '{ \\"command\\": [\\"cycle\\", \\"pause\\"] }' | socat - /tmp/mpvsocket"
+bindsym XF86AudioPlay exec --no-startup-id "echo '{ \\"command\\": [\\"cycle\\", \\"pause\\"] }' | socat - /tmp/mpvsocket"
 
 # Launch networkmanager_dmenu
-bindsym $mod+b exec networkmanager_dmenu
+bindsym $mod+b exec --no-startup-id networkmanager_dmenu
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -92,11 +92,11 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease screen brightness
 
 # Touchpad controls
-bindsym XF86TouchpadToggle exec $HOME/bin/toggletouchpad.sh # toggle touchpad
+bindsym XF86TouchpadToggle exec --no-startup-id $HOME/bin/toggletouchpad.sh # toggle touchpad
 
 # Power management
 set $mode_system (l) lock, (e) logout, (s) suspend, (S) shutdown, (r) reboot
