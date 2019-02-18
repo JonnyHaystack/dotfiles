@@ -102,6 +102,7 @@ if has('nvim')
       \ 'c': ['clangd'],
       \ 'cpp': ['clangd'],
       \ 'python': ['pyls'],
+      \ 'java': ['jdtls'],
       \ }
 
   function SetLSPShortcuts()
@@ -119,7 +120,7 @@ if has('nvim')
 
   augroup LSP
     autocmd!
-    autocmd FileType cpp,c,python call SetLSPShortcuts()
+    autocmd FileType cpp,c,python,java call SetLSPShortcuts()
   augroup END
 else
   " Syntastic config
