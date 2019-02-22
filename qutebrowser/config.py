@@ -44,6 +44,8 @@ config.bind('ws', 'set-cmd-text -s :session-save -o')
 config.bind('wr', 'set-cmd-text -s :session-load -t')
 # Delete saved session
 config.bind('wd', 'set-cmd-text -s :session-delete ')
+# Toggle adblock
+config.bind(',h', 'config-cycle -t -p content.host_blocking.enabled')
 
 
 # Tab title format.
