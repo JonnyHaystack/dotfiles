@@ -40,6 +40,14 @@ ln -sf $HOME/.dotfiles/tmux/tmux.conf $HOME/.tmux.conf
 ln -sf $HOME/.dotfiles/bash_config $HOME/.bash_config
 touch $HOME/.bash_aliases
 
+# zsh
+ln -sf $HOME/.dotfiles/zshrc $HOME/.zshrc
+
+# zsh pure prompt
+mkdir -p $HOME/.zfunctions/
+ln -sf $HOME/.dotfiles/pure/pure.zsh $HOME/.zfunctions/prompt_pure_setup
+ln -sf $HOME/.dotfiles/pure/async.zsh $HOME/.zfunctions/async
+
 # git
 ln -sf $HOME/.dotfiles/gitconfig $HOME/.gitconfig
 
