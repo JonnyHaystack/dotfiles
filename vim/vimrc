@@ -192,7 +192,7 @@ if has ('nvim')
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
-
+  Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
   " Multi-entry selection UI. FZF
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
