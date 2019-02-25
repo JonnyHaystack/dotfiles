@@ -10,6 +10,11 @@ let mapleader=" "
 set hlsearch
 set encoding=utf-8
 
+" Code folding
+set foldenable
+set foldmethod=syntax
+set foldlevel=0
+
 " Font
 set guifont=Menlo\ Regular:h18
 
