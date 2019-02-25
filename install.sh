@@ -42,6 +42,10 @@ touch $HOME/.bash_aliases
 
 # zsh
 ln -sf $HOME/.dotfiles/zshrc $HOME/.zshrc
+touch $HOME/.zsh_aliases
+
+# fzf
+ln -sfn $HOME/.dotfiles/fzf $HOME/.fzf
 
 # zsh pure prompt
 mkdir -p $HOME/.zfunctions/
