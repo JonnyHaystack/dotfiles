@@ -1,3 +1,8 @@
+# Source localised configuration
+if [ -f ~/.zsh_local ]; then
+  . ~/.zsh_local
+fi
+
 # Load aliases
 if [ -f ~/.zsh_aliases ]; then
   . ~/.zsh_aliases

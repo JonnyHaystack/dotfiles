@@ -42,6 +42,7 @@ touch $HOME/.bash_aliases
 
 # zsh
 ln -sf $HOME/.dotfiles/zshrc $HOME/.zshrc
+touch $HOME/.zsh_local
 touch $HOME/.zsh_aliases
 
 # fzf
