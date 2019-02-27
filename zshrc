@@ -93,9 +93,6 @@ autoload -Uz _zplugin
 zplugin ice pick"async.zsh" src"pure.zsh"
 zplugin light sindresorhus/pure
 
-zplugin ice wait"0" lucid atload"_zsh_autosuggest_start"
-zplugin light zsh-users/zsh-autosuggestions
-
 zplugin ice wait"0" blockf lucid
 zplugin light zsh-users/zsh-completions
 
