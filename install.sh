@@ -48,11 +48,6 @@ touch $HOME/.zsh_aliases
 # fzf
 ln -sfn $HOME/.dotfiles/fzf $HOME/.fzf
 
-# zsh pure prompt
-mkdir -p $HOME/.zfunctions/
-ln -sf $HOME/.dotfiles/pure/pure.zsh $HOME/.zfunctions/prompt_pure_setup
-ln -sf $HOME/.dotfiles/pure/async.zsh $HOME/.zfunctions/async
-
 # git
 ln -sf $HOME/.dotfiles/gitconfig $HOME/.gitconfig
 
