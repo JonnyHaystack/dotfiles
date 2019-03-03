@@ -45,7 +45,7 @@ set $ug_text      "#f2f2f5"
 client.focused          $f_border   $f_border    $f_text   $f_indicator  $f_border
 client.focused_inactive $uf_border  $uf_border   $fi_text  $fi_indicator $fi_border
 client.unfocused        $uf_border  $uf_border   $uf_text  $uf_indicator $uf_border
-client.urgent           $ug_border  $ug_border   $ug_text  $ug_indicator $uf_border
+client.urgent           $ug_border  $ug_border   $ug_text  $ug_indicator $ug_border
 
 # }}}
 
