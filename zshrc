@@ -25,6 +25,8 @@ bindkey "jj" vi-cmd-mode
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 # Shift-TAB cycles completions backwards
 bindkey '^[[Z' reverse-menu-complete
+# Fix behaviour of backspace
+bindkey -v '^?' backward-delete-char
 
 # Enable color support of ls and other commands and also add handy aliases {{{
 
@@ -111,10 +113,6 @@ zplugin light zdharma/fast-syntax-highlighting
 
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */home/haystack/.dotfiles/fzf/bin* ]]; then
-  export PATH="$PATH:$HOME/.fzf/bin"
-fi
-
 # Auto-completion
 # ---------------
 [[ $- == *i* ]] && source "$HOME/.fzf/shell/completion.zsh" 2> /dev/null
