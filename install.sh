@@ -33,7 +33,8 @@ ln -sfn $HOME/.dotfiles/nvim $HOME/.config/nvim
 ln -sf $HOME/.dotfiles/inputrc $HOME/.inputrc
 
 # tmux
-ln -sfn $HOME/.dotfiles/tmux $HOME/.tmux
+mkdir -p $HOME/.tmux/
+ln -sf $HOME/.dotfiles/tmux/tmux.conf $HOME/.tmux/tmux.conf
 ln -sf $HOME/.dotfiles/tmux/tmux.conf $HOME/.tmux.conf
 
 # bash

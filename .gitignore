@@ -1,6 +1,4 @@
 .netrwhist
 vim/plugged/
-tmux/plugins/
-tmux/resurrect/
 *.swp
 .mypy_cache
