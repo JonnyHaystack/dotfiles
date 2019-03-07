@@ -111,14 +111,6 @@ zplugin light zdharma/fast-syntax-highlighting
 
 # fzf {{{
 
-# Setup fzf
-# ---------
-# Auto-completion
-# ---------------
-[[ $- == *i* ]] && source "$HOME/.fzf/shell/completion.zsh" 2> /dev/null
-
-# Key bindings
-# ------------
-source "$HOME/.fzf/shell/key-bindings.zsh"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # }}}

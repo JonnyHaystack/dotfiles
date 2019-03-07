@@ -47,7 +47,10 @@ touch $HOME/.zsh_local
 touch $HOME/.zsh_aliases
 
 # fzf
+git submodule init
+git submodule update
 ln -sfn $HOME/.dotfiles/fzf $HOME/.fzf
+$HOME/.fzf/install
 
 # git
 ln -sf $HOME/.dotfiles/gitconfig $HOME/.gitconfig
