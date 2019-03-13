@@ -13,6 +13,9 @@ fi
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+# No duplicates in command history
+setopt HIST_IGNORE_DUPS
+setopt HIST_FIND_NO_DUPS
 
 # }}}
 
