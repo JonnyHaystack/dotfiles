@@ -11,11 +11,13 @@ fi
 # History file settings {{{
 
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=4000
+SAVEHIST=4000
 # No duplicates in command history
 setopt HIST_IGNORE_DUPS
 setopt HIST_FIND_NO_DUPS
+# Prevent commands beginning with a space from appearing in history
+setopt HIST_IGNORE_SPACE
 
 # }}}
 
