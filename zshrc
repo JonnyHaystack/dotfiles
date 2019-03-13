@@ -30,8 +30,10 @@ bindkey "jj" vi-cmd-mode
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 # Shift-TAB cycles completions backwards
 bindkey '^[[Z' reverse-menu-complete
-# Fix behaviour of backspace
+# Fix behaviour of backspace and delete keys
 bindkey -v '^?' backward-delete-char
+bindkey "^[[3~" delete-char
+bindkey "^[3;5~" delete-char
 
 # Enable color support of ls and other commands and also add handy aliases {{{
 
