@@ -29,7 +29,7 @@ set $f_text       "#f2f2f5"
 # Focused inactive colors
 set $fi_border    "#5f676a"
 set $fi_indicator "#5f676a"
-set $fi_text      "#f2f2f5"
+set $fi_text      "#afb8c6"
 
 # Unfocused colors
 set $uf_border    "#292c37"
