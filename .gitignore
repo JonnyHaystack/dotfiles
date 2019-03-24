@@ -2,3 +2,4 @@
 vim/plugged/
 *.swp
 .mypy_cache
+scripts/i3/img
