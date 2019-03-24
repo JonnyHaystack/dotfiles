@@ -84,11 +84,12 @@ bindsym $mod+t exec --no-startup-id i3-sensible-terminal
 bindsym $mod+x [urgent=latest] focus
 
 # Power management
-set $mode_system (l) lock, (e) logout, (s) suspend, (S) shutdown, (r) reboot
+set $mode_system (l) lock, (e) logout, (s) suspend, (h) hibernate, (S) shutdown, (r) reboot
 mode "$mode_system" {
   bindsym l exec --no-startup-id $LOCKER, mode "default"
   bindsym e exec --no-startup-id i3-msg exit, mode "default"
   bindsym s exec --no-startup-id systemctl suspend, mode "default"
+  bindsym h exec --no-startup-id systemctl hibernate, mode "default"
   bindsym Shift+S exec --no-startup-id systemctl poweroff -i, mode "default"
   bindsym r exec --no-startup-id systemctl reboot, mode "default"
 
@@ -330,8 +331,7 @@ exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.png
 # Start compton
 exec --no-startup-id compton -b --config $HOME/.config/compton/compton.conf
 
-# Start light-locker
-exec --no-startup-id light-locker --no-lock-on-suspend
+# Start xss-lock for auto lock on suspend
 exec --no-startup-id xss-lock -- $LOCKER
 
 # Start authentication agent
