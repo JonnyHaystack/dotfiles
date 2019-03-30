@@ -337,8 +337,8 @@ exec --no-startup-id xss-lock -- $LOCKER
 # Start authentication agent
 exec --no-startup-id lxqt-policykit-agent
 
-
-exec --no-startup-id yakuake
+# General startup apps
+exec --no-startup-id guake
 exec --no-startup-id udiskie -s
 exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id nm-applet
