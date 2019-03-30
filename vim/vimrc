@@ -42,15 +42,8 @@ nnoremap <leader><S-q> :q!<CR>
 " Reload .vimrc
 nnoremap <leader>s :source ~/.vimrc<CR>
 
-nnoremap <Leader><Leader> :e#<CR>
+" Enter normal mode convenient binding
 inoremap jj <ESC>
-
-" Ctrl-j/k deletes blank line below/above, and Alt-j/k inserts.
-" NOT WORKING RIGHT NOW
-"nnoremap <silent><C-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
-"nnoremap <silent><C-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
-"nnoremap <silent><A-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
-"nnoremap <silent><A-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 
 " Use gc to swap current character with the next without changing cursor
 " position.
@@ -71,8 +64,6 @@ let NERDTreeMapActivateNode='l'
 let NERDTreeShowHidden=1
 nmap <leader>n :NERDTreeToggle<CR>
 nmap <leader>j :NERDTreeFind<CR>
-"autocmd VimEnter * NERDTree
-"autocmd VimEnter * wincmd p
 let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
 
 " GitGutter config - always display gutter
@@ -87,12 +78,28 @@ endif
 " Show docstrings for folded code
 let g:SimpylFold_docstring_preview=1
 
+" Airline config
+let g:airline_theme='tomorrow'
+
+" auto-pairs config
+let g:AutoPairsMultilineClose = 0
+
+" neosnippet config
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+
+
 if has('nvim')
+
+  " neovim specific configuration {{{
+
   " ALE config
-  let g:ale_completion_enabled = 1
   map <leader>d :ALEDetail<CR>
-  nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-  nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
   " Deoplete config
   let g:deoplete#enable_at_startup = 1
@@ -127,11 +134,18 @@ if has('nvim')
     autocmd!
     autocmd FileType cpp,c,python,java call SetLSPShortcuts()
   augroup END
+
+" }}}
+
 else
+
+  " Vanilla vim specific configuration {{{
+
   " Syntastic config
   set statusline+=%#warningmsg#
   set statusline+=%{SyntasticStatuslineFlag()}
   set statusline+=%*
+  highlight SyntasticErrorLine guibg=#2f0000
 
   let g:syntastic_always_populate_loc_list = 1
   let g:syntastic_auto_loc_list = 1
@@ -149,25 +163,17 @@ else
   " Make sure autocomplete window is closed properly.
   let g:ycm_autoclose_preview_window_after_completion=1
   " Go to definition shortcut.
-  map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+  map <leader>ld  :YcmCompleter GoToDefinitionElseDeclaration<CR>
   let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
   let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
   let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
   let g:ycm_complete_in_comments = 1 " Completion in comments
   let g:ycm_complete_in_strings = 1 " Completion in string
 
-  " UltiSnips config
-  let g:UltiSnipsExpandTrigger="<tab>" " Change this if does not work with YCM
-  let g:UltiSnipsJumpForwardTrigger="<c-b>"
-  let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-  let g:ultisnips_java_brace_style="nl"
+  " }}}
+
 endif
 
-" Airline config
-let g:airline_theme='tomorrow'
-
-" auto-pairs config
-let g:AutoPairsMultilineClose = 0
 
 " Load matchit.vim
 :source ~/.vim/macros/matchit/plugin/matchit.vim
@@ -175,9 +181,7 @@ let g:AutoPairsMultilineClose = 0
 " Load starsearch.vim
 :source ~/.vim/macros/starsearch/plugin/starsearch.vim
 
-
 " Plugin list
-highlight SyntasticErrorLine guibg=#2f0000
 call plug#begin()
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -186,11 +190,18 @@ Plug 'tpope/vim-unimpaired'
 Plug 'easymotion/vim-easymotion'
 Plug 'wincent/command-t'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
+Plug 'tmhedberg/simpylfold'
+Plug 'jiangmiao/auto-pairs'
+Plug 'valloric/matchtagalways'
+Plug 'lervag/vimtex'
+Plug 'shougo/neosnippet.vim'
+Plug 'shougo/neosnippet-snippets'
 if has ('nvim')
+
   Plug 'w0rp/ale'
   Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'autozimu/LanguageClient-neovim', {
@@ -201,16 +212,15 @@ if has ('nvim')
   " Multi-entry selection UI. FZF
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
+
 else
+
   Plug 'scrooloose/syntastic'
   Plug 'ervandew/supertab'
-  Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer --cs-completer --js-completer --java-completer' }
-  Plug 'sirver/ultisnips'
-  Plug 'honza/vim-snippets'
+  Plug 'valloric/youcompleteme', {
+    \ 'do': './install.py --clang-completer --cs-completer --js-completer --java-completer'
+    \ }
+  Plug 'jmcantrell/vim-virtualenv'
+
 endif
-Plug 'terryma/vim-multiple-cursors'
-Plug 'tmhedberg/simpylfold'
-Plug 'jmcantrell/vim-virtualenv'
-Plug 'jiangmiao/auto-pairs'
-Plug 'valloric/matchtagalways'
 call plug#end()
