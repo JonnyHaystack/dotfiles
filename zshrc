@@ -21,6 +21,8 @@ setopt HIST_IGNORE_SPACE
 
 # }}}
 
+# Key bindings {{{
+
 # Use vi key bindings
 bindkey -v
 # Bind jj to enter normal mode
@@ -34,6 +36,12 @@ bindkey '^[[Z' reverse-menu-complete
 bindkey -v '^?' backward-delete-char
 bindkey "^[[3~" delete-char
 bindkey "^[3;5~" delete-char
+# Make visual mode open command line in editor
+autoload edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
+# }}}
 
 # Enable color support of ls and other commands and also add handy aliases {{{
 
