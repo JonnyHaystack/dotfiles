@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=GIFview 
+Exec=gifview -a %f
+Icon=gif
+Terminal=false
+Type=Application
+StartupNotify=true
+NoDisplay=true
+MimeType=image/gif
