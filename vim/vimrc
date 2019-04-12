@@ -11,6 +11,14 @@ let maplocalleader="\\"
 set hlsearch
 set encoding=utf-8
 
+" Enable spell checking in tex files
+augroup spellcheck
+  autocmd!
+  autocmd FileType tex setlocal spell
+  autocmd FileType tex set spelllang=en_gb
+  autocmd FileType tex inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+augroup END
+
 " Code folding
 set foldenable
 set foldmethod=syntax
@@ -104,7 +112,7 @@ if has('conceal')
 endif
 
 let g:neosnippet_snipmate_compatibility = 1
-let g:neosnippet#snippets_directory = '~/.vim/plugged/vim-snippets/snippets'
+let g:neosnippet#snippets_directory = '~/.vim/snippets'
 
 " }}}
 
@@ -220,7 +228,9 @@ Plug 'wellle/targets.vim'
 Plug 'lervag/vimtex'
 Plug 'shougo/neosnippet.vim'
 Plug 'shougo/neosnippet-snippets'
-Plug 'honza/vim-snippets'
+Plug 'honza/vim-snippets', {
+      \ 'do': 'ln -sf $HOME/.dotfiles/vim/plugged/vim-snippets/snippets/* $HOME/.dotfiles/vim/snippets/'
+      \ }
 if has ('nvim')
 
   Plug 'w0rp/ale'
