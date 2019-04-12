@@ -1,0 +1,33 @@
+configuration {
+	display-drun: "❯";
+	show-icons: false;
+        lines: 8;
+}
+
+* {
+    font: "Roboto Medium 12";
+    padding: 5px 10px;
+    color: #ffffff;
+    background-color: #00000000;
+}
+
+
+window {
+    border-radius: 6px;
+    width: 700px;
+    padding: 0px 0px 0px 0px;
+    background-color: #2f343fea;
+}
+
+#prompt {
+  color: #5294e2;
+}
+
+listview {
+    padding: 20px 0px 0px 0px;
+    spacing: 0.1em;
+}
+
+#element selected {
+  text-color: #5294e2;
+}

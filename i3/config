@@ -83,25 +83,6 @@ bindsym $mod+t exec --no-startup-id i3-sensible-terminal
 # Jump to urgent window
 bindsym $mod+x [urgent=latest] focus
 
-# Power management
-set $mode_system (l) lock, (e) logout, (s) suspend, (h) hibernate, (S) shutdown, (r) reboot
-mode "$mode_system" {
-  bindsym l exec --no-startup-id $LOCKER, mode "default"
-  bindsym e exec --no-startup-id i3-msg exit, mode "default"
-  bindsym s exec --no-startup-id systemctl suspend, mode "default"
-  bindsym h exec --no-startup-id systemctl hibernate, mode "default"
-  bindsym Shift+S exec --no-startup-id systemctl poweroff -i, mode "default"
-  bindsym r exec --no-startup-id systemctl reboot, mode "default"
-
-  # Back to normal: Enter, Escape, or Delete
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
-  bindsym Delete mode "default"
-  bindsym $mod+Delete mode "default"
-}
-
-bindsym $mod+Delete mode "$mode_system"
-
 # Change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -261,6 +242,26 @@ mode "load" {
 
 bindsym $mod+n mode "load"
 
+# Power management
+set $LockSleep $LOCKER; sleep 1
+set $mode_system (l) lock, (e) logout, (s) suspend, (h) hibernate, (S) shutdown, (r) reboot
+mode "$mode_system" {
+  bindsym l exec --no-startup-id $LOCKER, mode "default"
+  bindsym e exec --no-startup-id i3-msg exit, mode "default"
+  bindsym s exec --no-startup-id "$LockSleep && systemctl suspend", mode "default"
+  bindsym h exec --no-startup-id "$LockSleep && systemctl hibernate", mode "default"
+  bindsym Shift+S exec --no-startup-id systemctl poweroff -i, mode "default"
+  bindsym r exec --no-startup-id systemctl reboot, mode "default"
+
+  # Back to normal: Enter, Escape, or Delete
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym Delete mode "default"
+  bindsym $mod+Delete mode "default"
+}
+
+bindsym $mod+Delete mode "$mode_system"
+
 # }}}
 
 # Non-i3 bindings {{{
@@ -268,11 +269,17 @@ bindsym $mod+n mode "load"
 # Restart polybar
 bindsym $mod+Control+P exec $HOME/.config/polybar/launch.sh
 
-# Start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id "i3-dmenu-desktop --dmenu=\\"(cat ; (stest -flx $(echo $PATH | tr : ' ') | sort -u)) | ~/bin/dmenu-custom -l 10\\""
+# Start rofi (a program launcher)
+bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # Start dmenu-lpass script
 bindsym $mod+m exec --no-startup-id ~/bin/dmenu-lpass
+
+# Launch networkmanager_dmenu
+bindsym $mod+b exec --no-startup-id networkmanager_dmenu
+
+# Show rofi SSH menu
+bindsym $mod+c exec --no-startup-id rofi -show ssh
 
 # Take screenshot
 bindsym Print exec --no-startup-id "maim --hidecursor -s ~/Pictures/Screenshots/img-$(date +%Y-%m-%d)-$(ls ~/Pictures/Screenshots/img* | wc -l).png && notify-send -i screenie 'Screenshot' '~/Pictures/Screenshots'"
@@ -280,9 +287,6 @@ bindsym Print exec --no-startup-id "maim --hidecursor -s ~/Pictures/Screenshots/
 # Pause/play mpv
 bindsym $mod+y exec --no-startup-id "echo '{ \\"command\\": [\\"cycle\\", \\"pause\\"] }' | socat - /tmp/mpvsocket"
 bindsym XF86AudioPlay exec --no-startup-id "echo '{ \\"command\\": [\\"cycle\\", \\"pause\\"] }' | socat - /tmp/mpvsocket"
-
-# Launch networkmanager_dmenu
-bindsym $mod+b exec --no-startup-id networkmanager_dmenu
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -330,9 +334,6 @@ exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.png
 
 # Start compton
 exec --no-startup-id compton -b --config $HOME/.config/compton/compton.conf
-
-# Start xss-lock for auto lock on suspend
-exec --no-startup-id xss-lock -- $LOCKER
 
 # Start authentication agent
 exec --no-startup-id lxqt-policykit-agent

@@ -1,1 +1,3 @@
-rofi.font: mono 10
+rofi.font: Roboto Medium 12
+rofi.theme: ~/.config/rofi/themes/default.rasi
+rofi.modi: window,run,ssh,drun

@@ -38,19 +38,32 @@ OUTPUT_IMG="$CACHE_FOLDER""$MD5_SCREEN_CONFIG"."$MD5_BKG_IMG".png # Path of fina
 OUTPUT_IMG_WIDTH=0 # Decide size to cover all screens
 OUTPUT_IMG_HEIGHT=0 # Decide size to cover all screens
 
+# Enable DPMS on lock
+on_lock() {
+    xset +dpms dpms 5
+}
+
+# Disable DPMS on unlock
+on_unlock() {
+    xset dpms 0 0 0
+}
+
+# Make sure if the script is killed, DPMS settings are still reverted
+trap on_unlock HUP INT TERM
+
 #i3lock command
 LOCK_BASE_CMD="i3lock -i $OUTPUT_IMG"
 if [ "$lock_args" ]; then
         LOCK_ARGS="$lock_args"  # Passed command
 else
-        LOCK_ARGS="-t -e"  # Default
+        LOCK_ARGS="-f -t -e -n"  # Default
 fi
-LOCK_CMD="$LOCK_BASE_CMD $LOCK_ARGS"
+LOCK_CMD="on_lock; $LOCK_BASE_CMD $LOCK_ARGS; on_unlock"
 
 if [ -e $OUTPUT_IMG ]
 then
     # Lock screen since image already exists
-    $LOCK_CMD
+    eval $LOCK_CMD &
     exit 0
 fi
 
@@ -86,4 +99,4 @@ eval convert -size ${OUTPUT_IMG_WIDTH}x${OUTPUT_IMG_HEIGHT} 'xc:black' $OUTPUT_I
 eval convert $OUTPUT_IMG $PARAMS $OUTPUT_IMG
 
 #Lock the screen:
-$LOCK_CMD
+eval $LOCK_CMD &
