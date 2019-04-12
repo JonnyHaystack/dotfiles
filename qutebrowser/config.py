@@ -3,8 +3,7 @@ import os
 # My configuration
 
 # Aliases
-c.aliases['fill'] = ('spawn --userscript qute-lastpass -d '
-        '"%s/bin/dmenu-custom -l 10"' % os.environ['HOME'])
+c.aliases['fill'] = ('spawn --userscript qute-lastpass -d "rofi -dmenu -p LastPass"')
 c.aliases['sync'] = 'spawn --userscript bookmarksync'
 
 # Bindings
