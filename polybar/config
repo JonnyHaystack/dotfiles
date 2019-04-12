@@ -281,7 +281,7 @@ label = %date% %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = %{A2:paprefs&:}%{A3:pavucontrol&:}<ramp-volume> <label-volume>%{A}%{A}
+format-volume = %{A2:paprefs&:}%{A3:~/polybar-scripts/rofi-widgets/widgets/pulseaudio-devices.sh&:}<ramp-volume> <label-volume>%{A}%{A}
 label-volume = %percentage%%
 ramp-volume-foreground = ${colors.foreground-alt}
 ramp-volume-0 = %{u#F44336}
@@ -295,7 +295,7 @@ ramp-volume-7 = %{u#7EDC37}
 ramp-volume-8 = %{u#5AD937}
 ramp-volume-9 = %{u#38D638}
 
-format-muted = %{A2:paprefs&:}%{A3:pavucontrol&:}<label-muted>%{A}%{A}
+format-muted = %{A2:paprefs&:}%{A3:~/polybar-scripts/rofi-widgets/widgets/pulseaudio-devices.sh&:}<label-muted>%{A}%{A}
 label-muted = 
 label-muted-foreground = ${colors.foreground-alt}
 label-muted-underline = ${colors.bad}

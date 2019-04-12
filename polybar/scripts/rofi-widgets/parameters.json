@@ -1,0 +1,52 @@
+{
+  "remind": {
+    "width": 600,
+    "lines": 8,
+    "columns": 1,
+    "location": 6,
+    "prompt": "Reminders",
+	"format": "s",
+	"cmd": "remind -t7 -ga ~/.remind/reminders.rem | awk '/\\w/ {print}'",
+	"config": "~/polybar-scripts/rofi-widgets/colors-rofi-dark.rasi"
+  },
+  "mpc": {
+    "width": 600,
+    "lines": 10,
+    "columns": 1,
+    "location": 2,
+    "prompt": "Select a Song",
+	"format": "d",
+	"cmd": "mpc playlist",
+	"config": "~/polybar-scripts/rofi-widgets/music-background.rasi"
+  },
+  "power": {
+    "width": 400,
+    "lines": 1,
+    "columns": 3,
+    "location": 0,
+    "prompt": "Power Options",
+	"format": "d",
+	"cmd": "echo -e \" \\uf924 Shutdown\\n \\uf94f Reboot\\n \\uf9b1 Suspend\"",
+	"config": "~/polybar-scripts/rofi-widgets/colors-rofi-simple-listview.rasi"
+  },
+  "keyboard": {
+    "width": 4,
+    "lines": 2,
+    "columns": 1,
+    "location": 5,
+    "prompt": "Layouts",
+	"format": "d",
+	"cmd": "echo -e \"$icon us\\n$icon br\"",
+	"config": "~/polybar-scripts/rofi-widgets/colors-rofi-simple-listview.rasi"
+  },
+  "sound": {
+    "width": 300,
+    "lines": 3,
+    "columns": 1,
+    "location": 5,
+    "prompt": "Choose an audio device",
+	"format": "s",
+	"cmd": "pactl list sinks | awk -F# '/Sink/ {ORS=\" \"; print $2; FS=\"=\"} /alsa.card_name/ {ORS=\"\\n\"; print $2; FS=\"#\"}'",
+	"config": "~/polybar-scripts/rofi-widgets/colors-rofi-simple-listview.rasi"
+  }
+}
