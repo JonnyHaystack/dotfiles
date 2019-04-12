@@ -139,8 +139,12 @@ def main(arguments):
     else:
         choices = ["{:s} | {:s}".format(c["name"], c["username"]) for c in candidates]
         choice = dmenu(choices, arguments.dmenu_invocation, arguments.io_encoding)
-        choiceId = choice.split("|")[0].strip()
-        selection = next((c for (i, c) in enumerate(candidates) if c["id"] == choiceId), None)
+        choiceTokens = choice.split("|");
+        choiceName = choiceTokens[0].strip()
+        choiceUsername = choiceTokens[1].strip()
+        selection = next((c for (i, c) in enumerate(candidates)
+            if c["name"] == choiceName and c["username"] == choiceUsername),
+            None)
 
     # Nothing was selected, simply return
     if not selection:
