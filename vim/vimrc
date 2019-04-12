@@ -4,7 +4,7 @@ set backspace=indent,eol,start
 set number
 set colorcolumn=81
 set showmatch
-filetype on
+filetype plugin indent on
 syntax on
 let mapleader=" "
 set hlsearch
@@ -95,6 +95,10 @@ xmap <C-k> <Plug>(neosnippet_expand_target)
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
+
+" vimtex config
+let g:vimtex_compiler_progname = 'nvr'
+let g:tex_flavor = 'latex'
 
 
 if has('nvim')
