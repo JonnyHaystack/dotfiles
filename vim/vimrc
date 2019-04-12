@@ -88,14 +88,25 @@ let g:airline_theme='tomorrow'
 " auto-pairs config
 let g:AutoPairsMultilineClose = 0
 
-" neosnippet config
+" neosnippet config {{{
+
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
+
+" Tab to select the next field to fill in the snippet
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+      \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
 " For conceal markers.
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
+
+let g:neosnippet_snipmate_compatibility = 1
+let g:neosnippet#snippets_directory = '~/.vim/plugged/vim-snippets/snippets'
+
+" }}}
 
 " vimtex config
 let g:vimtex_compiler_progname = 'nvr'
@@ -209,6 +220,7 @@ Plug 'wellle/targets.vim'
 Plug 'lervag/vimtex'
 Plug 'shougo/neosnippet.vim'
 Plug 'shougo/neosnippet-snippets'
+Plug 'honza/vim-snippets'
 if has ('nvim')
 
   Plug 'w0rp/ale'
