@@ -96,6 +96,15 @@ let g:airline_theme='tomorrow'
 " auto-pairs config
 let g:AutoPairsMultilineClose = 0
 
+" UltiSnips config {{{
+
+set runtimepath+=~/.vim/my-snippets/
+let g:UltiSnipsExpandTrigger="<C-e>"
+let g:UltiSnipsJumpForwardTrigger="<C-e>"
+let g:UltiSnipsJumpBackwardTrigger="<nop>"
+
+" }}}
+
 " neosnippet config {{{
 
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -111,14 +120,13 @@ if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
 
-let g:neosnippet_snipmate_compatibility = 1
-let g:neosnippet#snippets_directory = '~/.vim/snippets'
-
 " }}}
 
 " vimtex config
 let g:vimtex_compiler_progname = 'nvr'
 let g:tex_flavor = 'latex'
+let g:vimtex_view_method='zathura'
+let g:tex_conceal='abdmg'
 
 
 if has('nvim')
@@ -228,9 +236,8 @@ Plug 'wellle/targets.vim'
 Plug 'lervag/vimtex'
 Plug 'shougo/neosnippet.vim'
 Plug 'shougo/neosnippet-snippets'
-Plug 'honza/vim-snippets', {
-      \ 'do': 'ln -sf $HOME/.dotfiles/vim/plugged/vim-snippets/snippets/* $HOME/.dotfiles/vim/snippets/'
-      \ }
+Plug 'sirver/ultisnips'
+Plug 'honza/vim-snippets'
 if has ('nvim')
 
   Plug 'w0rp/ale'
