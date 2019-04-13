@@ -654,4 +654,33 @@ snippet pbox "Pretty box"
 $0
 endsnippet
 
+snippet letter "Letter" iA
+\documentclass{letter}
+\signature{${1:name}}
+\address{${2:House name/number} \\\\ ${3:Street} \\\\ ${4:City} \\\\ ${5:County} \\\\ ${6:Postcode}}
+\begin{document}
+\begin{letter}{${7:Company} \\\\ ${8:Street} \\\\ ${9:City} \\\\ ${10:County} \\\\ ${11:Postcode}}
+  \opening{Dear Sir or Madam,}
+  $12
+  \closing{Best regards,}
+\end{letter}
+endsnippet
+
+snippet article "Article" iA
+\documentclass{article}
+
+\title{$1}
+\author{$2}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{${3:Introduction}}
+$4
+
+\end{document}
+
+endsnippet
+
 # vim:ft=snippets
