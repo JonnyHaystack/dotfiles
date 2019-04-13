@@ -3,6 +3,7 @@ background = #222
 background-alt = #444
 foreground = #dfdfdf
 foreground-alt = #666
+foreground-alt2 = #66666
 primary = #ffb52a
 secondary = #e60053
 good = #38d638
@@ -28,7 +29,7 @@ border-size = 0
 border-color = #00000000
 
 padding-left = 0
-padding-right = 0
+padding-right = 2
 
 module-margin-left = 1
 module-margin-right = 2
@@ -45,7 +46,7 @@ font-8 = siji:pixelsize=13;4
 
 modules-left = i3
 modules-center = mpd
-modules-right = updates-arch-combined vpn-openvpn-isrunning filesystem memory cpu info-pingrtt battery pulseaudio temperature date screenshot lock powermenu
+modules-right = updates-arch-combined vpn-openvpn-isrunning filesystem memory cpu info-pingrtt battery pulseaudio temperature date screenshot lock
 
 wm-restack = i3
 
@@ -203,14 +204,15 @@ bar-progress-empty = ─
 bar-progress-indicator-font = 8
 bar-progress-fill-font = 8
 bar-progress-empty-font = 8
-icon-single-foreground = ${colors.foreground-alt}
-icon-prev-foreground = ${colors.foreground-alt}
-icon-seekb-foreground = ${colors.foreground-alt}
-icon-stop-foreground = ${colors.foreground-alt}
-icon-play-foreground = ${colors.foreground-alt}
-icon-pause-foreground = ${colors.foreground-alt}
-icon-seekf-foreground = ${colors.foreground-alt}
-icon-next-foreground = ${colors.foreground-alt}
+toggle-on-foreground = ${colors.foreground-alt2}
+toggle-off-foreground = ${colors.foreground-alt2}
+icon-prev-foreground = ${colors.foreground-alt2}
+icon-seekb-foreground = ${colors.foreground-alt2}
+icon-stop-foreground = ${colors.foreground-alt2}
+icon-play-foreground = ${colors.foreground-alt2}
+icon-pause-foreground = ${colors.foreground-alt2}
+icon-seekf-foreground = ${colors.foreground-alt2}
+icon-next-foreground = ${colors.foreground}
 bar-progress-fill-foreground = ${colors.more-degraded}
 
 label-song-maxlen = 25
