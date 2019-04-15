@@ -188,6 +188,8 @@ type = internal/mpd
 format-online = <label-song>   <icon-single>  <icon-prev>  <icon-seekb>   <icon-stop>   <toggle>   <icon-seekf>  <icon-next>   <bar-progress>
 format-stopped =
 
+label-song = %title% - %artist%
+
 icon-single = 
 icon-prev = 
 icon-seekb = 
