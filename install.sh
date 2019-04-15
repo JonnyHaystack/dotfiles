@@ -106,3 +106,10 @@ mkdir -p $HOME/.config/mpv/scripts/
 ln -sf $HOME/.dotfiles/mpv/input.conf $HOME/.config/mpv/input.conf
 ln -sf $HOME/.dotfiles/mpv/scripts/youtube-quality.lua \
   $HOME/.config/mpv/scripts/youtube-quality.lua
+
+# ncmpcpp
+ln -sfn $HOME/.dotfiles/ncmpcpp $HOME/.config/ncmpcpp
+
+# zathura
+mkdir -p $HOME/.config/zathura/
+ln -sf $HOME/.config/zathura/zathurarc $HOME/.dotfiles/zathura/zathurarc
