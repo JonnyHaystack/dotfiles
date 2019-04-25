@@ -1,5 +1,6 @@
 .netrwhist
 vim/plugged/
+vim/spell/
 *.swp
 .mypy_cache
 scripts/i3/img
