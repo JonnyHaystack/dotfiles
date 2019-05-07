@@ -3,6 +3,7 @@ from __future__ import print_function
 import sys
 
 import psutil
+from psutil._exceptions import AccessDenied
 
 import i3ipc
 from wmctrl import Window
@@ -53,15 +54,19 @@ for con in i3.get_tree():
     # Get process info for the window.
     procinfo = psutil.Process(pid)
 
-    working_directory = procinfo.cwd()
+    try:
+        working_directory = procinfo.cwd()
+    except AccessDenied:
+        working_directory = '$HOME'
 
     # If the program is a terminal, get the working directory from the
     # window title.
     if con.window_class in terminals:
         # Remove any non ascii characters.
         working_directory = con.name.encode('ascii', 'ignore').strip()
-        # Change ~ to $HOME.
-        working_directory = working_directory.replace('~', '$HOME')
+
+    # Change ~ to $HOME.
+    working_directory = working_directory.replace('~', '$HOME')
 
     # Create command to launch program.
     # If there is a special command mapping for this program, use that.
