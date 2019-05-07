@@ -11,6 +11,9 @@ let maplocalleader="\\"
 set hlsearch
 set encoding=utf-8
 
+" Indentation settings for different filetypes
+autocmd FileType c setlocal shiftwidth=4 softtabstop=4
+
 " Enable spell checking in tex files
 augroup spellcheck
   autocmd!
