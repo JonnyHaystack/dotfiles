@@ -30,10 +30,11 @@ config.bind('M', 'bookmark-add ;; spawn --userscript bookmarksync')
 config.bind('cM', 'bookmark-del ;; spawn --userscript bookmarksync ;; '
         'message-info "Deleted bookmark"')
 # Remote add torrent
+torrent_server = os.environ.get('TORRENT_SERVER')
 config.bind('tf', 'hint links spawn --userscript torrent-add '
-        '192.168.1.100:9091 {hint-url}')
+        '%s {hint-url}' % torrent_server)
 config.bind(';T', 'hint --rapid links spawn --userscript torrent-add '
-        '192.168.1.104:9091 {hint-url}')
+        '%s {hint-url}' % torrent_server)
 # Open selected form field in editor
 config.bind('<Ctrl-I>', 'open-editor')
 config.bind('<Ctrl-I>', 'open-editor', mode='insert')
