@@ -14,11 +14,9 @@ set encoding=utf-8
 " Indentation settings for different filetypes
 autocmd FileType c,cpp setlocal shiftwidth=4 softtabstop=4
 
-" Enable spell checking in tex files
+" Perform spell check in tex file
 augroup spellcheck
   autocmd!
-  autocmd FileType tex setlocal spell
-  autocmd FileType tex set spelllang=en_gb
   autocmd FileType tex inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 augroup END
 
@@ -53,6 +51,10 @@ nnoremap <leader><S-q> :q!<CR>
 
 " Reload .vimrc
 nnoremap <leader>s :source ~/.vimrc<CR>
+
+" Toggle conceallevel 2/0
+nnoremap coe :setlocal conceallevel=<c-r>=&conceallevel == 0 ? '2' : '0'<cr><cr>
+:map <F3> :setlocal spell! spelllang=en_gb<CR>
 
 " Toggle scrolloff
 nnoremap <Leader>zz :let &scrolloff=24-&scrolloff<CR>
