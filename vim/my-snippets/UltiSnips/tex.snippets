@@ -499,18 +499,22 @@ snippet \\\ "setminus" iA
 \setminus
 endsnippet
 
+context "math()"
 snippet >> ">>" iA
 \gg
 endsnippet
 
+context "math()"
 snippet << "<<" iA
 \ll
 endsnippet
 
+context "math()"
 snippet DD "delta" iA
 \Delta 
 endsnippet
 
+context "math()"
 snippet ~~ "~" iA
 \sim 
 endsnippet
@@ -520,10 +524,10 @@ snippet set "set" wA
 \\{$1\\} $0
 endsnippet
 
+context "math()"
 snippet || "mid" iA
  \mid 
 endsnippet
-
 
 context "math()"
 snippet cc "subset" Ai
@@ -543,18 +547,22 @@ snippet NN "n" iA
 \N
 endsnippet
 
+context "math()"
 snippet Nn "cap" iA
 \cap 
 endsnippet
 
+context "math()"
 snippet UU "cup" iA
 \cup 
 endsnippet
 
+context "math()"
 snippet uuu "bigcup" iA
 \bigcup_{${1:i \in ${2: I}}} $0
 endsnippet
 
+context "math()"
 snippet nnn "bigcap" iA
 \bigcap_{${1:i \in ${2: I}}} $0
 endsnippet
@@ -575,14 +583,15 @@ snippet ZZ "Z" iA
 \Z
 endsnippet
 
+context "math()"
 snippet <! "normal" iA
 \triangleleft 
 endsnippet
 
+context "math()"
 snippet <> "hokje" iA
 \diamond 
 endsnippet
-
 
 context "math()"
 snippet '(?<!i)sts' "text subscript" irA
@@ -612,6 +621,7 @@ snippet bigfun "Big function" iA
 .\end{align*}
 endsnippet
 
+context "math()"
 snippet cvec "column vector" iA
 \begin{pmatrix} ${1:x}_${2:1}\\\\ \vdots\\\\ $1_${2:n} \end{pmatrix}
 endsnippet
