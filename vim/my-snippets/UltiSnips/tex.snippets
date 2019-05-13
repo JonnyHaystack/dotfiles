@@ -654,7 +654,7 @@ snippet pbox "Pretty box"
 $0
 endsnippet
 
-snippet letter "Letter" iA
+snippet letter "Letter" b
 \documentclass{letter}
 \signature{${1:name}}
 \address{${2:House name/number} \\\\ ${3:Street} \\\\ ${4:City} \\\\ ${5:County} \\\\ ${6:Postcode}}
@@ -666,7 +666,7 @@ snippet letter "Letter" iA
 \end{letter}
 endsnippet
 
-snippet article "Article" iA
+snippet article "Article" b
 \documentclass[a4paper]{article}
 \usepackage[hidelinks]{hyperref}
 
@@ -683,7 +683,7 @@ $4
 \end{document}
 endsnippet
 
-snippet hidesectionnums "Hide section numbers" iA
+snippet hidesectionnums "Hide section numbers" b
 \usepackage{titlesec}
 
 \titleformat{\section}{\normalfont\Large\bfseries}{}{0pt}{}
@@ -691,7 +691,7 @@ snippet hidesectionnums "Hide section numbers" iA
 \titleformat{\subsubsection}{\normalfont\normalsize\bfseries}{}{0pt}{}
 endsnippet
 
-snippet codestyle "Code style" iA
+snippet codestyle "Code style" b
 \usepackage{listings}
 \usepackage{color}
 
@@ -717,7 +717,7 @@ snippet codestyle "Code style" iA
 }
 endsnippet
 
-snippet wide "Smaller margins" iA
+snippet wide "Smaller margins" b
 \usepackage[left=2cm,
   top=1.5cm,
   right=2cm,
@@ -726,23 +726,23 @@ snippet wide "Smaller margins" iA
   marginparsep=0mm]{geometry}
 endsnippet
 
-snippet noindent "No paragraph indentation" iA
+snippet noindent "No paragraph indentation" b
 \setlength\parindent{0pt}
 endsnippet
 
-snippet listing "Listing" iA
+snippet listing "Listing" b
 \begin{lstlisting}[language=$1, caption=$2, label=lst:$3]
 $4
 \end{lstlisting}
 endsnippet
 
-snippet graphics "Graphics" iA
+snippet graphics "Graphics" b
 \usepackage{graphicx}
 
 \graphicspath{{./images/}}
 endsnippet
 
-snippet figure "Figure" iA
+snippet figure "Figure" b
 \begin{figure}[!htb]
   \centering
   \includegraphics[scale=$3]{${1:filename}}
