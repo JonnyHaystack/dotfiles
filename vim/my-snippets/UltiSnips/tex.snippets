@@ -667,7 +667,8 @@ snippet letter "Letter" iA
 endsnippet
 
 snippet article "Article" iA
-\documentclass{article}
+\documentclass[a4paper]{article}
+\usepackage[hidelinks]{hyperref}
 
 \title{$1}
 \author{$2}
@@ -717,10 +718,37 @@ snippet codestyle "Code style" iA
 }
 endsnippet
 
+snippet wide "Smaller margins" iA
+\usepackage[left=2cm,
+  top=1.5cm,
+  right=2cm,
+  bottom=2cm,
+  marginparwidth=0cm,
+  marginparsep=0mm]{geometry}
+endsnippet
+
+snippet noindent "No paragraph indentation" iA
+\setlength\parindent{0pt}
+endsnippet
+
 snippet listing "Listing" iA
 \begin{lstlisting}[language=$1, caption=$2, label=lst:$3]
 $4
 \end{lstlisting}
+endsnippet
+
+snippet graphics "Graphics" iA
+\usepackage{graphicx}
+
+\graphicspath{{./images/}}
+endsnippet
+
+snippet figure "Figure" iA
+\begin{figure}[!htb]
+  \includegraphics{$1}
+  \caption{$2}
+  \label{fig:$1}
+\end{figure}
 endsnippet
 
 # vim:ft=snippets
