@@ -761,22 +761,28 @@ endsnippet
 snippet figure "Figure" b
 \begin{figure}[!htb]
   \centering
-  \includegraphics[scale=$3]{${1:filename}}
+  \includegraphics[width=$3cm]{${1:filename}}
   \caption{$2}
   \label{fig:$1}
 \end{figure}
+endsnippet
+
+snippet minipage "Minipage"
+\begin{minipage}{$1\textwidth}
+  $2
+\end{minipage}
 endsnippet
 
 snippet br "Blank line" i
 \bigskip
 endsnippet
 
-priority 100
+priority 10
 snippet qt "Single quote" i
 \`$1'
 endsnippet
 
-priority 200
+priority 100
 snippet dqt "Double quote" i
 \`\`$1''
 endsnippet
