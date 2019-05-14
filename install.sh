@@ -112,4 +112,4 @@ ln -sfn $HOME/.dotfiles/ncmpcpp $HOME/.config/ncmpcpp
 
 # zathura
 mkdir -p $HOME/.config/zathura/
-ln -sf $HOME/.config/zathura/zathurarc $HOME/.dotfiles/zathura/zathurarc
+ln -sf $HOME/.dotfiles/zathura/zathurarc $HOME/.config/zathura/zathurarc
