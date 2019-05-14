@@ -98,7 +98,7 @@ ln -sf $HOME/.dotfiles/qutebrowser/userscripts/* \
   $HOME/.local/share/qutebrowser/userscripts/
 
 # rofi
-ln -sf $HOME/.dotfiles/rofi/* $HOME/.config/rofi/
+ln -sfn $HOME/.dotfiles/rofi $HOME/.config/rofi
 
 # mpv
 mkdir -p $HOME/.config/mpv/
