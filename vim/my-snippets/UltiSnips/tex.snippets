@@ -670,6 +670,12 @@ snippet pbox "Pretty box"
 $0
 endsnippet
 
+snippet longbox "Multiline box"
+\fbox{\parbox{${1:\textwidth}}{%
+    $2
+}}
+endsnippet
+
 snippet letter "Letter" b
 \documentclass{letter}
 \signature{${1:name}}
