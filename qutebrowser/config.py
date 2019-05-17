@@ -52,7 +52,7 @@ config.bind(',h', 'config-cycle -t -p content.host_blocking.enabled')
 c.tabs.title.format = '{private}{audio}{index}: {title}'
 
 # Editor command
-c.editor.command = [os.environ['TERMINAL'], '-e', 'nvim', '{}']
+c.editor.command = [os.environ.get('TERMINAL'), '-e', 'nvim', '{}']
 
 # Tab title padding
 c.tabs.padding = {'top': 3, 'bottom': 3, 'left': 5, 'right': 5}
