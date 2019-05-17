@@ -67,6 +67,9 @@ c.session.default_name = 'default'
 # Lazy restore
 c.session.lazy_restore = True
 
+# Don't leave insert mode on page load
+c.input.insert_mode.leave_on_load = False
+
 # Fonts
 c.fonts.completion.category = '12pt monospace'
 c.fonts.completion.entry = '12pt monospace'
