@@ -42,7 +42,8 @@ ln -sf $HOME/.dotfiles/bash_config $HOME/.bash_config
 touch $HOME/.bash_aliases
 
 # zsh
-ln -sf $HOME/.dotfiles/zshrc $HOME/.zshrc
+ln -sf $HOME/.dotfiles/zsh/zshrc $HOME/.zshrc
+cp -n $HOME/.dotfiles/zsh/zshenv $HOME/.zshenv
 touch $HOME/.zsh_local
 touch $HOME/.zsh_aliases
 
