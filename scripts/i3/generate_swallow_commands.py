@@ -3,7 +3,6 @@ from __future__ import print_function
 import sys
 
 import psutil
-from psutil._exceptions import AccessDenied
 
 import i3ipc
 from wmctrl import Window
@@ -56,7 +55,7 @@ for con in i3.get_tree():
 
     try:
         working_directory = procinfo.cwd()
-    except AccessDenied:
+    except Exception:
         working_directory = '$HOME'
 
     # If the program is a terminal, get the working directory from the
