@@ -51,7 +51,7 @@ touch $HOME/.zsh_aliases
 git submodule init
 git submodule update
 ln -sfn $HOME/.dotfiles/fzf $HOME/.fzf
-$HOME/.fzf/install
+$HOME/.fzf/install --all
 
 # git
 ln -sf $HOME/.dotfiles/gitconfig $HOME/.gitconfig
@@ -64,6 +64,7 @@ ln -sf $HOME/.dotfiles/plasma/set_window_manager.sh \
 # i3
 mkdir -p $HOME/.config/i3/
 ln -sf $HOME/.dotfiles/i3/config $HOME/.config/i3/config
+mkdir $HOME/.i3/
 
 # i3status
 mkdir -p $HOME/.config/i3status/
@@ -114,3 +115,6 @@ ln -sfn $HOME/.dotfiles/ncmpcpp $HOME/.config/ncmpcpp
 # zathura
 mkdir -p $HOME/.config/zathura/
 ln -sf $HOME/.dotfiles/zathura/zathurarc $HOME/.config/zathura/zathurarc
+
+# feh
+ln -sfn $HOME/.dotfiles/feh $HOME/.config/feh
