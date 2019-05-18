@@ -64,7 +64,7 @@ ln -sf $HOME/.dotfiles/plasma/set_window_manager.sh \
 # i3
 mkdir -p $HOME/.config/i3/
 ln -sf $HOME/.dotfiles/i3/config $HOME/.config/i3/config
-mkdir $HOME/.i3/
+mkdir -p $HOME/.i3/
 
 # i3status
 mkdir -p $HOME/.config/i3status/
