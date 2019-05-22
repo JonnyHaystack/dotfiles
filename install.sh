@@ -120,4 +120,5 @@ ln -sf $HOME/.dotfiles/zathura/zathurarc $HOME/.config/zathura/zathurarc
 ln -sfn $HOME/.dotfiles/feh $HOME/.config/feh
 
 # termite
+mkdir -p $HOME/.config/termite/
 ln -sf $HOME/.dotfiles/termite/config $HOME/.config/termite/config
