@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env bash
 source "$HOME/polybar-scripts/rofi-widgets/wrapper/rofi.sh"
 
 animationSpeed=30
