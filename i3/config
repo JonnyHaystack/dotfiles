@@ -282,7 +282,7 @@ bindsym $mod+b exec --no-startup-id networkmanager_dmenu
 bindsym $mod+c exec --no-startup-id rofi -show ssh
 
 # Take screenshot
-bindsym Print exec --no-startup-id "maim --hidecursor -s ~/Pictures/Screenshots/img-$(date +%Y-%m-%d)-$(ls ~/Pictures/Screenshots/img* | wc -l).png && notify-send -i screenie 'Screenshot' '~/Pictures/Screenshots'"
+bindsym Print exec --no-startup-id ~/bin/screenshot
 
 # Pause/play mpv
 bindsym $mod+y exec --no-startup-id "echo '{ \\"command\\": [\\"cycle\\", \\"pause\\"] }' | socat - /tmp/mpvsocket"

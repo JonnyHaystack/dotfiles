@@ -100,7 +100,7 @@ interval = 600
 [module/screenshot]
 type = custom/text
 content = 
-click-left = maim --hidecursor -s ~/Pictures/Screenshots/img-$(date +%Y-%m-%d)-$(ls ~/Pictures/Screenshots/img* | wc -l).png && notify-send -i screenie 'Screenshot' '~/Pictures/Screenshots'
+click-left = ~/bin/screenshot
 
 [module/lock]
 type = custom/text
