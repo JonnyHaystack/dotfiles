@@ -1,6 +1,7 @@
 configuration {
     show-icons: false;
     font: "DejaVu Sans Mono 11";
+    cycle: false;
 }
 
 * {
