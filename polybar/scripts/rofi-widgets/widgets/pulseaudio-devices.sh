@@ -1,7 +1,7 @@
 #!/bin/zsh
 source "$HOME/polybar-scripts/rofi-widgets/wrapper/rofi.sh"
 
-animationSpeed=40
+animationSpeed=30
 
 USBICON=
 HDMIICON=
