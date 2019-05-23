@@ -31,3 +31,8 @@ function rofi_dmenu_read(){
 	wait $1
 	read -t 1 choice <&3
 }
+
+function rofi_drun(){
+	rofi -show drun &
+	rofi_window_show
+}

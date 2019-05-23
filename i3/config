@@ -270,7 +270,7 @@ bindsym $mod+Delete mode "$mode_system"
 bindsym $mod+Control+P exec $HOME/.config/polybar/launch.sh
 
 # Start rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+d exec --no-startup-id "source ~/polybar-scripts/rofi-widgets/wrapper/rofi.sh; rofi_drun"
 
 # Start dmenu-lpass script
 bindsym $mod+m exec --no-startup-id ~/bin/dmenu-lpass
