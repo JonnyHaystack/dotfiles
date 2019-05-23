@@ -4,8 +4,7 @@
 winId=""
 findTimeOut=0.5
 polybarHeight=32
-maxOpacity=0.8
-animationSpeed=20
+maxOpacity=1
 
 # Find an open rofi window
 rofi_window_find(){
@@ -26,7 +25,7 @@ rofi_window_show(){
 	rofi_window_find
 
 	# Make the Window Visible
-	transset -i  $winId $maxOpacity
+	transset -i $winId $maxOpacity
 }
 
 # Show the window (opacity from 0 (default on compton) to 1) and move it to position
