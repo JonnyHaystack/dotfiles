@@ -70,6 +70,10 @@ mkdir -p $HOME/.config/i3/
 ln -sf $HOME/.dotfiles/i3/config $HOME/.config/i3/config
 mkdir -p $HOME/.i3/
 
+# sway
+mkdir -p $HOME/.config/sway/
+ln -sf $HOME/.dotfiles/sway/config $HOME/.config/sway/config
+
 # i3status
 mkdir -p $HOME/.config/i3status/
 ln -sf $HOME/.dotfiles/i3status/config $HOME/.config/i3status/config

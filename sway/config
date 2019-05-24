@@ -1,0 +1,362 @@
+# General configuration {{{
+
+gaps inner 10
+gaps outer 0
+smart_gaps on
+smart_borders on
+
+# Set border styles
+for_window [class="^.*"] border pixel 2
+new_float none
+
+# Keyboard layout
+input * xkb_layout dvorak
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:Roboto 13
+for_window [class=".*"] title_format " %title "
+
+# Enable urgent workspace feature
+force_display_urgency_hint 0 ms
+
+# }}}
+
+# Colors {{{
+
+# Focused colors
+set $f_border     "#4c7899"
+set $f_indicator  "#4c7899"
+set $f_text       "#f2f2f5"
+
+# Focused inactive colors
+set $fi_border    "#5f676a"
+set $fi_indicator "#5f676a"
+set $fi_text      "#afb8c6"
+
+# Unfocused colors
+set $uf_border    "#292c37"
+set $uf_indicator "#292c37"
+set $uf_text      "#5c627b"
+
+# Urgent colors
+set $ug_border    "#900000"
+set $ug_indicator "#900000"
+set $ug_text      "#f2f2f5"
+
+#<colorclass>           <border>    <background> <text>    <indicator>   <child_border>
+client.focused          $f_border   $f_border    $f_text   $f_indicator  $f_border
+client.focused_inactive $uf_border  $uf_border   $fi_text  $fi_indicator $fi_border
+client.unfocused        $uf_border  $uf_border   $uf_text  $uf_indicator $uf_border
+client.urgent           $ug_border  $ug_border   $ug_text  $ug_indicator $ug_border
+
+# }}}
+
+# Specific window rules {{{
+
+for_window [class="yakuake"] floating enable
+
+# Assign applications to workspaces
+#  xprop | grep "CLASS"
+#  wmctrl -lxp
+#  swaymsg get_tree
+for_window [title="Ishiiruka"] move container to workspace 8; workspace 8
+for_window [title="Dolphin Netplay"] move container to workspace 8
+for_window [title="^Dolphin$"] move container to workspace 10; workspace 10
+
+# }}}
+
+# sway bindings {{{
+
+set $mod Mod4
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Kill focused window
+bindsym $mod+g kill
+
+# Switch back-and-forth between workspaces
+# (Simlar to Alt-Tab for workspaces)
+bindsym $mod+Tab workspace back_and_forth
+
+# Start a terminal
+bindsym $mod+t exec $TERMINAL
+
+# Jump to urgent window
+bindsym $mod+x [urgent=latest] focus
+
+# Change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move focused window
+bindsym $mod+Control+H move left
+bindsym $mod+Control+J move down
+bindsym $mod+Control+K move up
+bindsym $mod+Control+L move right
+
+# Move current workspace to another display
+bindsym $mod+Shift+H move workspace to output left
+bindsym $mod+Shift+J move workspace to output down
+bindsym $mod+Shift+K move workspace to output up
+bindsym $mod+Shift+L move workspace to output right
+
+# Alternatively, you can use the cursor keys:
+bindsym $mod+Control+Left move left
+bindsym $mod+Control+Down move down
+bindsym $mod+Control+Up move up
+bindsym $mod+Control+Right move right
+
+# Split in horizontal orientation
+bindsym $mod+Control+V split h
+
+# Split in vertical orientation
+bindsym $mod+v split v
+
+# Enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# Change container layout (stacked, tabbed, toggle split)
+bindsym $mod+o layout stacking
+bindsym $mod+comma layout tabbed
+bindsym $mod+period layout toggle split
+
+# Toggle tiling / floating
+bindsym $mod+Control+space floating toggle
+
+# Change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# Make floating window sticky.
+bindsym $mod+p sticky toggle
+
+# Focus the parent container
+bindsym $mod+a focus parent
+
+# Switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# Move focused container to workspace
+bindsym $mod+Control+1 move container to workspace 1
+bindsym $mod+Control+2 move container to workspace 2
+bindsym $mod+Control+3 move container to workspace 3
+bindsym $mod+Control+4 move container to workspace 4
+bindsym $mod+Control+5 move container to workspace 5
+bindsym $mod+Control+6 move container to workspace 6
+bindsym $mod+Control+7 move container to workspace 7
+bindsym $mod+Control+8 move container to workspace 8
+bindsym $mod+Control+9 move container to workspace 9
+bindsym $mod+Control+0 move container to workspace 10
+
+# Reload the configuration file
+bindsym $mod+Shift+C reload
+# Restart sway inplace (preserves your layout/session, can be used to upgrade sway)
+bindsym $mod+Control+R swaymsg restart
+# Exit sway (logs you out of your X session)
+bindsym $mod+Control+E exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'"
+
+# Resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym h resize shrink width 5 px or 2 ppt
+        bindsym j resize grow height 5 px or 2 ppt
+        bindsym k resize shrink height 5 px or 2 ppt
+        bindsym l resize grow width 5 px or 2 ppt
+
+        # Same bindings, but for the arrow keys
+        bindsym Left resize shrink width 5 px or 2 ppt
+        bindsym Down resize grow height 5 px or 2 ppt
+        bindsym Up resize shrink height 5 px or 2 ppt
+        bindsym Right resize grow width 5 px or 2 ppt
+
+        # Back to normal: Enter, Escape, or r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym r mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Save workspace mode.
+mode "save" {
+  bindsym 1 exec "~/scripts/i3/save_workspace.sh 1"
+  bindsym 2 exec "~/scripts/i3/save_workspace.sh 2"
+  bindsym 3 exec "~/scripts/i3/save_workspace.sh 3"
+  bindsym 4 exec "~/scripts/i3/save_workspace.sh 4"
+  bindsym 5 exec "~/scripts/i3/save_workspace.sh 5"
+  bindsym 6 exec "~/scripts/i3/save_workspace.sh 6"
+  bindsym 7 exec "~/scripts/i3/save_workspace.sh 7"
+  bindsym 8 exec "~/scripts/i3/save_workspace.sh 8"
+  bindsym 9 exec "~/scripts/i3/save_workspace.sh 9"
+  bindsym 0 exec "~/scripts/i3/save_workspace.sh 0"
+
+  # Back to normal: Enter, Escape, or s
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym s mode "default"
+  bindsym $mod+s mode "default"
+}
+
+bindsym $mod+s mode "save"
+
+# Load workspace mode.
+mode "load" {
+  bindsym 1 exec "~/scripts/i3/load_workspace.sh 1"
+  bindsym 2 exec "~/scripts/i3/load_workspace.sh 2"
+  bindsym 3 exec "~/scripts/i3/load_workspace.sh 3"
+  bindsym 4 exec "~/scripts/i3/load_workspace.sh 4"
+  bindsym 5 exec "~/scripts/i3/load_workspace.sh 5"
+  bindsym 6 exec "~/scripts/i3/load_workspace.sh 6"
+  bindsym 7 exec "~/scripts/i3/load_workspace.sh 7"
+  bindsym 8 exec "~/scripts/i3/load_workspace.sh 8"
+  bindsym 9 exec "~/scripts/i3/load_workspace.sh 9"
+  bindsym 0 exec "~/scripts/i3/load_workspace.sh 0"
+
+  # Back to normal: Enter, Escape, or n
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym n mode "default"
+  bindsym $mod+n mode "default"
+}
+
+bindsym $mod+n mode "load"
+
+# Power management
+set $LockSleep $LOCKER; sleep 1
+set $mode_system (l) lock, (e) logout, (s) suspend, (h) hibernate, (S) shutdown, (r) reboot
+mode "$mode_system" {
+  bindsym l exec --no-startup-id $LOCKER, mode "default"
+  bindsym e exec --no-startup-id swaymsg exit, mode "default"
+  bindsym s exec --no-startup-id "$LockSleep && systemctl suspend", mode "default"
+  bindsym h exec --no-startup-id "$LockSleep && systemctl hibernate", mode "default"
+  bindsym Shift+S exec --no-startup-id systemctl poweroff -i, mode "default"
+  bindsym r exec --no-startup-id systemctl reboot, mode "default"
+
+  # Back to normal: Enter, Escape, or Delete
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym Delete mode "default"
+  bindsym $mod+Delete mode "default"
+}
+
+bindsym $mod+Delete mode "$mode_system"
+
+# }}}
+
+# Non-sway bindings {{{
+
+# Restart polybar
+bindsym $mod+Control+P exec $HOME/.config/polybar/launch.sh
+
+# Start rofi (a program launcher)
+bindsym $mod+d exec --no-startup-id rofi -show drun
+
+# Start dmenu-lpass script
+bindsym $mod+m exec --no-startup-id rofi -show LastPass -modi \
+  LastPass:~/bin/rofi-lpass
+
+# Launch networkmanager_dmenu
+bindsym $mod+b exec --no-startup-id networkmanager_dmenu
+
+# Show rofi SSH menu
+bindsym $mod+c exec --no-startup-id rofi -show ssh
+
+# Show rofi calculator
+bindsym $mod+Control+C exec --no-startup-id rofi -show Calc -modi \
+  Calc:~/bin/rofi-calculator
+
+# Show rofi file browser
+bindsym $mod+Control+F exec --no-startup-id rofi -show File -modi \
+  File:~/bin/rofi-file-browser
+
+# Take screenshot
+bindsym Print exec --no-startup-id ~/bin/screenshot
+
+# Pause/play mpv
+bindsym $mod+y exec --no-startup-id "echo '{ \\"command\\": [\\"cycle\\", \\"pause\\"] }' | socat - /tmp/mpvsocket"
+bindsym XF86AudioPlay exec --no-startup-id "echo '{ \\"command\\": [\\"cycle\\", \\"pause\\"] }' | socat - /tmp/mpvsocket"
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease screen brightness
+
+# Touchpad controls
+bindsym XF86TouchpadToggle exec --no-startup-id $HOME/bin/toggletouchpad.sh # toggle touchpad
+
+# }}}
+
+# Plasma Integration {{{
+
+# Try to kill the wallpaper set by Plasma (it takes up the entire workspace and hides everythiing)
+exec --no-startup-id wmctrl -c Plasma
+for_window [title="Desktop — Plasma"] kill, floating enable, border none
+
+## Avoid tiling popups, dropdown windows from plasma
+# For the first time, manually resize them, sway will remember the setting for floating windows
+for_window [class="plasmashell"] floating enable
+for_window [class="Plasma"] floating enable, border none
+for_window [title="plasma-desktop"] floating enable, border none
+for_window [title="win7"] floating enable, border none
+for_window [class="krunner"] floating enable, border none
+for_window [class="Kmix"] floating enable, border none
+for_window [class="Klipper"] floating enable, border none
+for_window [class="Plasmoidviewer"] floating enable, border none
+
+# Don't let KDE notifications steal focus
+no_focus [class="plasmashell"]
+
+# }}}
+
+# Startup Applications {{{
+
+# Start polybar
+exec --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Set wallpaper
+output * bg ~/Pictures/wallpaper.png fill
+
+# Start compton
+exec --no-startup-id compton -b --config $HOME/.config/compton/compton.conf
+
+# Start authentication agent
+exec --no-startup-id lxqt-policykit-agent
+
+# General startup apps
+exec --no-startup-id guake
+exec --no-startup-id udiskie -s
+exec --no-startup-id kdeconnect-indicator
+exec --no-startup-id nm-applet
+exec --no-startup-id redshift-gtk
+exec --no-startup-id unclutter
+exec --no-startup-id gmediarender -d --gstout-buffer-duration=0
+
+# }}}
