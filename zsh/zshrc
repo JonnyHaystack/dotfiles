@@ -13,8 +13,10 @@ fi
 HISTFILE=~/.histfile
 HISTSIZE=4000
 SAVEHIST=4000
+HISTORY_IGNORE="(mv *|cp *|ls|ls *|ll|ll *|la|la *|cd|cd *)"
 # No duplicates in command history
 setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 # Prevent commands beginning with a space from appearing in history
 setopt HIST_IGNORE_SPACE
