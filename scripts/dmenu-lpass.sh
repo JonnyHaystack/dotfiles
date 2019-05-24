@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 selection=$(echo -e $(lpass ls | awk -F '[/[]' '{print $(NF-1)"\\n"}' \
   | tr -d '[:space:]') | rofi -dmenu -p LastPass)

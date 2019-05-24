@@ -164,7 +164,7 @@ bindsym $mod+Control+9 move container to workspace 9
 bindsym $mod+Control+0 move container to workspace 10
 
 # Reload the configuration file
-bindsym $mod+Control+C reload
+bindsym $mod+Shift+C reload
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Control+R restart
 # Exit i3 (logs you out of your X session)
@@ -273,13 +273,22 @@ bindsym $mod+Control+P exec $HOME/.config/polybar/launch.sh
 bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # Start dmenu-lpass script
-bindsym $mod+m exec --no-startup-id ~/bin/dmenu-lpass
+bindsym $mod+m exec --no-startup-id rofi -show LastPass -modi \
+  LastPass:~/bin/rofi-lpass
 
 # Launch networkmanager_dmenu
 bindsym $mod+b exec --no-startup-id networkmanager_dmenu
 
 # Show rofi SSH menu
 bindsym $mod+c exec --no-startup-id rofi -show ssh
+
+# Show rofi calculator
+bindsym $mod+Control+C exec --no-startup-id rofi -show Calc -modi \
+  Calc:~/bin/rofi-calculator
+
+# Show rofi file browser
+bindsym $mod+Control+F exec --no-startup-id rofi -show File -modi \
+  File:~/bin/rofi-file-browser
 
 # Take screenshot
 bindsym Print exec --no-startup-id ~/bin/screenshot

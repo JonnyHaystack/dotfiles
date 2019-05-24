@@ -10,6 +10,9 @@ mkdir -p $HOME/bin/
 ln -sfn $HOME/.dotfiles/scripts/i3 $HOME/scripts/i3
 ln -sf $HOME/.dotfiles/scripts/dmenu-custom.sh $HOME/bin/dmenu-custom
 ln -sf $HOME/.dotfiles/scripts/dmenu-lpass.sh $HOME/bin/dmenu-lpass
+ln -sf $HOME/.dotfiles/scripts/rofi-lpass.sh $HOME/bin/rofi-lpass
+ln -sf $HOME/.dotfiles/scripts/rofi-calculator.sh $HOME/bin/rofi-calculator
+ln -sf $HOME/.dotfiles/scripts/rofi-file-browser.sh $HOME/bin/rofi-file-browser
 ln -sf $HOME/.dotfiles/scripts/open_url_in_instance.sh $HOME/bin/qutebrowser
 ln -sf $HOME/.dotfiles/scripts/screenshot.sh $HOME/bin/screenshot
 
