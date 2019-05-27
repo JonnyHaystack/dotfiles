@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Create symlinks for dotfiles so that they will appear in their
 # normal locations.
 
