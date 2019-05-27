@@ -111,11 +111,7 @@ ln -sf $HOME/.dotfiles/qutebrowser/userscripts/* \
 ln -sfn $HOME/.dotfiles/rofi $HOME/.config/rofi
 
 # mpv
-mkdir -p $HOME/.config/mpv/
-mkdir -p $HOME/.config/mpv/scripts/
-ln -sf $HOME/.dotfiles/mpv/input.conf $HOME/.config/mpv/input.conf
-ln -sf $HOME/.dotfiles/mpv/scripts/youtube-quality.lua \
-  $HOME/.config/mpv/scripts/youtube-quality.lua
+ln -sfn $HOME/.dotfiles/mpv $HOME/.config/mpv
 
 # ncmpcpp
 ln -sfn $HOME/.dotfiles/ncmpcpp $HOME/.config/ncmpcpp
