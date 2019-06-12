@@ -283,8 +283,8 @@ bindsym $mod+b exec --no-startup-id networkmanager_dmenu
 bindsym $mod+c exec --no-startup-id rofi -show ssh
 
 # Show rofi calculator
-bindsym $mod+Control+C exec --no-startup-id rofi -show Calc -modi \
-  Calc:~/bin/rofi-calculator
+bindsym $mod+Control+C exec --no-startup-id rofi -show calc -modi calc \
+  -no-show-match -no-sort -calc-command "echo '{result}' | xclip"
 
 # Show rofi file browser
 bindsym $mod+Control+F exec --no-startup-id rofi -show File -modi \
