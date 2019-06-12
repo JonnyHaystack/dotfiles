@@ -154,6 +154,7 @@ if has('nvim')
       \ 'c': ['clangd'],
       \ 'cpp': ['clangd'],
       \ 'python': ['pyls'],
+      \ 'javascript': ['javascript-typescript-stdio'],
       \ 'java': ['jdtls', '-data', getcwd()],
       \ }
 
@@ -172,7 +173,7 @@ if has('nvim')
 
   augroup LSP
     autocmd!
-    autocmd FileType cpp,c,python,java call SetLSPShortcuts()
+    autocmd FileType cpp,c,python,javascript,java call SetLSPShortcuts()
   augroup END
 
 " }}}
