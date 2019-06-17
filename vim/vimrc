@@ -136,7 +136,8 @@ if has('nvim')
 
   " Linter options
   let g:ale_linters = {
-    \ 'c': ['cppcheck', 'clangcheck', 'clangtidy', 'cquery']
+    \ 'c': ['cppcheck', 'clangcheck', 'clangtidy', 'cquery'],
+    \ 'python': ['flake8', 'pylint']
     \ }
 
   " }}}
