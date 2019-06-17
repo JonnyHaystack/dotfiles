@@ -104,26 +104,9 @@ let g:AutoPairsMultilineClose = 0
 " UltiSnips config {{{
 
 set runtimepath+=~/.vim/my-snippets/
-let g:UltiSnipsExpandTrigger="<C-e>"
-let g:UltiSnipsJumpForwardTrigger="<C-e>"
+let g:UltiSnipsExpandTrigger="<C-k>"
+let g:UltiSnipsJumpForwardTrigger="<C-k>"
 let g:UltiSnipsJumpBackwardTrigger="<nop>"
-
-" }}}
-
-" neosnippet config {{{
-
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
-
-" Tab to select the next field to fill in the snippet
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
 
 " }}}
 
@@ -134,86 +117,82 @@ let g:vimtex_view_method='zathura'
 let g:tex_conceal='abdmg'
 
 
+" neovim specific configuration {{{
 if has('nvim')
-
-  " neovim specific configuration {{{
 
   " ALE config
   map <leader>d :ALEDetail<CR>
 
-  " Deoplete config
-  let g:deoplete#enable_at_startup = 1
-  autocmd VimEnter * call deoplete#custom#option({
-      \ 'auto_complete_delay': 5,
-      \ })
+  " coc.nvim config {{{
+
+  " Use <c-space> to trigger completion
+  inoremap <silent><expr> <c-space> coc#refresh()
+
+  " Use <Tab> and <S-Tab> to navigate the completion list
   inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
   inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-  " LanguageClient config
-  let g:LanguageClient_serverCommands = {
-      \ 'c': ['clangd'],
-      \ 'cpp': ['clangd'],
-      \ 'python': ['pyls'],
-      \ 'javascript': ['javascript-typescript-stdio'],
-      \ 'java': ['jdtls', '-data', getcwd()],
-      \ }
+  " Use <cr> to confirm completion
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-  function SetLSPShortcuts()
-    nnoremap <leader>ld :call LanguageClient#textDocument_definition()<CR>
-    nnoremap <leader>lr :call LanguageClient#textDocument_rename()<CR>
-    nnoremap <leader>lf :call LanguageClient#textDocument_formatting()<CR>
-    nnoremap <leader>lt :call LanguageClient#textDocument_typeDefinition()<CR>
-    nnoremap <leader>lx :call LanguageClient#textDocument_references()<CR>
-    nnoremap <leader>la :call LanguageClient_workspace_applyEdit()<CR>
-    nnoremap <leader>lc :call LanguageClient#textDocument_completion()<CR>
-    nnoremap <leader>lh :call LanguageClient#textDocument_hover()<CR>
-    nnoremap <leader>ls :call LanguageClient_textDocument_documentSymbol()<CR>
-    nnoremap <leader>lm :call LanguageClient_contextMenu()<CR>
-  endfunction()
+  " Close the preview window when completion is done
+  autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
-  augroup LSP
-    autocmd!
-    autocmd FileType cpp,c,python,javascript,java call SetLSPShortcuts()
-  augroup END
+  " Use `[c` and `]c` to navigate diagnostics
+  nmap <silent> [c <Plug>(coc-diagnostic-prev)
+  nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
-" }}}
+  " Keys for gotos
+  nnoremap <leader>ld <Plug>(coc-definition)
+  nnoremap <leader>ly <Plug>(coc-type-definition)
+  nnoremap <leader>li <Plug>(coc-implementation)
+  nnoremap <leader>lr <Plug>(coc-references)
 
-else
+  " Format entire file
+  nnoremap <leader>lf :call CocAction('format')<CR>
 
-  " Vanilla vim specific configuration {{{
+  " Show commands
+  nnoremap <leader>lm :<C-u>CocList commands<cr>
 
-  " Syntastic config
-  set statusline+=%#warningmsg#
-  set statusline+=%{SyntasticStatuslineFlag()}
-  set statusline+=%*
-  highlight SyntasticErrorLine guibg=#2f0000
+  " Rename current word
+  nmap <leader>rn <Plug>(coc-rename)
 
-  let g:syntastic_always_populate_loc_list = 1
-  let g:syntastic_auto_loc_list = 1
-  let g:syntastic_check_on_open = 1
-  let g:syntastic_check_on_wq = 0
-  " Enable Java classpath config files.
-  let g:syntastic_java_javac_config_file_enabled = 1
-  " Passive mode file types.
-  let g:syntastic_mode_map = {
-      \ "mode": "active",
-      \ "passive_filetypes": ["asm"]
-      \ }
+  " Format selected region
+  nnoremap <leader>f <Plug>(coc-format-selected)
+  xnoremap <leader>f <Plug>(coc-format-selected)
 
-  " YouCompleteMe config
-  " Make sure autocomplete window is closed properly.
-  let g:ycm_autoclose_preview_window_after_completion=1
-  " Go to definition shortcut.
-  map <leader>ld  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-  let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
-  let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
-  let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
-  let g:ycm_complete_in_comments = 1 " Completion in comments
-  let g:ycm_complete_in_strings = 1 " Completion in string
+  " Do codeAction of selected region, ex: `<leader>aap` for current paragraph
+  xnoremap <leader>a <Plug>(coc-codeaction-selected)
+  nnoremap <leader>a <Plug>(coc-codeaction-selected)
+  " Do codeAction of current line
+  nmap <leader>ac  <Plug>(coc-codeaction)
+
+  " Fix autofix problem of current line
+  nmap <leader>af <Plug>(coc-fix-current)
+
+  " Use `:OR` for organize import of current buffer
+  command! -nargs=0 OR :call CocAction('runCommand',
+        \ 'editor.action.organizeImport')
+
+  " Use K to show documentation in preview window
+  nnoremap <silent> K :call <SID>show_documentation()<CR>
+  function! s:show_documentation()
+    if (index(['vim','help'], &filetype) >= 0)
+      execute 'h '.expand('<cword>')
+    else
+      call CocAction('doHover')
+    endif
+  endfunction
+
+  " Extensions to always install
+  let g:coc_global_extensions = [
+    \ 'coc-vimtex',
+    \ ]
 
   " }}}
 
 endif
+" }}}
 
 
 " Load matchit.vim
@@ -227,6 +206,7 @@ call plug#begin()
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'vim-scripts/visualrepeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'easymotion/vim-easymotion'
 Plug 'wincent/command-t'
@@ -240,31 +220,13 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'valloric/matchtagalways'
 Plug 'wellle/targets.vim'
 Plug 'lervag/vimtex'
-Plug 'shougo/neosnippet.vim'
-Plug 'shougo/neosnippet-snippets'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 if has ('nvim')
-
   Plug 'w0rp/ale'
-  Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
-  " Multi-entry selection UI. FZF
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
-
-else
-
-  Plug 'scrooloose/syntastic'
-  Plug 'ervandew/supertab'
-  Plug 'valloric/youcompleteme', {
-    \ 'do': './install.py --clang-completer --cs-completer --js-completer --java-completer'
-    \ }
-  Plug 'jmcantrell/vim-virtualenv'
-
 endif
 call plug#end()
