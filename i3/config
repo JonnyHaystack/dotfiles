@@ -277,7 +277,7 @@ bindsym $mod+m exec --no-startup-id rofi -show LastPass -modi \
   LastPass:~/bin/rofi-lpass
 
 # Launch networkmanager_dmenu
-bindsym $mod+b exec --no-startup-id networkmanager_dmenu
+bindsym $mod+b exec --no-startup-id ~/bin/networkmanager_dmenu
 
 # Show rofi SSH menu
 bindsym $mod+c exec --no-startup-id rofi -show ssh

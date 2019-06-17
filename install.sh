@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
-# Create symlinks for dotfiles so that they will appear in their
+
+# This script creates symlinks for dotfiles so that they will appear in their
 # normal locations.
+
+git submodule init
+git submodule update
 
 mkdir -p $HOME/.config/
 
@@ -10,6 +14,8 @@ mkdir -p $HOME/bin/
 ln -sfn $HOME/.dotfiles/scripts/i3 $HOME/scripts/i3
 ln -sf $HOME/.dotfiles/scripts/dmenu-custom.sh $HOME/bin/dmenu-custom
 ln -sf $HOME/.dotfiles/scripts/dmenu-lpass.sh $HOME/bin/dmenu-lpass
+ln -sf $HOME/.dotfiles/scripts/networkmanager_dmenu \
+  $HOME/bin/networkmanager_dmenu
 ln -sf $HOME/.dotfiles/scripts/rofi-lpass.sh $HOME/bin/rofi-lpass
 ln -sf $HOME/.dotfiles/scripts/rofi-calculator.sh $HOME/bin/rofi-calculator
 ln -sf $HOME/.dotfiles/scripts/rofi-file-browser.sh $HOME/bin/rofi-file-browser
@@ -52,8 +58,6 @@ touch $HOME/.zsh_local
 touch $HOME/.zsh_aliases
 
 # fzf
-git submodule init
-git submodule update
 ln -sfn $HOME/.dotfiles/fzf $HOME/.fzf
 $HOME/.fzf/install --all
 
