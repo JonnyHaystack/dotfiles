@@ -12,7 +12,7 @@ set hlsearch
 set encoding=utf-8
 
 " Indentation settings for different filetypes
-autocmd FileType c,cpp setlocal shiftwidth=4 softtabstop=4
+autocmd FileType c,cpp,javascript setlocal shiftwidth=4 softtabstop=4
 
 " Perform spell check in tex file
 augroup spellcheck
