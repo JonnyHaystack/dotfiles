@@ -120,8 +120,21 @@ let g:tex_conceal='abdmg'
 " neovim specific configuration {{{
 if has('nvim')
 
-  " ALE config
+  " ALE config {{{
+
+  " View details
   map <leader>d :ALEDetail<CR>
+
+  " Sign/highlight colours
+  highlight ALEErrorSign ctermfg=Red
+  highlight ALEWarningSign ctermfg=Yellow
+  highlight ALEError ctermfg=Black ctermbg=Red
+  highlight ALEWarning ctermfg=Black ctermbg=Yellow
+  highlight ALEStyleError ctermfg=Black ctermbg=DarkMagenta
+  highlight link ALEStyleWarning ALEStyleError
+  highlight clear ALEInfo
+
+  " }}}
 
   " coc.nvim config {{{
 
