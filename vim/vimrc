@@ -140,6 +140,11 @@ if has('nvim')
     \ 'python': ['flake8', 'pylint']
     \ }
 
+  " Fixer options
+  let g:ale_fixers = {
+    \ 'javascript': ['prettier'],
+    \ }
+
   " }}}
 
   " coc.nvim config {{{
@@ -184,8 +189,7 @@ if has('nvim')
   xnoremap <leader>a <Plug>(coc-codeaction-selected)
   nnoremap <leader>a <Plug>(coc-codeaction-selected)
   " Do codeAction of current line
-  nmap <leader>ac  <Plug>(coc-codeaction)
-
+  nmap <leader>ac <Plug>(coc-codeaction)
   " Fix autofix problem of current line
   nmap <leader>af <Plug>(coc-fix-current)
 
@@ -206,6 +210,7 @@ if has('nvim')
   " Extensions to always install
   let g:coc_global_extensions = [
     \ 'coc-vimtex',
+    \ 'coc-ultisnips',
     \ ]
 
   " }}}
@@ -248,4 +253,7 @@ if has ('nvim')
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
 endif
+" Syntax plugins
+Plug 'vim-scripts/django.vim'
+Plug 'nikvdp/ejs-syntax'
 call plug#end()
