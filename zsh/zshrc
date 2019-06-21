@@ -54,6 +54,8 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
+
+    alias diff='diff --color=auto'
 fi
 
 # Colored GCC warnings and errors
@@ -99,19 +101,24 @@ autoload -Uz _zplugin
 
 # }}}
 
-# ZPlugin {{{
+# Plugins {{{
 
 # Prompt
 zplugin ice pick"async.zsh" src"pure.zsh"
 zplugin light sindresorhus/pure
 
-zplugin ice wait"0" lucid atload"_zsh_autosuggest_start"
-zplugin light zsh-users/zsh-autosuggestions
+# kitty command completion
+zplugin ice wait"0" lucid atload"kitty + complete setup zsh | source /dev/stdin"
 
+# Extra completions
 zplugin ice wait"0" blockf lucid
 zplugin light zsh-users/zsh-completions
 
-# Syntax highlighting
+# Autosuggestions
+zplugin ice wait"0" lucid atload"_zsh_autosuggest_start"
+zplugin light zsh-users/zsh-autosuggestions
+
+# Syntax highlighting - should be the last plugin loaded!
 zplugin ice lucid atinit"zpcompinit; zpcdreplay"
 zplugin light zdharma/fast-syntax-highlighting
 
