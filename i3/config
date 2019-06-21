@@ -78,7 +78,7 @@ bindsym $mod+g kill
 bindsym $mod+Tab workspace back_and_forth
 
 # Start a terminal
-bindsym $mod+t exec --no-startup-id i3-sensible-terminal
+bindsym $mod+t exec --no-startup-id $TERMINAL
 
 # Jump to urgent window
 bindsym $mod+x [urgent=latest] focus
