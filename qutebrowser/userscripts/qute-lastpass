@@ -52,7 +52,7 @@ import tldextract
 argument_parser = argparse.ArgumentParser(
     description=__doc__, usage=USAGE, epilog=EPILOG)
 argument_parser.add_argument('url', nargs='?', default=os.getenv('QUTE_URL'))
-argument_parser.add_argument('--dmenu-invocation', '-d', default='rofi -dmenu',
+argument_parser.add_argument('--dmenu-invocation', '-d', default='rofi -dmenu -i -p LastPass',
                              help='Invocation used to execute a dmenu-provider')
 argument_parser.add_argument('--no-insert-mode', '-n', dest='insert_mode', action='store_false',
                              help="Don't automatically enter insert mode")
