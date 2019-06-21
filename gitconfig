@@ -1,7 +1,9 @@
 [user]
-	email = jonathan.s.haylett@gmail.com
+	email = jonathan@haylett.dev
 	name = Jonathan Haylett
 [push]
 	default = simple
 [merge]
 	tool = vimdiff
+[color]
+        ui = auto
