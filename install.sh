@@ -3,6 +3,13 @@
 # This script creates symlinks for dotfiles so that they will appear in their
 # normal locations.
 
+remove_non_dirlink() {
+  if [[ ! (-L $1 && -d $1) ]]; then
+    echo "${1} is an existing directory, do you want to overwrite it with a symlink?"
+    rm -rI $1
+  fi
+}
+
 git submodule init
 git submodule update
 
@@ -58,8 +65,22 @@ touch $HOME/.zsh_local
 touch $HOME/.zsh_aliases
 
 # fzf
+remove_non_dirlink $HOME/.fzf
 ln -sfn $HOME/.dotfiles/fzf $HOME/.fzf
 $HOME/.fzf/install --all
+
+# alacritty
+mkdir -p $HOME/.config/alacritty/
+ln -sf $HOME/.dotfiles/alacritty/alacritty.yml \
+  $HOME/.config/alacritty/alacritty.yml
+
+# termite
+mkdir -p $HOME/.config/termite/
+ln -sf $HOME/.dotfiles/termite/config $HOME/.config/termite/config
+
+# kitty
+remove_non_dirlink $HOME/.config/kitty
+ln -sfn $HOME/.dotfiles/kitty $HOME/.config/kitty
 
 # git
 ln -sf $HOME/.dotfiles/gitconfig $HOME/.gitconfig
@@ -99,11 +120,6 @@ ln -sf $HOME/.dotfiles/dunst/dunstrc $HOME/.config/dunst/dunstrc
 mkdir -p $HOME/.config/autorandr/
 ln -sf $HOME/.dotfiles/autorandr/postswitch $HOME/.config/autorandr/postswitch
 
-# alacritty
-mkdir -p $HOME/.config/alacritty/
-ln -sf $HOME/.dotfiles/alacritty/alacritty.yml \
-  $HOME/.config/alacritty/alacritty.yml
-
 # qutebrowser
 mkdir -p $HOME/.config/qutebrowser/bookmarks/
 mkdir -p $HOME/.local/share/qutebrowser/userscripts/
@@ -112,12 +128,15 @@ ln -sf $HOME/.dotfiles/qutebrowser/userscripts/* \
   $HOME/.local/share/qutebrowser/userscripts/
 
 # rofi
+remove_non_dirlink $HOME/.config/rofi
 ln -sfn $HOME/.dotfiles/rofi $HOME/.config/rofi
 
 # mpv
+remove_non_dirlink $HOME/.config/mpv
 ln -sfn $HOME/.dotfiles/mpv $HOME/.config/mpv
 
 # ncmpcpp
+remove_non_dirlink $HOME/.config/ncmpcpp
 ln -sfn $HOME/.dotfiles/ncmpcpp $HOME/.config/ncmpcpp
 
 # zathura
@@ -125,8 +144,5 @@ mkdir -p $HOME/.config/zathura/
 ln -sf $HOME/.dotfiles/zathura/zathurarc $HOME/.config/zathura/zathurarc
 
 # feh
+remove_non_dirlink $HOME/.config/feh
 ln -sfn $HOME/.dotfiles/feh $HOME/.config/feh
-
-# termite
-mkdir -p $HOME/.config/termite/
-ln -sf $HOME/.dotfiles/termite/config $HOME/.config/termite/config
