@@ -127,9 +127,9 @@ if has('nvim')
 
   " Sign/highlight colours
   highlight ALEErrorSign ctermfg=Red
-  highlight ALEWarningSign ctermfg=Yellow
+  highlight ALEWarningSign ctermfg=DarkMagenta
   highlight ALEError ctermfg=Black ctermbg=Red
-  highlight ALEWarning ctermfg=Black ctermbg=Yellow
+  highlight ALEWarning ctermfg=Black ctermbg=DarkMagenta
   highlight ALEStyleError ctermfg=Black ctermbg=DarkMagenta
   highlight link ALEStyleWarning ALEStyleError
   highlight clear ALEInfo
