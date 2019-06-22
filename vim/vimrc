@@ -253,6 +253,8 @@ Plug 'honza/vim-snippets'
 if has ('nvim')
   Plug 'w0rp/ale'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'Shougo/neco-vim'
+  Plug 'neoclide/coc-neco'
   Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
