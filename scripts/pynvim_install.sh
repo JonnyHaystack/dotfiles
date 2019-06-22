@@ -2,8 +2,7 @@
 
 virtualenv -p /usr/bin/python2 ~/.virtualenvs/pynvim2
 virtualenv -p /usr/bin/python3 ~/.virtualenvs/pynvim3
-workon pynvim2
+source ~/.virtualenvs/pynvim2/bin/activate
 pip install pynvim
-workon pynvim3
+source ~/.virtualenvs/pynvim3/bin/activate
 pip install pynvim
-deactivate
