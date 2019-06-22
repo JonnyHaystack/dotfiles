@@ -195,7 +195,7 @@ if has('nvim')
   " Do codeAction of current line
   nmap <leader>ac <Plug>(coc-codeaction)
   " Fix autofix problem of current line
-  nmap <leader>af <Plug>(coc-fix-current)
+  nmap <leader>laf <Plug>(coc-fix-current)
 
   " Use `:OR` for organize import of current buffer
   command! -nargs=0 OR :call CocAction('runCommand',
