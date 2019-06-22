@@ -5,3 +5,6 @@ fi
 if [[ $PATH != *"${HOME}/bin"* ]]; then
   export PATH=${HOME}/bin:$PATH
 fi
+
+# Set locale
+export LANG=en_GB.UTF-8
