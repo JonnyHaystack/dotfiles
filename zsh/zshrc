@@ -1,8 +1,3 @@
-# Source localised configuration
-if [ -f ~/.zsh_local ]; then
-  . ~/.zsh_local
-fi
-
 # Load aliases
 if [ -f ~/.zsh_aliases ]; then
   . ~/.zsh_aliases
@@ -79,6 +74,11 @@ workon() {
     source ~/.virtualenvs/$1/bin/activate
   fi
 }
+
+# Python virtualenv fix (for neovim)
+if [[ -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" ]]; then
+  source "${VIRTUAL_ENV}/bin/activate"
+fi
 
 # }}}
 
