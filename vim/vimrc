@@ -99,8 +99,7 @@ inoremap jj <ESC>
 command W w !sudo tee % >/dev/null
 
 " Command-T config
-set wildignore+=*.log,*.sql,*.cache,*.swp
-noremap <Leader>r :CommandTFlush<CR>
+nnoremap <C-t> :Files<CR>
 
 " NerdTree config
 let NERDTreeMapActivateNode='l'
@@ -255,7 +254,6 @@ Plug 'tpope/vim-repeat'
 Plug 'vim-scripts/visualrepeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'easymotion/vim-easymotion'
-Plug 'wincent/command-t'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'bling/vim-airline'
