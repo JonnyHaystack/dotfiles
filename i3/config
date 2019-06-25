@@ -11,7 +11,7 @@ new_float none
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Roboto 13
+font pango:Roboto 10
 for_window [class=".*"] title_format " %title "
 
 # Enable urgent workspace feature
@@ -247,7 +247,7 @@ set $LockSleep $LOCKER; sleep 1
 set $mode_system (l) lock, (e) logout, (s) suspend, (h) hibernate, (S) shutdown, (r) reboot
 mode "$mode_system" {
   bindsym l exec --no-startup-id $LOCKER, mode "default"
-  bindsym e exec --no-startup-id i3-msg exit, mode "default"
+  bindsym e exec --no-startup-id "kill -9 $(pgrep proot)", mode "default"
   bindsym s exec --no-startup-id "$LockSleep && systemctl suspend", mode "default"
   bindsym h exec --no-startup-id "$LockSleep && systemctl hibernate", mode "default"
   bindsym Shift+S exec --no-startup-id systemctl poweroff -i, mode "default"
@@ -347,13 +347,15 @@ exec --no-startup-id compton -b --config $HOME/.config/compton/compton.conf
 # Start authentication agent
 exec --no-startup-id lxqt-policykit-agent
 
+# Start notification daemon
+exec --no-startup-id dunst
+
 # General startup apps
 exec --no-startup-id guake
 exec --no-startup-id udiskie -s
 exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift-gtk
-exec --no-startup-id unclutter
 exec --no-startup-id gmediarender -d --gstout-buffer-duration=0
 
 # }}}
