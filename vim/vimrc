@@ -99,7 +99,7 @@ inoremap jj <ESC>
 command W w !sudo tee % >/dev/null
 
 " Command-T config
-nnoremap <C-t> :Files<CR>
+nnoremap <silent> <C-t> :Files<CR>
 
 " NerdTree config
 let NERDTreeMapActivateNode='l'
@@ -170,7 +170,10 @@ if has('nvim')
   " coc.nvim config {{{
 
   " Use <c-space> to trigger completion
-  inoremap <silent><expr> <c-space> coc#refresh()
+  inoremap <silent><expr> <C-space> coc#refresh()
+
+  " Show signature help
+  nnoremap <silent> <C-e> :call CocActionAsync('showSignatureHelp')<CR>
 
   " Use <Tab> and <S-Tab> to navigate the completion list
   inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -187,16 +190,16 @@ if has('nvim')
   nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
   " Keys for gotos
-  nnoremap <leader>ld <Plug>(coc-definition)
-  nnoremap <leader>ly <Plug>(coc-type-definition)
-  nnoremap <leader>li <Plug>(coc-implementation)
-  nnoremap <leader>lr <Plug>(coc-references)
+  nmap <leader>ld <Plug>(coc-definition)
+  nmap <leader>ly <Plug>(coc-type-definition)
+  nmap <leader>li <Plug>(coc-implementation)
+  nmap <leader>lr <Plug>(coc-references)
 
   " Format entire file
   nnoremap <leader>lf :call CocAction('format')<CR>
 
   " Show commands
-  nnoremap <leader>lm :<C-u>CocList commands<cr>
+  nnoremap <leader>lm :<C-u>CocList commands<CR>
 
   " Rename current word
   nmap <leader>rn <Plug>(coc-rename)
