@@ -354,6 +354,7 @@ exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift-gtk
 exec --no-startup-id unclutter
+exec --no-startup-id thunar --daemon
 exec --no-startup-id gmediarender -d --gstout-buffer-duration=0
 
 # }}}
