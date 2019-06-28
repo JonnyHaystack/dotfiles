@@ -71,19 +71,19 @@ augroup END
 set pastetoggle=<F2>
 
 " Save and close shortcuts
-nnoremap <leader>w :w<CR>
-nnoremap <leader>q :q<CR>
-nnoremap <leader><S-q> :q!<CR>
+nnoremap <silent> <leader>w :w<CR>
+nnoremap <silent> <leader>q :q<CR>
+nnoremap <silent> <leader><S-q> :q!<CR>
 
 " Reload .vimrc
-nnoremap <leader>s :source ~/.vimrc<CR>
+nnoremap <silent> <leader>s :source ~/.vimrc<CR>
 
 " Toggle conceallevel 2/0
 nnoremap coe :setlocal conceallevel=<c-r>=&conceallevel == 0 ? '2' : '0'<cr><cr>
-:map <F3> :setlocal spell! spelllang=en_gb<CR>
+nnoremap <silent> <F3> :setlocal spell! spelllang=en_gb<CR>
 
 " Toggle scrolloff
-nnoremap <Leader>zz :let &scrolloff=24-&scrolloff<CR>
+nnoremap <silent> <Leader>zz :let &scrolloff=24-&scrolloff<CR>
 
 " Enter normal mode convenient binding
 inoremap jj <ESC>
@@ -104,8 +104,8 @@ nnoremap <silent> <C-t> :Files<CR>
 " NerdTree config
 let NERDTreeMapActivateNode='l'
 let NERDTreeShowHidden=1
-nmap <leader>n :NERDTreeToggle<CR>
-nmap <leader>j :NERDTreeFind<CR>
+nmap <silent> <leader>n :NERDTreeToggle<CR>
+nmap <silent> <leader>j :NERDTreeFind<CR>
 let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
 
 " GitGutter config - always display gutter
@@ -152,7 +152,7 @@ if has('nvim')
   " ALE config {{{
 
   " View details
-  map <leader>d :ALEDetail<CR>
+  nnoremap <silent> <leader>d :ALEDetail<CR>
 
   " Linter options
   let g:ale_linters = {
@@ -196,10 +196,10 @@ if has('nvim')
   nmap <leader>lr <Plug>(coc-references)
 
   " Format entire file
-  nnoremap <leader>lf :call CocAction('format')<CR>
+  nnoremap <silent> <leader>lf :call CocAction('format')<CR>
 
   " Show commands
-  nnoremap <leader>lm :<C-u>CocList commands<CR>
+  nnoremap <silent> <leader>lm :<C-u>CocList commands<CR>
 
   " Rename current word
   nmap <leader>rn <Plug>(coc-rename)
@@ -221,7 +221,7 @@ if has('nvim')
         \ 'editor.action.organizeImport')
 
   " Show documentation in preview window
-  nnoremap <leader>lh :call <SID>show_documentation()<CR>
+  nnoremap <silent> <leader>lh :call <SID>show_documentation()<CR>
   function! s:show_documentation()
     if (index(['vim','help'], &filetype) >= 0)
       execute 'h '.expand('<cword>')
