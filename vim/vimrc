@@ -121,7 +121,7 @@ endif
 let g:SimpylFold_docstring_preview=1
 
 " Airline config
-let g:airline_theme='tomorrow'
+let g:airline_theme='base16_tomorrow'
 
 " auto-pairs config
 let g:AutoPairsMultilineClose = 0
