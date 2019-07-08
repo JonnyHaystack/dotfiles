@@ -29,6 +29,8 @@ ln -sf $HOME/.dotfiles/scripts/rofi-file-browser.sh $HOME/bin/rofi-file-browser
 ln -sf $HOME/.dotfiles/scripts/open_url_in_instance.sh $HOME/bin/qutebrowser
 ln -sf $HOME/.dotfiles/scripts/screenshot.sh $HOME/bin/screenshot
 ln -sf $HOME/.dotfiles/scripts/pynvim_install.sh $HOME/bin/pynvim_install
+ln -sf $HOME/.dotfiles/scripts/pyline.py $HOME/bin/pyline
+ln -sf $HOME/.dotfiles/scripts/try.sh $HOME/bin/try
 
 # desktop shortcuts
 mkdir -p $HOME/.local/share/applications/
