@@ -111,7 +111,7 @@ click-left = $LOCKER
 type = internal/fs
 interval = 30
 
-mount-0 = /home
+mount-0 = ${env:POLYBAR_FS_ROOT:/home}
 
 format-mounted = <ramp-capacity><label-mounted>
 
