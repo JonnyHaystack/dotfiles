@@ -40,39 +40,6 @@ set t_Co=256
 set background=dark
 set termguicolors
 
-" Modify base-16 color scheme
-function! s:base16_customize() abort
-  call Base16hi("LineNr",        g:base16_gui03, g:base16_gui00, g:base16_cterm03, g:base16_cterm01, "", "")
-  call Base16hi("SignColumn",    g:base16_gui03, g:base16_gui00, g:base16_cterm03, g:base16_cterm01, "", "")
-  call Base16hi("GitGutterAdd",     g:base16_gui0B, g:base16_gui00, g:base16_cterm0B, g:base16_cterm01, "", "")
-  call Base16hi("GitGutterChange",  g:base16_gui0D, g:base16_gui00, g:base16_cterm0D, g:base16_cterm01, "", "")
-  call Base16hi("GitGutterDelete",  g:base16_gui08, g:base16_gui00, g:base16_cterm08, g:base16_cterm01, "", "")
-  call Base16hi("GitGutterChangeDelete",  g:base16_gui0E, g:base16_gui00, g:base16_cterm0E, g:base16_cterm01, "", "")
-  call Base16hi("SignifySignAdd",     g:base16_gui0B, g:base16_gui00, g:base16_cterm0B, g:base16_cterm01, "", "")
-  call Base16hi("SignifySignChange",  g:base16_gui0D, g:base16_gui00, g:base16_cterm0D, g:base16_cterm01, "", "")
-  call Base16hi("SignifySignDelete",  g:base16_gui08, g:base16_gui00, g:base16_cterm08, g:base16_cterm00, "", "")
-
-  " coc.nvim sign colours
-  call Base16hi("CocErrorSign", g:base16_gui08, "", g:base16_cterm08, "")
-  call Base16hi("CocWarningSign", g:base16_gui09, "", g:base16_cterm09, "")
-  call Base16hi("CocInfoSign", g:base16_gui0A, "", g:base16_cterm0A, "")
-  call Base16hi("CocHintSign", g:base16_gui0D, "", g:base16_cterm0D, "")
-
-  " ALE sign/highlight colours
-  call Base16hi("ALEErrorSign", g:base16_gui08, "", g:base16_cterm08, "")
-  call Base16hi("ALEWarningSign", g:base16_gui0E, "", g:base16_cterm0E, "")
-  call Base16hi("ALEError", g:base16_gui00, g:base16_gui08, g:base16_cterm00, g:base16_cterm08)
-  call Base16hi("ALEWarning", g:base16_gui00, g:base16_gui0E, g:base16_cterm00, g:base16_cterm0E)
-  call Base16hi("ALEStyleError", g:base16_gui00, g:base16_gui0E, g:base16_cterm00, g:base16_cterm0E)
-  call Base16hi("ALEStyleWarning", g:base16_gui00, g:base16_gui0E, g:base16_cterm00, g:base16_cterm0E)
-  call Base16hi("ALEInfo", "", "", "", "")
-endfunction
-
-augroup on_change_colorschema
-  autocmd!
-  autocmd ColorScheme * call s:base16_customize()
-augroup END
-
 " Theme
 colorscheme base16-tomorrow-night
 
