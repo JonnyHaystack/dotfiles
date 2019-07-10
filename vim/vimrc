@@ -34,6 +34,12 @@ set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 
+" Colour compatibility settings
+let base16colorspace=256
+set t_Co=256
+set background=dark
+set termguicolors
+
 " Modify base-16 color scheme
 function! s:base16_customize() abort
   call Base16hi("LineNr",        g:base16_gui03, g:base16_gui00, g:base16_cterm03, g:base16_cterm01, "", "")
@@ -66,6 +72,9 @@ augroup on_change_colorschema
   autocmd!
   autocmd ColorScheme * call s:base16_customize()
 augroup END
+
+" Theme
+colorscheme base16-tomorrow-night
 
 " Toggle paste mode on/off with F2.
 set pastetoggle=<F2>
@@ -253,7 +262,6 @@ endif
 
 " Plugin list
 call plug#begin()
-Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -267,7 +275,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'tmhedberg/simpylfold'
 Plug 'jiangmiao/auto-pairs'
-Plug 'valloric/matchtagalways'
 Plug 'wellle/targets.vim'
 Plug 'lervag/vimtex'
 Plug 'sirver/ultisnips'
@@ -285,12 +292,3 @@ endif
 Plug 'vim-scripts/django.vim'
 Plug 'nikvdp/ejs-syntax'
 call plug#end()
-
-" Colour compatibility settings
-let base16colorspace=256
-set t_Co=256
-set background=dark
-set termguicolors
-
-" Theme
-colorscheme base16-tomorrow-night
