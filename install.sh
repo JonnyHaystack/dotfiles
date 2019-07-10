@@ -40,6 +40,9 @@ ln -sf $HOME/.dotfiles/desktop/* $HOME/.local/share/applications/
 mkdir -p $HOME/.fonts/
 ln -sf $HOME/.dotfiles/fonts/* $HOME/.fonts/
 
+# default .profile
+cp -n $HOME/.dotfiles/profile $HOME/.profile
+
 # vim
 ln -sfn $HOME/.dotfiles/vim $HOME/.vim
 ln -sf $HOME/.dotfiles/vim/vimrc $HOME/.vimrc
