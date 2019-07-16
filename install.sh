@@ -62,7 +62,6 @@ touch $HOME/.bash_aliases
 # zsh
 ln -sf $HOME/.dotfiles/zsh/zshrc $HOME/.zshrc
 cp -n $HOME/.dotfiles/zsh/zshenv $HOME/.zshenv
-touch $HOME/.zsh_local
 touch $HOME/.zsh_aliases
 
 # fzf
