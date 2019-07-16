@@ -29,6 +29,8 @@ ln -sf $HOME/.dotfiles/scripts/rofi-file-browser.sh $HOME/bin/rofi-file-browser
 ln -sf $HOME/.dotfiles/scripts/open_url_in_instance.sh $HOME/bin/qutebrowser
 ln -sf $HOME/.dotfiles/scripts/screenshot.sh $HOME/bin/screenshot
 ln -sf $HOME/.dotfiles/scripts/pynvim_install.sh $HOME/bin/pynvim_install
+ln -sf $HOME/.dotfiles/scripts/pyline.py $HOME/bin/pyline
+ln -sf $HOME/.dotfiles/scripts/try.sh $HOME/bin/try
 
 # desktop shortcuts
 mkdir -p $HOME/.local/share/applications/
@@ -37,6 +39,9 @@ ln -sf $HOME/.dotfiles/desktop/* $HOME/.local/share/applications/
 # fonts
 mkdir -p $HOME/.fonts/
 ln -sf $HOME/.dotfiles/fonts/* $HOME/.fonts/
+
+# default .profile
+cp -n $HOME/.dotfiles/profile $HOME/.profile
 
 # vim
 ln -sfn $HOME/.dotfiles/vim $HOME/.vim
