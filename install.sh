@@ -67,7 +67,7 @@ touch $HOME/.bash_aliases
 # zsh
 ln -sf $HOME/.dotfiles/zsh/zshrc $HOME/.zshrc
 cp -n $HOME/.dotfiles/zsh/zshenv $HOME/.zshenv
-touch $HOME/.zsh_aliases
+cp -n $HOME/.dotfiles/zsh/zsh_aliases $HOME/.zsh_aliases
 
 # fzf
 remove_non_dirlink $HOME/.fzf
