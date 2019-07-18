@@ -71,6 +71,9 @@ inoremap jj <ESC>
 " Use gw to swap current word with the next without changing cursor position.
 :nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>:nohlsearch<CR>
 
+" Re-select last changed text
+noremap gV `[v`]
+
 " Command-T config
 nnoremap <silent> <C-t> :Files<CR>
 
