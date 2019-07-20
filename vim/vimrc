@@ -152,7 +152,7 @@ if has('nvim')
   inoremap <silent><expr> <C-space> coc#refresh()
 
   " Show signature help
-  nnoremap <silent> <C-e> :call CocActionAsync('showSignatureHelp')<CR>
+  nnoremap <silent> <C-h> :call CocActionAsync('showSignatureHelp')<CR>
 
   " Use <Tab> and <S-Tab> to navigate the completion list
   inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
