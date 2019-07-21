@@ -43,6 +43,10 @@ set termguicolors
 " Theme
 colorscheme base16-tomorrow-night
 
+" Backup directory
+set backupdir=~/.vim-backup,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-backup,~/.tmp,~/tmp,/var/tmp,/tmp
+
 " Toggle paste mode on/off with F2.
 set pastetoggle=<F2>
 
