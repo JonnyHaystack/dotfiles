@@ -4,6 +4,8 @@ alias vim=nvim
 alias treesize="du -ha --max-depth=1 ./ | sort -h"
 alias streesize="sudo du -ha --max-depth=1 ./ | sort -h"
 alias diff="diff --color=auto"
+alias tn="tmux new"
+alias ta="tmux a"
 
 if [ -f /etc/os-release ]; then
   . /etc/os-release
