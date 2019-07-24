@@ -49,7 +49,7 @@ config.bind(',h', 'config-cycle -t -p content.host_blocking.enabled')
 
 
 # Tab title format.
-c.tabs.title.format = '{private}{audio}{index}: {title}'
+c.tabs.title.format = '{private}{audio}{index}: {current_title}'
 
 # Editor command
 c.editor.command = [os.environ.get('TERMINAL'), '-e', 'nvim', '{}']
