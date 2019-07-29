@@ -198,7 +198,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $i3_resurrect ~/.virtualenvs/i3-resurrect/bin/python ~/Projects/Python/i3-resurrect/i3_resurrect.py
+set $i3_resurrect i3-resurrect
 
 # Save workspace mode.
 mode "save" {
