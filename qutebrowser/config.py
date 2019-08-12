@@ -48,7 +48,7 @@ config.bind('wd', 'set-cmd-text -s :session-delete ')
 config.bind(',h', 'config-cycle -t -p content.host_blocking.enabled')
 
 
-# Tab title format.
+# Tab title format
 c.tabs.title.format = '{private}{audio}{index}: {current_title}'
 
 # Editor command
@@ -60,12 +60,15 @@ c.tabs.padding = {'top': 3, 'bottom': 3, 'left': 5, 'right': 5}
 # Smooth scrolling
 c.scrolling.smooth = True
 
-# Always restore open sites when qutebrowser is reopened.
+# Always restore open sites when qutebrowser is reopened
 c.auto_save.session = True
 c.session.default_name = 'default'
 
 # Lazy restore
 c.session.lazy_restore = True
+
+# Enable JavaScript clipboard access
+c.content.javascript.can_access_clipboard = False
 
 # Fonts
 c.fonts.completion.category = '12pt monospace'
