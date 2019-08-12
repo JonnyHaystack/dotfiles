@@ -1,0 +1,20 @@
+{
+  "window_command_mappings": [
+    {
+      "class": "Gnome-terminal",
+      "command": "gnome-terminal"
+    },
+    {
+      "class": "Dolphin-emu",
+      "title": "Dolphin NetPlay Setup"
+    }
+  ],
+  "window_swallow_criteria": {
+    "Ario": ["class", "instance"],
+    "TelegramDesktop": ["class", "instance"]
+  },
+  "terminals": [
+    "Gnome-terminal",
+    "Alacritty"
+  ]
+}

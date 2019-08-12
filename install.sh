@@ -104,6 +104,10 @@ mkdir -p $HOME/.i3/
 mkdir -p $HOME/.config/sway/
 ln -sf $HOME/.dotfiles/sway/config $HOME/.config/sway/config
 
+# i3-resurrect
+remove_non_dirlink $HOME/.config/i3-resurrect
+ln -sfn $HOME/.dotfiles/i3-resurrect $HOME/.config/i3-resurrect
+
 # i3status
 mkdir -p $HOME/.config/i3status/
 ln -sf $HOME/.dotfiles/i3status/config $HOME/.config/i3status/config
