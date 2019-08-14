@@ -26,6 +26,7 @@ ln -sf $HOME/.dotfiles/scripts/networkmanager_dmenu \
 ln -sf $HOME/.dotfiles/scripts/rofi-lpass.sh $HOME/bin/rofi-lpass
 ln -sf $HOME/.dotfiles/scripts/rofi-calculator.sh $HOME/bin/rofi-calculator
 ln -sf $HOME/.dotfiles/scripts/rofi-file-browser.sh $HOME/bin/rofi-file-browser
+ln -sf $HOME/.dotfiles/scripts/rofimoji/rofimoji.py $HOME/bin/rofimoji
 ln -sf $HOME/.dotfiles/scripts/open_url_in_instance.sh $HOME/bin/qutebrowser
 ln -sf $HOME/.dotfiles/scripts/screenshot.sh $HOME/bin/screenshot
 ln -sf $HOME/.dotfiles/scripts/pynvim_install.sh $HOME/bin/pynvim_install

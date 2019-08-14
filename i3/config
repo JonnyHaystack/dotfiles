@@ -167,8 +167,6 @@ bindsym $mod+Control+0 move container to workspace 10
 bindsym $mod+Shift+C reload
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Control+R restart
-# Exit i3 (logs you out of your X session)
-bindsym $mod+Control+E exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Resize window (you can also use the mouse for that)
 mode "resize" {
@@ -302,6 +300,9 @@ bindsym $mod+Control+C exec --no-startup-id rofi -show calc -modi calc \
 # Show rofi file browser
 bindsym $mod+Control+F exec --no-startup-id rofi -show File -modi \
   File:~/bin/rofi-file-browser
+
+# Show rofimoji
+bindsym $mod+Control+E exec --no-startup-id ~/bin/rofimoji
 
 # Take screenshot
 bindsym Print exec --no-startup-id ~/bin/screenshot
