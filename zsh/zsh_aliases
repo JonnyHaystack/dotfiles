@@ -1,8 +1,8 @@
 # User defined aliases.
 alias se="sudoedit"
 alias vim=nvim
-alias treesize="du -ha --max-depth=1 ./ | sort -h"
-alias streesize="sudo du -ha --max-depth=1 ./ | sort -h"
+alias treesize="du -had 1 ./ | sort -h"
+alias streesize="sudo du -had 1 ./ | sort -h"
 alias diff="diff --color=auto"
 alias tn="tmux new"
 alias ta="tmux a"
