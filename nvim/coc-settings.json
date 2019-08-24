@@ -6,5 +6,6 @@
       "filetypes": ["c", "cpp", "objc", "objcpp"]
     }
   },
-  "snippets.userSnippetsDirectory": "~/.vim/my-snippets/UltiSnips"
+  "snippets.userSnippetsDirectory": "~/.vim/my-snippets/UltiSnips",
+  "xml.java.home": "/usr/lib/jvm/java-12-openjdk"
 }
