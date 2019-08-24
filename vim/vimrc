@@ -106,15 +106,6 @@ let g:airline_theme='base16_tomorrow'
 " auto-pairs config
 let g:AutoPairsMultilineClose = 0
 
-" UltiSnips config {{{
-
-set runtimepath+=~/.vim/my-snippets/
-let g:UltiSnipsExpandTrigger="<C-k>"
-let g:UltiSnipsJumpForwardTrigger="<C-k>"
-let g:UltiSnipsJumpBackwardTrigger="<nop>"
-
-" }}}
-
 " vimtex config
 let g:vimtex_compiler_progname = 'nvr'
 let g:tex_flavor = 'latex'
@@ -168,6 +159,10 @@ if has('nvim')
   " Close the preview window when completion is done
   autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
+  " Navigate snippet placeholders
+  "let g:coc_snippet_next = '<C-j>'
+  "let g:coc_snippet_prev = '<C-k>'
+
   " Use `[c` and `]c` to navigate diagnostics
   nmap <silent> [c <Plug>(coc-diagnostic-prev)
   nmap <silent> ]c <Plug>(coc-diagnostic-next)
@@ -216,7 +211,7 @@ if has('nvim')
   " Extensions to always install
   let g:coc_global_extensions = [
     \ 'coc-vimtex',
-    \ 'coc-ultisnips',
+    \ 'coc-snippets'
     \ ]
 
   " }}}
@@ -248,7 +243,6 @@ Plug 'tmhedberg/simpylfold'
 Plug 'jiangmiao/auto-pairs'
 Plug 'wellle/targets.vim'
 Plug 'lervag/vimtex'
-Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'lambdalisue/suda.vim'
 if has ('nvim')
