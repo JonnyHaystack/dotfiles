@@ -24,6 +24,7 @@ ln -sf $HOME/.dotfiles/scripts/dmenu-lpass.sh $HOME/bin/dmenu-lpass
 ln -sf $HOME/.dotfiles/scripts/networkmanager_dmenu \
   $HOME/bin/networkmanager_dmenu
 ln -sf $HOME/.dotfiles/scripts/rofi-lpass.sh $HOME/bin/rofi-lpass
+ln -sf $HOME/.dotfiles/scripts/bwmenu $HOME/bin/bwmenu
 ln -sf $HOME/.dotfiles/scripts/rofi-calculator.sh $HOME/bin/rofi-calculator
 ln -sf $HOME/.dotfiles/scripts/rofi-file-browser.sh $HOME/bin/rofi-file-browser
 ln -sf $HOME/.dotfiles/scripts/rofimoji/rofimoji.py $HOME/bin/rofimoji
