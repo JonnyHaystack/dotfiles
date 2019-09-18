@@ -5,6 +5,7 @@ import os
 # Aliases
 c.aliases['fill'] = ('spawn --userscript qute-bitwarden --auto-lock 10800')
 c.aliases['sync'] = 'spawn --userscript bookmarksync'
+c.aliases['json'] = ('spawn --userscript format_json')
 
 # Bindings
 # LastPass fill
