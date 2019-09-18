@@ -3,7 +3,7 @@ import os
 # My configuration
 
 # Aliases
-c.aliases['fill'] = ('spawn --userscript qute-lastpass')
+c.aliases['fill'] = ('spawn --userscript qute-bitwarden --auto-lock 10800')
 c.aliases['sync'] = 'spawn --userscript bookmarksync'
 
 # Bindings
