@@ -58,6 +58,7 @@ ln -sfn $DIR/vim $HOME/.vim
 ln -sf $DIR/vim/vimrc $HOME/.vimrc
 ln -sf $DIR/vrapper/vrapperrc $HOME/.vrapperrc
 ln -sf $DIR/ideavim/ideavimrc $HOME/.ideavimrc
+mkdir -p $HOME/.vim-backup
 
 # neovim
 ln -sfn $DIR/nvim $HOME/.config/nvim
