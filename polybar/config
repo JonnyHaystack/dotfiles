@@ -359,21 +359,21 @@ label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
-ramp-used-0 = %{u#38d638}
-ramp-used-1 = %{u#38d638}
-ramp-used-2 = %{u#38d638}
-ramp-used-3 = %{u#38d638}
-ramp-used-4 = %{u#e6d937}
-ramp-used-5 = %{u#e6d937}
-ramp-used-6 = %{u#e6d937}
-ramp-used-7 = %{u#ff7a00}
-ramp-used-8 = %{u#ff7a00}
-ramp-used-9 = %{u#f44336}
-ramp-0 = %{u#38d638}
-ramp-1 = %{u#38d638}
-ramp-2 = %{u#ff7a00}
-ramp-3 = %{u#ff7a00}
-ramp-4 = %{u#f44336}
+ramp-used-0 = %{u#38d638}%{+u}
+ramp-used-1 = %{u#38d638}%{+u}
+ramp-used-2 = %{u#38d638}%{+u}
+ramp-used-3 = %{u#38d638}%{+u}
+ramp-used-4 = %{u#e6d937}%{+u}
+ramp-used-5 = %{u#e6d937}%{+u}
+ramp-used-6 = %{u#e6d937}%{+u}
+ramp-used-7 = %{u#ff7a00}%{+u}
+ramp-used-8 = %{u#ff7a00}%{+u}
+ramp-used-9 = %{u#f44336}%{+u}
+ramp-0 = %{u#38d638}%{+u}
+ramp-1 = %{u#38d638}%{+u}
+ramp-2 = %{u#ff7a00}%{+u}
+ramp-3 = %{u#ff7a00}%{+u}
+ramp-4 = %{u#f44336}%{+u}
 ramp-foreground = ${colors.foreground-alt}
 
 [settings]
