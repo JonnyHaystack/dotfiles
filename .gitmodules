@@ -1,6 +1,6 @@
 [submodule "fzf"]
         path = fzf
-        url = https://github.com/junegunn/fzf
+        url = https://github.com/junegunn/fzf.git
 [submodule "scripts/rofimoji"]
 	path = scripts/rofimoji
-	url = git@github.com:fdw/rofimoji.git
+	url = https://github.com/fdw/rofimoji.git
