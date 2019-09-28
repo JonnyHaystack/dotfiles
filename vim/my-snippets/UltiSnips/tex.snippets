@@ -436,7 +436,7 @@ endsnippet
 
 priority 100
 context "math()"
-snippet * "cdot" iA
+snippet * "cdot" wA
 \cdot
 endsnippet
 
@@ -534,7 +534,8 @@ snippet cc "subset" Ai
 \subset
 endsnippet
 
-snippet notin "not in " iA
+context "math()"
+snippet notin "not in " wA
 \not\in
 endsnippet
 
@@ -687,6 +688,13 @@ endsnippet
 snippet article "Article" b
 \documentclass[a4paper]{article}
 \usepackage[hidelinks]{hyperref}
+\usepackage[parfill]{parskip}
+\usepackage[left=2cm,
+  top=1.5cm,
+  right=2cm,
+  bottom=2cm,
+  marginparwidth=0cm,
+  marginparsep=0mm]{geometry}
 
 \title{$1}
 \author{$2}
