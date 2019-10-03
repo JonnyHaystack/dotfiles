@@ -126,7 +126,7 @@ ramp-capacity-7 = %{u#38d638}%{+u}
 ramp-capacity-8 = %{u#38d638}%{+u}
 ramp-capacity-9 = %{u#38d638}%{+u}
 
-label-mounted = %{F#666}%{F-} %free%%
+label-mounted = %{F#666}%{F-} %free%
 label-unmounted = 
 label-unmounted-foreground = ${colors.foreground-alt}
 
