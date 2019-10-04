@@ -167,3 +167,9 @@ ln -sf $DIR/zathura/zathurarc $HOME/.config/zathura/zathurarc
 # feh
 remove_non_dirlink $HOME/.config/feh
 ln -sfn $DIR/feh $HOME/.config/feh
+
+# ranger
+mkdir -p $HOME/.config/ranger/
+ln -sf $DIR/ranger/rc.conf $HOME/.config/ranger/rc.conf
+remove_non_dirlink $HOME/.config/ranger/plugins
+ln -sfn $DIR/ranger/plugins $HOME/.config/ranger/plugins

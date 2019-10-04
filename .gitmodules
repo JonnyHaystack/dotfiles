@@ -4,3 +4,6 @@
 [submodule "scripts/rofimoji"]
 	path = scripts/rofimoji
 	url = https://github.com/fdw/rofimoji.git
+[submodule "ranger/plugins/fzf-marks"]
+	path = ranger/plugins/fzf-marks
+	url = https://github.com/laggardkernel/ranger-fzf-marks.git
