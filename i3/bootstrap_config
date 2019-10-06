@@ -1,1 +1,1 @@
-exec_always $HOME/.config/i3/restart.sh
+exec $HOME/.config/i3/restart.sh
