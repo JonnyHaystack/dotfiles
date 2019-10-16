@@ -7,3 +7,6 @@
 [submodule "ranger/plugins/fzf-marks"]
 	path = ranger/plugins/fzf-marks
 	url = https://github.com/laggardkernel/ranger-fzf-marks.git
+[submodule "scripts/diff-so-fancy"]
+	path = scripts/diff-so-fancy
+	url = https://github.com/so-fancy/diff-so-fancy.git

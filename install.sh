@@ -41,6 +41,7 @@ ln -sf $DIR/scripts/pynvim_install.sh $HOME/bin/pynvim_install
 ln -sf $DIR/scripts/pyline.py $HOME/bin/pyline
 ln -sf $DIR/scripts/try.sh $HOME/bin/try
 ln -sf $DIR/scripts/bward $HOME/bin/bward
+ln -sf $DIR/scripts/diff-so-fancy/diff-so-fancy $HOME/bin/diff-so-fancy
 
 # desktop shortcuts
 mkdir -p $HOME/.local/share/applications/
