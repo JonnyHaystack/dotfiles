@@ -3,7 +3,7 @@ alias se="sudoedit"
 alias vim=nvim
 alias treesize="du -had 1 ./ | sort -h"
 alias streesize="sudo du -had 1 ./ | sort -h"
-alias diff="diff --color=auto"
+alias diff="diff -u --color=auto"
 alias tn="tmux new"
 alias ta="tmux a"
 
