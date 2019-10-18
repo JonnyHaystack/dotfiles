@@ -42,6 +42,7 @@ ln -sf $DIR/scripts/pyline.py $HOME/bin/pyline
 ln -sf $DIR/scripts/try.sh $HOME/bin/try
 ln -sf $DIR/scripts/bward $HOME/bin/bward
 ln -sf $DIR/scripts/diff-so-fancy/diff-so-fancy $HOME/bin/diff-so-fancy
+ln -sf $DIR/scripts/byzanz-gui/byzanz-gui $HOME/bin/byzanz-gui
 
 # desktop shortcuts
 mkdir -p $HOME/.local/share/applications/
