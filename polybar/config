@@ -101,6 +101,7 @@ interval = 600
 type = custom/text
 content = 
 click-left = ~/bin/screenshot
+click-right = ~/bin/byzanz-gui
 
 [module/lock]
 type = custom/text
