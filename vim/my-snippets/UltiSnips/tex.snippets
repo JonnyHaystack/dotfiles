@@ -809,6 +809,24 @@ snippet missing "Missing child" w
 child [missing]
 endsnippet
 
+snippet tikztree "Import tikz graph packages" b
+\usepackage{tikz}
+\usetikzlibrary{graphs, graphdrawing}
+\usegdlibrary{trees}
+endsnippet
+
+snippet luatree "LuaTeX tree" b
+\tikz[tree layout]\graph[nodes={draw, rectangle, align=center}] {
+  ${1:root} -> {
+    ${2:first child}
+  }
+};
+endsnippet
+
+snippet lualatex "Use lualatex to compile" b
+% !TEX program = lualatex
+endsnippet
+
 priority 10
 snippet qt "Single quote" wA
 \`$1'
