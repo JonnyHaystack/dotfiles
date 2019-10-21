@@ -193,11 +193,12 @@ snip.rv = subprocess.check_output(['wolframscript', '-code', code])
 `
 endsnippet
 
-snippet == "equals" iA
+context "math()"
+snippet === "equals" iA
 &= $1 \\\\
 endsnippet
 
-snippet != "equals" iA
+snippet != "not equals" iA
 \neq
 endsnippet
 
@@ -816,9 +817,13 @@ snippet tikztree "Import tikz graph packages" b
 endsnippet
 
 snippet luatree "LuaTeX tree" b
-\tikz[tree layout]\graph[nodes={draw, rectangle, align=center}] {
-  ${1:root} -> {
-    ${2:first child}
+\tikz[tree layout]\graph[
+    nodes={draw, rectangle, align=center},
+    level distance=4em,
+    grow=${1:down}
+  ] {
+  ${2:root} -> {
+    ${3:first child}
   }
 };
 endsnippet
