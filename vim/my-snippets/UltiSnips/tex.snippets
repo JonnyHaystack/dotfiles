@@ -817,7 +817,7 @@ snippet tikztree "Import tikz graph packages" b
 endsnippet
 
 snippet luatree "LuaTeX tree" b
-\tikz[tree layout]\graph[
+\tikz[tree layout, >=latex]\graph[
     nodes={draw, rectangle, align=center},
     level distance=4em,
     grow=${1:down}
