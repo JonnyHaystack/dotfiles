@@ -8,7 +8,7 @@ beep() {
 # Get options from user using yad GUI
 OPTIONS=$(yad --form \
   --title "Slip" \
-  --field "Screencast duration in seconds:":NUM 5 \
+  --field "Screencast duration in seconds:":NUM 2 \
   --field "Delay before recording":NUM 2 \
   --field "Save as":CB GIF!Video \
   --field "Upload to":CB Gfycat!Imgur!None \
@@ -29,9 +29,6 @@ UPLOAD_TO=$(awk -F '|' '{print $4}' <<< $OPTIONS)
 # Window geometry
 GEOMETRY=$(slop -f '%wx%h|%x,%y')
  
-# Notify the user of recording time and delay
-notify-send "Slip" "Recording duration set to $DURATION seconds. Recording will start in $DELAY seconds."
-
 if [ "$RECORDING_TYPE" = GIF ]; then
   RECORDING_TYPE='-g'
 elif [ "$RECORDING_TYPE" = Video ]; then
@@ -46,13 +43,17 @@ GIF_DIR="$HOME/Pictures/Slip"
 
 FILENAME="$GIF_DIR/GIFrecord_$TIME.gif"
 
-#Actual recording
+# Delay
+notify-send "Slip" "Recording will start in $DELAY seconds."
 sleep $DELAY
+
+#Actual recording
 slip $RECORDING_TYPE -d $GEOMETRY -u $UPLOAD_TO -f "$FILENAME"
-SLEEP $DELAY
+beep
+notify-send "Slip" "Recording for $DURATION seconds."
+sleep $DURATION
 beep
 slip -q
-beep
  
 # Notify the user of end of recording.
 notify-send "Slip" "Screencast saved to $FILENAME"
