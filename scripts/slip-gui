@@ -28,7 +28,11 @@ CAPTURE_TYPE=$(awk -F '|' '{print $3}' <<< $OPTIONS)
 UPLOAD_TO=$(awk -F '|' '{print $4}' <<< $OPTIONS)
 
 # Window geometry
-GEOMETRY=$(slop -f '%wx%h|%x,%y')
+if [ "$CAPTURE_TYPE" = Screenshot ]; then
+  GEOMETRY=$(slop -f '%wx%h+%x+%y')
+else
+  GEOMETRY=$(slop -f '%wx%h|%x,%y')
+fi
  
 if [ "$CAPTURE_TYPE" = GIF ]; then
   CAPTURE_TYPE='-g'
@@ -51,10 +55,3 @@ sleep $DURATION
 # Stop recording
 beep
 slip -q
- 
-# Notify the user of end of recording.
-if [ "$CAPTURE_TYPE" = '-g' ] || [ "$CAPTURE_TYPE" = '-r' ]; then
-  notify-send "Slip" "Screencast saved to ~/Videos/Slip/"
-elif [ "$CAPTURE_TYPE" = '-s' ]; then
-  notify-send "Slip" "Screenshot saved to ~/Pictures/Slip/"
-fi
