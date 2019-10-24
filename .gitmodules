@@ -13,3 +13,6 @@
 [submodule "scripts/byzanz-gui"]
 	path = scripts/byzanz-gui
 	url = https://github.com/JonnyHaystack/byzanz-gui.git
+[submodule "scripts/slip"]
+	path = scripts/slip
+	url = https://github.com/JonnyHaystack/slip.git
