@@ -44,16 +44,18 @@ GIF_DIR="$HOME/Pictures/Slip"
 FILENAME="$GIF_DIR/GIFrecord_$TIME.gif"
 
 # Delay
-notify-send "Slip" "Recording will start in $DELAY seconds."
 sleep $DELAY
 
 #Actual recording
 slip $RECORDING_TYPE -d $GEOMETRY -u $UPLOAD_TO -f "$FILENAME"
 beep
-notify-send "Slip" "Recording for $DURATION seconds."
+
+# Wait for duration
 sleep $DURATION
+
+# Stop recording
 beep
 slip -q
  
 # Notify the user of end of recording.
-notify-send "Slip" "Screencast saved to $FILENAME"
+notify-send "Slip" "Screencast saved to ~/Videos/Slip/"
