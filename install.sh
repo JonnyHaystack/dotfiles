@@ -43,6 +43,8 @@ ln -sf $DIR/scripts/try.sh $HOME/bin/try
 ln -sf $DIR/scripts/bward $HOME/bin/bward
 ln -sf $DIR/scripts/diff-so-fancy/diff-so-fancy $HOME/bin/diff-so-fancy
 ln -sf $DIR/scripts/byzanz-gui/byzanz-gui $HOME/bin/byzanz-gui
+ln -sf $DIR/scripts/slip/slip $HOME/bin/slip
+ln -sf $DIR/scripts/slip-gui $HOME/bin/slip-gui
 
 # desktop shortcuts
 mkdir -p $HOME/.local/share/applications/
@@ -175,3 +177,7 @@ mkdir -p $HOME/.config/ranger/
 ln -sf $DIR/ranger/rc.conf $HOME/.config/ranger/rc.conf
 remove_non_dirlink $HOME/.config/ranger/plugins
 ln -sfn $DIR/ranger/plugins $HOME/.config/ranger/plugins
+
+# slip
+mkdir -p $HOME/.config/slip
+ln -sf $DIR/slip/config $HOME/.config/slip/config

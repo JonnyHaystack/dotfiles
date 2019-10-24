@@ -1,0 +1,58 @@
+#!/bin/bash
+
+set -e
+beep() {
+  paplay /usr/share/sounds/freedesktop/stereo/message-new-instant.oga &
+}
+
+# Get options from user using yad GUI
+OPTIONS=$(yad --form \
+  --title "Slip" \
+  --field "Screencast duration in seconds:":NUM 5 \
+  --field "Delay before recording":NUM 2 \
+  --field "Save as":CB GIF!Video \
+  --field "Upload to":CB Gfycat!Imgur!None \
+  2>/dev/null)
+
+# Recording duration
+DURATION=$(awk -F '|' '{print $1}' <<< $OPTIONS)
+
+# Delay before starting
+DELAY=$(awk -F '|' '{print $2}' <<< $OPTIONS)
+
+# Save as video or GIF
+RECORDING_TYPE=$(awk -F '|' '{print $3}' <<< $OPTIONS)
+ 
+# Where to upload the recording to
+UPLOAD_TO=$(awk -F '|' '{print $4}' <<< $OPTIONS)
+
+# Window geometry
+GEOMETRY=$(slop -f '%wx%h|%x,%y')
+ 
+# Notify the user of recording time and delay
+notify-send "Slip" "Recording duration set to $DURATION seconds. Recording will start in $DELAY seconds."
+
+if [ "$RECORDING_TYPE" = GIF ]; then
+  RECORDING_TYPE='-g'
+elif [ "$RECORDING_TYPE" = Video ]; then
+  RECORDING_TYPE='-r'
+fi
+
+# Time and date
+TIME=$(date +"%Y-%m-%d_%H%M%S")
+ 
+# GIF folder
+GIF_DIR="$HOME/Pictures/Slip"
+
+FILENAME="$GIF_DIR/GIFrecord_$TIME.gif"
+
+#Actual recording
+sleep $DELAY
+slip $RECORDING_TYPE -d $GEOMETRY -u $UPLOAD_TO -f "$FILENAME"
+SLEEP $DELAY
+beep
+slip -q
+beep
+ 
+# Notify the user of end of recording.
+notify-send "Slip" "Screencast saved to $FILENAME"
