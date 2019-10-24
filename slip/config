@@ -5,7 +5,7 @@
 DMENU_CMD="rofi -dmenu"
 RECORD_PIDFILE="/tmp/slip_record.pid"
 IMAGES="$HOME/Pictures/Slip"
-VIDEOS="$HOME/Video/Slips"
+VIDEOS="$HOME/Videos/Slip"
 DMENU_PROMPT="slip"
 
 # Maximum resolution (either width or height) for gifs.
