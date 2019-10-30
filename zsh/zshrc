@@ -6,8 +6,8 @@ fi
 # History file settings {{{
 
 HISTFILE=~/.histfile
-HISTSIZE=4000
-SAVEHIST=4000
+HISTSIZE=10000
+SAVEHIST=10000
 #HISTORY_IGNORE="(mv *|cp *|ls|ls *|ll|ll *|la|la *|cd|cd *)"
 ZSH_AUTOSUGGEST_HISTORY_IGNORE="?(#c90,)"
 

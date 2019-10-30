@@ -101,6 +101,7 @@ interval = 600
 type = custom/text
 content = 
 click-left = ~/bin/screenshot
+click-right = ~/bin/slip-gui
 
 [module/lock]
 type = custom/text
@@ -115,16 +116,16 @@ mount-0 = ${env:POLYBAR_FS_ROOT:/home}
 
 format-mounted = <ramp-capacity><label-mounted>
 
-ramp-capacity-0 = %{u#f44336}
-ramp-capacity-1 = %{u#e6d937}
-ramp-capacity-2 = %{u#e6d937}
-ramp-capacity-3 = %{u#38d638}
-ramp-capacity-4 = %{u#38d638}
-ramp-capacity-5 = %{u#38d638}
-ramp-capacity-6 = %{u#38d638}
-ramp-capacity-7 = %{u#38d638}
-ramp-capacity-8 = %{u#38d638}
-ramp-capacity-9 = %{u#38d638}
+ramp-capacity-0 = %{u#f44336}%{+u}
+ramp-capacity-1 = %{u#e6d937}%{+u}
+ramp-capacity-2 = %{u#e6d937}%{+u}
+ramp-capacity-3 = %{u#38d638}%{+u}
+ramp-capacity-4 = %{u#38d638}%{+u}
+ramp-capacity-5 = %{u#38d638}%{+u}
+ramp-capacity-6 = %{u#38d638}%{+u}
+ramp-capacity-7 = %{u#38d638}%{+u}
+ramp-capacity-8 = %{u#38d638}%{+u}
+ramp-capacity-9 = %{u#38d638}%{+u}
 
 label-mounted = %{F#666}%{F-} %free%
 label-unmounted = 
@@ -225,16 +226,16 @@ interval = 2
 format = <ramp-load><label>
 label = %{F#666}%{F-} %percentage:2%%
 
-ramp-load-0 = %{u#38d638}
-ramp-load-1 = %{u#38d638}
-ramp-load-2 = %{u#e6d937}
-ramp-load-3 = %{u#e6d937}
-ramp-load-4 = %{u#e6d937}
-ramp-load-5 = %{u#f44336}
-ramp-load-6 = %{u#f44336}
-ramp-load-7 = %{u#f44336}
-ramp-load-8 = %{u#f44336}
-ramp-load-9 = %{u#f44336}
+ramp-load-0 = %{u#38d638}%{+u}
+ramp-load-1 = %{u#38d638}%{+u}
+ramp-load-2 = %{u#e6d937}%{+u}
+ramp-load-3 = %{u#e6d937}%{+u}
+ramp-load-4 = %{u#e6d937}%{+u}
+ramp-load-5 = %{u#f44336}%{+u}
+ramp-load-6 = %{u#f44336}%{+u}
+ramp-load-7 = %{u#f44336}%{+u}
+ramp-load-8 = %{u#f44336}%{+u}
+ramp-load-9 = %{u#f44336}%{+u}
 
 [module/memory]
 type = internal/memory
@@ -242,16 +243,16 @@ interval = 2
 format = <ramp-used><label>
 label = %{F#666} %{F-} %percentage_used%%
 
-ramp-used-0 = %{u#38d638}
-ramp-used-1 = %{u#38d638}
-ramp-used-2 = %{u#38d638}
-ramp-used-3 = %{u#38d638}
-ramp-used-4 = %{u#e6d937}
-ramp-used-5 = %{u#e6d937}
-ramp-used-6 = %{u#e6d937}
-ramp-used-7 = %{u#ff7a00}
-ramp-used-8 = %{u#ff7a00}
-ramp-used-9 = %{u#f44336}
+ramp-used-0 = %{u#38d638}%{+u}
+ramp-used-1 = %{u#38d638}%{+u}
+ramp-used-2 = %{u#38d638}%{+u}
+ramp-used-3 = %{u#38d638}%{+u}
+ramp-used-4 = %{u#e6d937}%{+u}
+ramp-used-5 = %{u#e6d937}%{+u}
+ramp-used-6 = %{u#e6d937}%{+u}
+ramp-used-7 = %{u#ff7a00}%{+u}
+ramp-used-8 = %{u#ff7a00}%{+u}
+ramp-used-9 = %{u#f44336}%{+u}
 
 [module/date]
 type = internal/date
@@ -275,16 +276,16 @@ type = internal/pulseaudio
 format-volume = %{A2:pavucontrol&:}%{A3:~/polybar-scripts/rofi-widgets/widgets/pulseaudio-devices.sh&:}<ramp-volume> <label-volume>%{A}%{A}
 label-volume = %percentage%%
 ramp-volume-foreground = ${colors.foreground-alt}
-ramp-volume-0 = %{u#F44336}
-ramp-volume-1 = %{u#F06B36}
-ramp-volume-2 = %{u#ED9136}
-ramp-volume-3 = %{u#EAB636}
-ramp-volume-4 = %{u#E6D937}
-ramp-volume-5 = %{u#CBE337}
-ramp-volume-6 = %{u#A4E037}
-ramp-volume-7 = %{u#7EDC37}
-ramp-volume-8 = %{u#5AD937}
-ramp-volume-9 = %{u#38D638}
+ramp-volume-0 = %{u#F44336}%{+u}
+ramp-volume-1 = %{u#F06B36}%{+u}
+ramp-volume-2 = %{u#ED9136}%{+u}
+ramp-volume-3 = %{u#EAB636}%{+u}
+ramp-volume-4 = %{u#E6D937}%{+u}
+ramp-volume-5 = %{u#CBE337}%{+u}
+ramp-volume-6 = %{u#A4E037}%{+u}
+ramp-volume-7 = %{u#7EDC37}%{+u}
+ramp-volume-8 = %{u#5AD937}%{+u}
+ramp-volume-9 = %{u#38D638}%{+u}
 
 format-muted = %{A2:pavucontrol&:}%{A3:~/polybar-scripts/rofi-widgets/widgets/pulseaudio-devices.sh&:}<label-muted>%{A}%{A}
 label-muted = 
@@ -359,21 +360,21 @@ label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
-ramp-used-0 = %{u#38d638}
-ramp-used-1 = %{u#38d638}
-ramp-used-2 = %{u#38d638}
-ramp-used-3 = %{u#38d638}
-ramp-used-4 = %{u#e6d937}
-ramp-used-5 = %{u#e6d937}
-ramp-used-6 = %{u#e6d937}
-ramp-used-7 = %{u#ff7a00}
-ramp-used-8 = %{u#ff7a00}
-ramp-used-9 = %{u#f44336}
-ramp-0 = %{u#38d638}
-ramp-1 = %{u#38d638}
-ramp-2 = %{u#ff7a00}
-ramp-3 = %{u#ff7a00}
-ramp-4 = %{u#f44336}
+ramp-used-0 = %{u#38d638}%{+u}
+ramp-used-1 = %{u#38d638}%{+u}
+ramp-used-2 = %{u#38d638}%{+u}
+ramp-used-3 = %{u#38d638}%{+u}
+ramp-used-4 = %{u#e6d937}%{+u}
+ramp-used-5 = %{u#e6d937}%{+u}
+ramp-used-6 = %{u#e6d937}%{+u}
+ramp-used-7 = %{u#ff7a00}%{+u}
+ramp-used-8 = %{u#ff7a00}%{+u}
+ramp-used-9 = %{u#f44336}%{+u}
+ramp-0 = %{u#38d638}%{+u}
+ramp-1 = %{u#38d638}%{+u}
+ramp-2 = %{u#ff7a00}%{+u}
+ramp-3 = %{u#ff7a00}%{+u}
+ramp-4 = %{u#f44336}%{+u}
 ramp-foreground = ${colors.foreground-alt}
 
 [settings]

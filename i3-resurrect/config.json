@@ -11,7 +11,8 @@
   ],
   "window_swallow_criteria": {
     "Ario": ["class", "instance"],
-    "TelegramDesktop": ["class", "instance"]
+    "TelegramDesktop": ["class", "instance"],
+    "discord": ["class", "instance"]
   },
   "terminals": [
     "Gnome-terminal",

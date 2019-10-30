@@ -1,6 +1,18 @@
 [submodule "fzf"]
         path = fzf
-        url = https://github.com/junegunn/fzf
+        url = https://github.com/junegunn/fzf.git
 [submodule "scripts/rofimoji"]
 	path = scripts/rofimoji
-	url = git@github.com:fdw/rofimoji.git
+	url = https://github.com/fdw/rofimoji.git
+[submodule "ranger/plugins/fzf-marks"]
+	path = ranger/plugins/fzf-marks
+	url = https://github.com/laggardkernel/ranger-fzf-marks.git
+[submodule "scripts/diff-so-fancy"]
+	path = scripts/diff-so-fancy
+	url = https://github.com/so-fancy/diff-so-fancy.git
+[submodule "scripts/byzanz-gui"]
+	path = scripts/byzanz-gui
+	url = https://github.com/JonnyHaystack/byzanz-gui.git
+[submodule "scripts/slip"]
+	path = scripts/slip
+	url = https://github.com/JonnyHaystack/slip.git

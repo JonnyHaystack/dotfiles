@@ -45,7 +45,7 @@ snippet beg "begin{} / end{}" bA
 endsnippet
 
 priority 100
-snippet ... "ldots" iA
+snippet "..." "ldots" iA
 \ldots
 endsnippet
 
@@ -105,12 +105,7 @@ snippet iff "iff" Ai
 endsnippet
 
 snippet mk "Math" wA
-$${1}$`!p
-if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
-	snip.rv = ' '
-else:
-	snip.rv = ''
-`$2
+$${1}$ $2
 endsnippet
 
 snippet dm "Math" wA
@@ -198,11 +193,12 @@ snip.rv = subprocess.check_output(['wolframscript', '-code', code])
 `
 endsnippet
 
-snippet == "equals" iA
+context "math()"
+snippet === "equals" iA
 &= $1 \\\\
 endsnippet
 
-snippet != "equals" iA
+snippet != "not equals" iA
 \neq
 endsnippet
 
@@ -441,7 +437,7 @@ endsnippet
 
 priority 100
 context "math()"
-snippet * "cdot" iA
+snippet * "cdot" wA
 \cdot
 endsnippet
 
@@ -539,7 +535,8 @@ snippet cc "subset" Ai
 \subset
 endsnippet
 
-snippet notin "not in " iA
+context "math()"
+snippet notin "not in " wA
 \not\in
 endsnippet
 
@@ -692,6 +689,13 @@ endsnippet
 snippet article "Article" b
 \documentclass[a4paper]{article}
 \usepackage[hidelinks]{hyperref}
+\usepackage[parfill]{parskip}
+\usepackage[left=2cm,
+  top=1.5cm,
+  right=2cm,
+  bottom=2cm,
+  marginparwidth=0cm,
+  marginparsep=0mm]{geometry}
 
 \title{$1}
 \author{$2}
@@ -753,6 +757,14 @@ snippet noindent "No paragraph indentation" b
 \setlength\parindent{0pt}
 endsnippet
 
+snippet autobreak "Automatic line breaks" b
+\usepackage[parfill]{parskip}
+endsnippet
+
+snippet br "Blank line" i
+\bigskip
+endsnippet
+
 snippet listing "Listing" b
 \begin{lstlisting}[language=$1, caption=$2, label=lst:$3]
 $4
@@ -780,12 +792,44 @@ snippet minipage "Minipage"
 \end{minipage}
 endsnippet
 
-snippet autobreak "Automatic line breaks" b
-\usepackage[parfill]{parskip}
+snippet tree "Tree diagram" b
+\begin{tikzpicture}
+  [nodes={draw, rectangle, align=center},
+  sibling distance=12em, level distance=4em, ->,
+  grow=${1:down}]
+  \node{${2:root}}
+    child{node{${3:first child}}};
+\end{tikzpicture}
 endsnippet
 
-snippet br "Blank line" i
-\bigskip
+snippet child "Tree child" w
+child{node{$1}}
+endsnippet
+
+snippet missing "Missing child" w
+child [missing]
+endsnippet
+
+snippet tikztree "Import tikz graph packages" b
+\usepackage{tikz}
+\usetikzlibrary{graphs, graphdrawing}
+\usegdlibrary{trees}
+endsnippet
+
+snippet luatree "LuaTeX tree" b
+\tikz[tree layout, >=latex]\graph[
+    nodes={draw, rectangle, align=center},
+    level distance=4em,
+    grow=${1:down}
+  ] {
+  ${2:root} -> {
+    ${3:first child}
+  }
+};
+endsnippet
+
+snippet lualatex "Use lualatex to compile" b
+% !TEX program = lualatex
 endsnippet
 
 priority 10

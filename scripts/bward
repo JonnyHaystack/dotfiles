@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+AUTO_LOCK=900 # 15 minutes, default for bitwarden apps
+
+# Source helper functions
+DIR="$(dirname "$(readlink -f "$0")")"
+source "$DIR/lib-bwmenu"
+
+case $1 in
+show)
+  get_session_key
+  bw --session "$BW_HASH" list items | jq ".[] | select(.name == \"$2\")"
+  ;;
+esac
