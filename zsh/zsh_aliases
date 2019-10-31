@@ -4,6 +4,8 @@ alias vim=nvim
 alias treesize="du -had 1 ./ | sort -h"
 alias streesize="sudo du -had 1 ./ | sort -h"
 alias diff="diff -u --color=auto"
+alias diffc="diff -u --color=always"
+alias less="less -R"
 # tmux
 alias tn="tmux new"
 alias ta="tmux a"
