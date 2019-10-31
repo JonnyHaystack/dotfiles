@@ -10,6 +10,7 @@ alias ta="tmux a"
 # todo.txt
 alias tdl="todo.sh ls"
 alias tda="todo.sh a"
+alias tdc="todo.sh do"
 
 if [ -f /etc/os-release ]; then
   . /etc/os-release
