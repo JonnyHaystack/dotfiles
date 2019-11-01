@@ -33,7 +33,7 @@ centos)
   alias yr="sudo yum remove"
   alias tmux="tmux -u"
   ;;
-debian|raspbian)
+debian|raspbian|ubuntu)
   alias yi="sudo apt install"
   alias ys="apt search"
   alias yu="sudo apt update && sudo apt upgrade"
