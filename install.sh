@@ -181,3 +181,7 @@ ln -sfn $DIR/ranger/plugins $HOME/.config/ranger/plugins
 # slip
 mkdir -p $HOME/.config/slip
 ln -sf $DIR/slip/config $HOME/.config/slip/config
+
+# todo.txt
+mkdir -p $HOME/.todo
+ln -sf $DIR/todo/config $HOME/.todo/config
