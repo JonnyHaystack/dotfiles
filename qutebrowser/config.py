@@ -68,6 +68,9 @@ c.session.default_name = 'default'
 # Lazy restore
 c.session.lazy_restore = True
 
+# Stop hints from disappearing when page is loading
+c.hints.leave_on_load = False
+
 # Enable JavaScript clipboard access
 c.content.javascript.can_access_clipboard = False
 
