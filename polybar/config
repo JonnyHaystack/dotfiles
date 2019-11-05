@@ -45,7 +45,7 @@ font-8 = siji:pixelsize=13;4
 
 modules-left = i3
 modules-center = mpd
-modules-right = updates-arch-combined vpn-openvpn-isrunning filesystem memory cpu info-pingrtt battery pulseaudio temperature date screenshot lock
+modules-right = updates-arch-combined vpn-openvpn-isrunning info-todotxt filesystem memory cpu info-pingrtt battery pulseaudio temperature date screenshot lock
 
 wm-restack = i3
 
@@ -81,21 +81,26 @@ tray-background = #282C34
 type = custom/script
 width = 1
 
+[module/updates-arch-combined]
+type = custom/script
+exec = ~/polybar-scripts/updates-arch-combined.sh
+interval = 600
+
 [module/vpn-openvpn-isrunning]
 type = custom/script
 exec = ~/polybar-scripts/vpn-openvpn-isrunning.sh
 interval = 5
 click-left = sudo nordvpn stop || sudo nordvpn start
 
+[module/info-todotxt]
+type = custom/script
+exec = ~/polybar-scripts/info-todotxt.sh
+interval = 600
+
 [module/info-pingrtt]
 type = custom/script
 exec = ~/polybar-scripts/info-pingrtt.sh
 interval = 0.5
-
-[module/updates-arch-combined]
-type = custom/script
-exec = ~/polybar-scripts/updates-arch-combined.sh
-interval = 600
 
 [module/screenshot]
 type = custom/text
