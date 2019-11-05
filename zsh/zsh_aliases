@@ -11,6 +11,7 @@ alias tn="tmux new"
 alias ta="tmux a"
 # todo.txt
 alias tdl="todo.sh ls"
+alias tdla="todo.sh lsa"
 alias tda="todo.sh a"
 alias tdc="todo.sh do"
 
