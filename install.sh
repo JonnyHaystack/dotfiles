@@ -45,6 +45,7 @@ ln -sf $DIR/scripts/diff-so-fancy/diff-so-fancy $HOME/bin/diff-so-fancy
 ln -sf $DIR/scripts/byzanz-gui/byzanz-gui $HOME/bin/byzanz-gui
 ln -sf $DIR/scripts/slip/slip $HOME/bin/slip
 ln -sf $DIR/scripts/slip-gui $HOME/bin/slip-gui
+ln -sf $DIR/scripts/nordvpn-toggle.sh $HOME/bin/nordvpn-toggle
 
 # desktop shortcuts
 mkdir -p $HOME/.local/share/applications/
