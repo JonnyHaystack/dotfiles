@@ -15,7 +15,7 @@ export POLBYAR_FS_ROOT=/home
 xset dpms 0 0
 
 # Keyboard configuration
-setxkbmap -layout us,gb -variant dvorak, \
+setxkbmap -layout us,gb -variant dvorak, -option \
   -option grp:alt_shift_toggle \
   -option lv3:lalt_switch -option poundsign:3 \
   -option caps:super
