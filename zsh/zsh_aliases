@@ -4,8 +4,16 @@ alias vim=nvim
 alias treesize="du -had 1 ./ | sort -h"
 alias streesize="sudo du -had 1 ./ | sort -h"
 alias diff="diff -u --color=auto"
+alias diffc="diff -u --color=always"
+alias less="less -R"
+# tmux
 alias tn="tmux new"
 alias ta="tmux a"
+# todo.txt
+alias tdl="todo.sh ls"
+alias tdla="todo.sh lsa"
+alias tda="todo.sh a"
+alias tdc="todo.sh do"
 
 if [ -f /etc/os-release ]; then
   . /etc/os-release
@@ -26,7 +34,7 @@ centos)
   alias yr="sudo yum remove"
   alias tmux="tmux -u"
   ;;
-debian|raspbian)
+debian|raspbian|ubuntu)
   alias yi="sudo apt install"
   alias ys="apt search"
   alias yu="sudo apt update && sudo apt upgrade"

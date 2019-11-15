@@ -12,6 +12,9 @@ do
   workspace_keys[$i]=F$(($i - 10))
 done
 
+# Set $i3_resurrect config variable.
+echo 'set $i3_resurrect i3-resurrect'
+
 for workspace in ${!workspace_keys[@]}
 do
   workspace_key=${workspace_keys[$workspace]}

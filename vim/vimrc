@@ -256,4 +256,5 @@ endif
 " Syntax plugins
 Plug 'vim-scripts/django.vim'
 Plug 'nikvdp/ejs-syntax'
+Plug 'isruslan/vim-es6'
 call plug#end()
