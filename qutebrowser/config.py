@@ -4,7 +4,6 @@ import os
 
 # Aliases
 c.aliases['fill'] = ('spawn --userscript qute-bitwarden --auto-lock 10800')
-c.aliases['sync'] = 'spawn --userscript bookmarksync'
 c.aliases['json'] = ('spawn --userscript format_json')
 
 # Bindings
@@ -26,10 +25,8 @@ config.bind(';p', 'hint links run open -p {hint-url}')
 # dmenu-open
 config.bind(',o', 'spawn --userscript dmenu-open')
 config.bind(',O', 'spawn --userscript dmenu-open --tab')
-# Add/remove bookmark and sync
-config.bind('M', 'bookmark-add ;; spawn --userscript bookmarksync')
-config.bind('cM', 'bookmark-del ;; spawn --userscript bookmarksync ;; '
-        'message-info "Deleted bookmark"')
+# Remove bookmark
+config.bind('cM', 'bookmark-del')
 # Remote add torrent
 torrent_server = os.environ.get('TORRENT_SERVER')
 config.bind('tf', 'hint links spawn --userscript torrent-add '
