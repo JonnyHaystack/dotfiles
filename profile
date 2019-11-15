@@ -16,6 +16,6 @@ xset dpms 0 0
 
 # Keyboard configuration
 setxkbmap -layout us,gb -variant dvorak, \
-  -option grp:alt_shift_toggle \ # Toggle layouts with Alt+Shift
-  -option lv3:lalt_switch -option poundsign:3 \ # Alt+3 to type pound sign
-  -option caps:super # Map caps lock to super
+  -option grp:alt_shift_toggle \
+  -option lv3:lalt_switch -option poundsign:3 \
+  -option caps:super
