@@ -115,10 +115,10 @@ ln -sf $DIR/plasma/set_window_manager.sh \
   $HOME/.config/plasma-workspace/env/set_window_manager.sh
 
 # i3
-remove_non_dirlink $HOME/.config/i3
-ln -sfn $DIR/i3 $HOME/.config/i3
-mkdir -p $HOME/.i3
-ln -sf $DIR/i3/bootstrap_config $HOME/.i3/config
+mkdir -p $HOME/.config/i3
+ln -sfn $DIR/i3/conf.d $HOME/.config/i3/conf.d
+ln -sf $DIR/i3/restart.sh $HOME/.config/i3/restart.sh
+cp -n $DIR/i3/bootstrap_config $HOME/.config/i3/config
 
 # sway
 mkdir -p $HOME/.config/sway/
