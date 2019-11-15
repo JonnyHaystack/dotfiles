@@ -58,6 +58,9 @@ ln -sf $DIR/fonts/* $HOME/.fonts/
 # default .profile
 cp -n $DIR/profile $HOME/.profile
 
+# default keyboard remappings
+cp -n $DIR/Xmodmap $HOME/.Xmodmap
+
 # vim
 ln -sfn $DIR/vim $HOME/.vim
 ln -sf $DIR/vim/vimrc $HOME/.vimrc

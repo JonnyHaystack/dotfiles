@@ -1,0 +1,4 @@
+!! Map Caps and context menu to Super
+clear Lock
+keysym Caps_Lock = Super_L
+keysym Menu = Super_L
