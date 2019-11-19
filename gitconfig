@@ -4,10 +4,11 @@
 [push]
 	default = simple
 [merge]
-	tool = vimdiff
+	tool = fugitive
+[mergetool "fugitive"]
+	cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
 [color]
 	ui = auto
-
 [alias]
         lg = !"git lg1"
         lg1 = !"git lg1-specific --all"
