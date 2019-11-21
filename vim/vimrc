@@ -59,7 +59,7 @@ nnoremap <silent> <leader><S-q> :q!<CR>
 nnoremap <silent> <leader>s :source ~/.vimrc<CR>
 
 " Toggle conceallevel 2/0
-nnoremap coe :setlocal conceallevel=<c-r>=&conceallevel == 0 ? '2' : '0'<cr><cr>
+nnoremap coe :setlocal conceallevel=<c-r>=&conceallevel == 0 ? '2' : '0'<CR><CR>
 nnoremap <silent> <F3> :setlocal spell! spelllang=en_gb<CR>
 
 " Toggle scrolloff
@@ -103,8 +103,9 @@ let g:SimpylFold_docstring_preview=1
 " Airline config
 let g:airline_theme='base16_tomorrow'
 
-" auto-pairs config
-let g:AutoPairsMultilineClose = 0
+" delimitMate config
+let delimitMate_expand_cr = 2
+let delimitMate_nesting_quotes = ['"', '`', "'"]
 
 " vimtex config
 let g:vimtex_compiler_progname = 'nvr'
@@ -131,7 +132,7 @@ if has('nvim')
   " Linter options
   let g:ale_linters = {
     \ 'c': ['cppcheck', 'clangcheck', 'clangtidy', 'cquery'],
-    \ 'python': ['flake8', 'pylint']
+    \ 'python': ['flake8',  'pyflakes', 'pylint']
     \ }
 
   " Fixer options
@@ -153,8 +154,8 @@ if has('nvim')
   inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
   inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-  " Use <cr> to confirm completion
-  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+  " Use <CR> to confirm completion
+  imap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u<Plug>delimitMateCR"
 
   " Close the preview window when completion is done
   autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
@@ -240,7 +241,7 @@ Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'tmhedberg/simpylfold'
-Plug 'jiangmiao/auto-pairs'
+Plug 'Raimondi/delimitMate'
 Plug 'wellle/targets.vim'
 Plug 'lervag/vimtex'
 Plug 'honza/vim-snippets'
