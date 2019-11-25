@@ -25,6 +25,7 @@ mkdir -p $HOME/.config/
 # scripts
 mkdir -p $HOME/scripts/
 mkdir -p $HOME/bin/
+remove_non_dirlink $HOME/scripts/i3
 ln -sfn $DIR/scripts/i3 $HOME/scripts/i3
 ln -sf $DIR/scripts/dmenu-custom.sh $HOME/bin/dmenu-custom
 ln -sf $DIR/scripts/dmenu-lpass.sh $HOME/bin/dmenu-lpass
@@ -63,6 +64,7 @@ cp -n $DIR/profile $HOME/.profile
 cp -n $DIR/Xmodmap $HOME/.Xmodmap
 
 # vim
+remove_non_dirlink $HOME/.vim
 ln -sfn $DIR/vim $HOME/.vim
 ln -sf $DIR/vim/vimrc $HOME/.vimrc
 ln -sf $DIR/vrapper/vrapperrc $HOME/.vrapperrc
@@ -70,7 +72,12 @@ ln -sf $DIR/ideavim/ideavimrc $HOME/.ideavimrc
 mkdir -p $HOME/.vim-backup
 
 # neovim
+remove_non_dirlink $HOME/.config/nvim
 ln -sfn $DIR/nvim $HOME/.config/nvim
+
+# yapf
+remove_non_dirlink $HOME/.config/yapf
+ln -sfn $DIR/yapf $HOME/.config/yapf
 
 # .inputrc
 ln -sf $DIR/inputrc $HOME/.inputrc
@@ -117,6 +124,7 @@ ln -sf $DIR/plasma/set_window_manager.sh \
 
 # i3
 mkdir -p $HOME/.config/i3
+remove_non_dirlink $HOME/.config/i3/conf.d
 ln -sfn $DIR/i3/conf.d $HOME/.config/i3/conf.d
 ln -sf $DIR/i3/restart.sh $HOME/.config/i3/restart.sh
 cp -n $DIR/i3/bootstrap_config $HOME/.config/i3/config
@@ -136,6 +144,7 @@ ln -sf $DIR/i3status/config $HOME/.config/i3status/config
 # polybar
 mkdir -p $HOME/.config/polybar/
 ln -sf $DIR/polybar/* $HOME/.config/polybar/
+remove_non_dirlink $HOME/polybar-scripts
 ln -sfn $DIR/polybar/scripts $HOME/polybar-scripts
 
 # compton
