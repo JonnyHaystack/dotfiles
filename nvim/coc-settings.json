@@ -7,5 +7,6 @@
     }
   },
   "snippets.userSnippetsDirectory": "~/.vim/my-snippets/UltiSnips",
-  "xml.java.home": "/usr/lib/jvm/java-12-openjdk"
+  "python.formatting.provider": "yapf",
+  "xml.java.home": "/usr/lib/jvm/java-8-openjdk"
 }
