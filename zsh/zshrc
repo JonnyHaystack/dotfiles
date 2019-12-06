@@ -66,6 +66,15 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+# Restore X related environment variables for tmux
+restore_x11_vars() {
+  if [[ -z $TMUX ]]; then
+    return 0
+  fi
+
+  eval $(tmux show-environment -s)
+}
+
 # Function for activating python virtual environments
 workon() {
   if (( $# != 1 ))
@@ -80,6 +89,41 @@ workon() {
 if [[ -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" ]]; then
   source "${VIRTUAL_ENV}/bin/activate"
 fi
+
+# }}}
+
+# fzf {{{
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+_gen_fzf_default_opts() {
+
+local color00='#1d1f21'
+local color01='#282a2e'
+local color02='#373b41'
+local color03='#969896'
+local color04='#b4b7b4'
+local color05='#c5c8c6'
+local color06='#e0e0e0'
+local color07='#ffffff'
+local color08='#cc6666'
+local color09='#de935f'
+local color0A='#f0c674'
+local color0B='#b5bd68'
+local color0C='#8abeb7'
+local color0D='#81a2be'
+local color0E='#b294bb'
+local color0F='#a3685a'
+
+export FZF_DEFAULT_OPTS="
+  --color=bg+:$color01,bg:$color00,spinner:$color0C,hl:$color0D
+  --color=fg:$color04,header:$color0D,info:$color0A,pointer:$color0C
+  --color=marker:$color0C,fg+:$color06,prompt:$color0A,hl+:$color0D
+"
+
+}
+
+_gen_fzf_default_opts
 
 # }}}
 
@@ -119,40 +163,5 @@ zplugin light zsh-users/zsh-autosuggestions
 # Syntax highlighting - should be the last plugin loaded!
 zplugin ice lucid atinit"zpcompinit; zpcdreplay"
 zplugin light zdharma/fast-syntax-highlighting
-
-# }}}
-
-# fzf {{{
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-_gen_fzf_default_opts() {
-
-local color00='#1d1f21'
-local color01='#282a2e'
-local color02='#373b41'
-local color03='#969896'
-local color04='#b4b7b4'
-local color05='#c5c8c6'
-local color06='#e0e0e0'
-local color07='#ffffff'
-local color08='#cc6666'
-local color09='#de935f'
-local color0A='#f0c674'
-local color0B='#b5bd68'
-local color0C='#8abeb7'
-local color0D='#81a2be'
-local color0E='#b294bb'
-local color0F='#a3685a'
-
-export FZF_DEFAULT_OPTS="
-  --color=bg+:$color01,bg:$color00,spinner:$color0C,hl:$color0D
-  --color=fg:$color04,header:$color0D,info:$color0A,pointer:$color0C
-  --color=marker:$color0C,fg+:$color06,prompt:$color0A,hl+:$color0D
-"
-
-}
-
-_gen_fzf_default_opts
 
 # }}}
