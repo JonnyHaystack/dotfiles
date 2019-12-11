@@ -284,7 +284,7 @@ split_before_named_assigns=True
 split_complex_comprehension=False
 
 # The penalty for splitting right after the opening bracket.
-split_penalty_after_opening_bracket=300
+split_penalty_after_opening_bracket=500
 
 # The penalty for splitting the line after a unary operator.
 split_penalty_after_unary_operator=10000
