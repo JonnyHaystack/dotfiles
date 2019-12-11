@@ -129,6 +129,8 @@ if has('nvim')
   " View details
   nnoremap <silent> <leader>d :ALEDetail<CR>
 
+  let g:ale_python_auto_pipenv = 1
+
   " Linter options
   let g:ale_linters = {
     \ 'c': ['cppcheck', 'clangcheck', 'clangtidy', 'cquery'],
