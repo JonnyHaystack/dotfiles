@@ -25,6 +25,11 @@ esac
 prompt="Profile"
 profile=$(i3-resurrect ls profiles | awk '{print $2}' | uniq | dmenu -p "$prompt")
 
+if [[ "$profile" == "" ]]; then
+  echo "Invalid profile"
+  exit 1
+fi
+
 prompt="Target"
 target=$(printf "%s\n" ${TARGETS[@]} | dmenu -p $prompt)
 
