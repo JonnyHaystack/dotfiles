@@ -37,6 +37,7 @@ ln -sf $DIR/scripts/rofi-calculator.sh $HOME/bin/rofi-calculator
 ln -sf $DIR/scripts/rofi-file-browser.sh $HOME/bin/rofi-file-browser
 ln -sf $DIR/scripts/rofimoji/rofimoji.py $HOME/bin/rofimoji
 ln -sf $DIR/scripts/rofi-tmux.sh $HOME/bin/rofi-tmux
+ln -sf $DIR/scripts/i3-resurrect-dmenu.sh $HOME/bin/i3-resurrect-dmenu
 ln -sf $DIR/scripts/open_url_in_instance.sh $HOME/bin/qutebrowser
 ln -sf $DIR/scripts/screenshot.sh $HOME/bin/screenshot
 ln -sf $DIR/scripts/pynvim_install.sh $HOME/bin/pynvim_install
