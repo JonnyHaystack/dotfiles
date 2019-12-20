@@ -1,3 +1,4 @@
 rofi.font: Roboto Medium 12
 rofi.theme: ~/.config/rofi/themes/default.rasi
 rofi.modi: ssh,drun
+rofi.kb-screenshot: Alt+s
