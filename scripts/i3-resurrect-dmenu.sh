@@ -23,7 +23,7 @@ case $action in
 esac
 
 prompt="Profile"
-profile=$(i3-resurrect ls profiles | awk '{print $2}' | uniq | dmenu -p "$prompt")
+profile=$(i3-resurrect ls profiles | awk '{$NF=""; $1=""; print $0}' | uniq | dmenu -p "$prompt" | xargs)
 
 if [[ "$profile" == "" ]]; then
   echo "Invalid profile"
