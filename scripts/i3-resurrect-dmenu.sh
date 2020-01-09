@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-ACTIONS=("Save" "Restore" "Delete")
+ACTIONS=("Restore" "Save" "Delete")
 TARGETS=("Programs" "Layout" "Both")
 
 prompt="i3-resurrect"
@@ -8,7 +8,7 @@ action=$(printf "%s\n" ${ACTIONS[@]} | dmenu -p $prompt)
 
 case $action in
   Save)
-    command="i3-resurrect save -p"
+    command="i3-resurrect save --swallow=class,instance,title -p"
     ;;
   Restore)
     command="i3-resurrect restore -p"
