@@ -2,9 +2,10 @@
 
 ACTIONS=("Restore" "Save" "Delete")
 TARGETS=("Programs" "Layout" "Both")
+DMENU="dmenu -i"
 
 prompt="i3-resurrect"
-action=$(printf "%s\n" ${ACTIONS[@]} | dmenu -p $prompt)
+action=$(printf "%s\n" ${ACTIONS[@]} | $DMENU -p $prompt)
 
 case $action in
   Save)
@@ -23,7 +24,7 @@ case $action in
 esac
 
 prompt="Profile"
-profile=$(i3-resurrect ls profiles | awk '{$NF=""; $1=""; print $0}' | uniq | dmenu -p "$prompt" | xargs)
+profile=$(i3-resurrect ls profiles | awk '{$NF=""; $1=""; print $0}' | uniq | $DMENU -p "$prompt" | xargs)
 
 if [[ "$profile" == "" ]]; then
   echo "Invalid profile"
@@ -31,7 +32,7 @@ if [[ "$profile" == "" ]]; then
 fi
 
 prompt="Target"
-target=$(printf "%s\n" ${TARGETS[@]} | dmenu -p $prompt)
+target=$(printf "%s\n" ${TARGETS[@]} | $DMENU -p $prompt)
 
 case $target in
   Programs)
