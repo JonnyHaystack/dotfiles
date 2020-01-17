@@ -187,6 +187,10 @@ ln -sf $DIR/zathura/zathurarc $HOME/.config/zathura/zathurarc
 remove_non_dirlink $HOME/.config/feh
 ln -sfn $DIR/feh $HOME/.config/feh
 
+# htop
+remove_non_dirlink $HOME/.config/htop
+ln -sfn $DIR/htop $HOME/.config/htop
+
 # ranger
 mkdir -p $HOME/.config/ranger/
 ln -sf $DIR/ranger/rc.conf $HOME/.config/ranger/rc.conf
