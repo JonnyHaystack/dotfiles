@@ -72,18 +72,18 @@ c.hints.leave_on_load = False
 c.content.javascript.can_access_clipboard = False
 
 # Fonts
-c.fonts.completion.category = '10pt monospace'
-c.fonts.completion.entry = '10pt monospace'
-c.fonts.debug_console = '10pt monospace'
-c.fonts.downloads = '10pt monospace'
-c.fonts.hints = '10pt monospace'
-c.fonts.keyhint = '9pt monospace'
-c.fonts.messages.error = '10pt monospace'
-c.fonts.messages.info = '8pt monospace'
-c.fonts.messages.warning = '8pt monospace'
-c.fonts.prompts = '11pt sans-serif'
-c.fonts.statusbar = '11pt monospace'
-c.fonts.tabs = '10pt monospace'
+c.fonts.completion.category = '12pt monospace'
+c.fonts.completion.entry = '12pt monospace'
+c.fonts.debug_console = '12pt monospace'
+c.fonts.downloads = '12pt monospace'
+c.fonts.hints = '12pt monospace'
+c.fonts.keyhint = '11pt monospace'
+c.fonts.messages.error = '12pt monospace'
+c.fonts.messages.info = '10pt monospace'
+c.fonts.messages.warning = '10pt monospace'
+c.fonts.prompts = '13pt sans-serif'
+c.fonts.statusbar = '13pt monospace'
+c.fonts.tabs = '12pt monospace'
 
 # HiDPI configuration
 c.qt.highdpi = True
