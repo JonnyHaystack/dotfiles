@@ -3,7 +3,7 @@ vim/plugged/
 vim/spell/
 *.swp
 .mypy_cache
-scripts/i3/img
+scripts/i3/img/cache
 i3/config
 ranger/plugins/__init__.py
 mpv/watch_later/
