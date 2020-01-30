@@ -51,12 +51,31 @@ on_unlock() {
 # Make sure if the script is killed, DPMS settings are still reverted
 trap on_unlock HUP INT TERM
 
+ICON="$FOLDER/img/lock.png"
+
 #i3lock command
-LOCK_BASE_CMD="i3lock -i $OUTPUT_IMG"
+ring=9e5c967f
+inside=00000000
+
+ringver=3841a17f
+insidever=00000000
+
+ringwrong=9f202d7f
+insidewrong=6134327f
+
+keyhl=e77cdb7f
+bshl=582da37f
+
+LOCK_BASE_CMD="i3lock -i '$OUTPUT_IMG' --veriftext='' --wrongtext='' \
+--noinputtext='' --insidecolor=$inside --ringcolor='$ring' \
+--insidevercolor='$insidever' --ringvercolor='$ringver' \
+--insidewrongcolor='$insidewrong' --ringwrongcolor='$ringwrong' \
+--keyhlcolor='$keyhl' --bshlcolor='$bshl' --linecolor=00000000 \
+--separatorcolor=0000007f --radius 130 --ring-width 3"
 if [ "$lock_args" ]; then
         LOCK_ARGS="$lock_args"  # Passed command
 else
-        LOCK_ARGS="-f -t -e -n"  # Default
+        LOCK_ARGS="-e -n"  # Default
 fi
 LOCK_CMD="on_lock; $LOCK_BASE_CMD $LOCK_ARGS; on_unlock"
 
@@ -83,14 +102,20 @@ do
     if ! [ -e $CACHE_IMG ]
     then
 	# Create image for that screensize
-        eval convert '$BKG_IMG' '-resize' '${SCREEN_WIDTH}X${SCREEN_HEIGHT}^' '-gravity' 'Center' '-crop' '${SCREEN_WIDTH}X${SCREEN_HEIGHT}+0+0' '+repage' '$CACHE_IMG'
+        convert "$BKG_IMG" -resize "${SCREEN_WIDTH}X${SCREEN_HEIGHT}^" -gravity "Center" -crop "${SCREEN_WIDTH}X${SCREEN_HEIGHT}+0+0" +repage "$CACHE_IMG"
+        # Place lock icon at centre of each screen
+        convert "$CACHE_IMG" -type TrueColor "$ICON" -gravity center -composite -matte "$CACHE_IMG"
     fi
 
     # Decide size of output image
-    if (( $OUTPUT_IMG_WIDTH < $SCREEN_WIDTH+$SCREEN_X )); then OUTPUT_IMG_WIDTH=$(($SCREEN_WIDTH+$SCREEN_X)); fi;
-    if (( $OUTPUT_IMG_HEIGHT < $SCREEN_HEIGHT+$SCREEN_Y )); then OUTPUT_IMG_HEIGHT=$(( $SCREEN_HEIGHT+$SCREEN_Y )); fi;
+    if (( $OUTPUT_IMG_WIDTH < $SCREEN_WIDTH+$SCREEN_X )); then
+      OUTPUT_IMG_WIDTH=$(($SCREEN_WIDTH+$SCREEN_X));
+    fi;
+    if (( $OUTPUT_IMG_HEIGHT < $SCREEN_HEIGHT+$SCREEN_Y )); then
+      OUTPUT_IMG_HEIGHT=$(( $SCREEN_HEIGHT+$SCREEN_Y ));
+    fi;
 
-    PARAMS="$PARAMS $CACHE_IMG -geometry +$SCREEN_X+$SCREEN_Y -composite "
+    PARAMS="$PARAMS -type TrueColor $CACHE_IMG -geometry +$SCREEN_X+$SCREEN_Y -composite "
   fi
 done <<<"`xrandr`"
 
