@@ -118,6 +118,10 @@ ln -sfn $DIR/kitty $HOME/.config/kitty
 # git
 ln -sf $DIR/gitconfig $HOME/.gitconfig
 
+# qt5ct
+remove_non_dirlink $HOME/.config/qt5ct
+ln -sfn $DIR/qt5ct $HOME/.config/qt5ct
+
 # plasma
 mkdir -p $HOME/.config/plasma-workspace/env/
 ln -sf $DIR/plasma/set_window_manager.sh \
