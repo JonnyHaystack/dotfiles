@@ -148,9 +148,9 @@ ln -sf $DIR/polybar/* $HOME/.config/polybar/
 remove_non_dirlink $HOME/polybar-scripts
 ln -sfn $DIR/polybar/scripts $HOME/polybar-scripts
 
-# compton
-mkdir -p $HOME/.config/compton/
-ln -sf $DIR/compton/compton.conf $HOME/.config/compton/compton.conf
+# picom
+mkdir -p $HOME/.config/picom/
+ln -sf $DIR/picom/picom.conf $HOME/.config/picom/picom.conf
 
 # dunst
 mkdir -p $HOME/.config/dunst/
