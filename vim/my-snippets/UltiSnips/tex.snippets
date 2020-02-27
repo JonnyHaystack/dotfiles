@@ -193,10 +193,10 @@ snip.rv = subprocess.check_output(['wolframscript', '-code', code])
 `
 endsnippet
 
-context "math()"
-snippet === "equals" iA
-&= $1 \\\\
-endsnippet
+#context "math()"
+#snippet === "equals" iA
+#&= $1 \\\\
+#endsnippet
 
 snippet != "not equals" iA
 \neq
@@ -545,6 +545,7 @@ snippet inn "in " iA
 \in
 endsnippet
 
+context "math()"
 snippet NN "n" iA
 \N
 endsnippet
@@ -569,18 +570,22 @@ snippet nnn "bigcap" iA
 \bigcap_{${1:i \in ${2: I}}} $0
 endsnippet
 
+context "math()"
 snippet OO "emptyset" iA
 \O
 endsnippet
 
+context "math()"
 snippet RR "real" iA
 \R
 endsnippet
 
+context "math()"
 snippet QQ "Q" iA
 \Q
 endsnippet
 
+context "math()"
 snippet ZZ "Z" iA
 \Z
 endsnippet
