@@ -14,5 +14,5 @@
   },
   "snippets.userSnippetsDirectory": "~/.vim/my-snippets/UltiSnips",
   "python.formatting.provider": "yapf",
-  "xml.java.home": "/usr/lib/jvm/java-8-openjdk"
+  "java.home": "/usr/lib/jvm/java-8-openjdk"
 }
