@@ -3,7 +3,7 @@ import os
 # My configuration
 
 # Aliases
-c.aliases['fill'] = ('spawn --userscript qute-bitwarden --auto-lock 10800')
+c.aliases['fill'] = ('spawn --userscript qute-bitwarden -t --auto-lock 10800')
 c.aliases['json'] = ('spawn --userscript format_json')
 
 # Bindings
