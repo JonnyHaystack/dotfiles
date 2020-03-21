@@ -260,4 +260,5 @@ endif
 Plug 'vim-scripts/django.vim'
 Plug 'nikvdp/ejs-syntax'
 Plug 'isruslan/vim-es6'
+Plug 'glench/vim-jinja2-syntax'
 call plug#end()
