@@ -1,0 +1,20 @@
+#!/usr/bin/expect
+
+set switch_ip "10.0.1.5"
+set user "admin"
+set password [lindex $argv 0]
+set timeout 1
+spawn ssh $user@$switch_ip
+match_max 100000
+expect -exact "\r$user@$switch_ip's password: "
+send -- "$password\r"
+expect "GS1900# "
+send -- "show mac address-table\r"
+expect -exact "--More--"
+send -- "j"
+expect -exact "GS1900# "
+send -- "exit\r"
+expect -exact "exit\r
+GS1900> "
+send -- "exit\r"
+expect eof

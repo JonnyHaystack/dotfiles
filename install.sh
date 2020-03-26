@@ -49,6 +49,8 @@ ln -sf $DIR/scripts/byzanz-gui/byzanz-gui $HOME/bin/byzanz-gui
 ln -sf $DIR/scripts/slip/slip $HOME/bin/slip
 ln -sf $DIR/scripts/slip-gui $HOME/bin/slip-gui
 ln -sf $DIR/scripts/nordvpn-toggle.sh $HOME/bin/nordvpn-toggle
+ln -sf $DIR/scripts/getmacs.exp $HOME/bin/getmacs
+ln -sf $DIR/scripts/getport.sh $HOME/bin/getport
 
 # desktop shortcuts
 mkdir -p $HOME/.local/share/applications/
