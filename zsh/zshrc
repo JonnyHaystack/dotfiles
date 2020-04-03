@@ -92,6 +92,14 @@ fi
 
 # }}}
 
+# Standard PATH modifications {{{
+
+if [[ $PATH != *"/usr/sbin"* ]]; then
+  export PATH=$PATH:/usr/sbin
+fi
+
+# }}}
+
 # fzf {{{
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
