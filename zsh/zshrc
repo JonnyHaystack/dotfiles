@@ -90,6 +90,54 @@ if [[ -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" ]]; then
   source "${VIRTUAL_ENV}/bin/activate"
 fi
 
+# Some general aliases
+alias se="sudoedit"
+alias treesize="du -had 1 ./ | sort -h"
+alias streesize="sudo du -had 1 ./ | sort -h"
+alias diff="diff -u --color=auto"
+alias diffc="diff -u --color=always"
+alias less="less -R"
+
+# tmux aliases
+alias tn="tmux new"
+alias ta="tmux a"
+
+# todo.txt aliases
+alias tdl="todo.sh ls"
+alias tdla="todo.sh lsa"
+alias tda="todo.sh a"
+alias tdc="todo.sh do"
+
+# }}}
+
+# Package manager aliases {{{
+
+if [ -f /etc/os-release ]; then
+  . /etc/os-release
+  OS=$ID
+fi
+
+case $OS in
+arch)
+  alias yi="sudo pacman -S"
+  alias ys="pacman -Ss"
+  alias yu="sudo pacman -Syu"
+  alias yr="sudo pacman -Rs"
+  ;;
+centos)
+  alias yi="sudo yum install"
+  alias ys="yum search"
+  alias yu="sudo yum update"
+  alias yr="sudo yum remove"
+  alias tmux="tmux -u"
+  ;;
+debian|raspbian|ubuntu)
+  alias yi="sudo apt install"
+  alias ys="apt search"
+  alias yu="sudo apt update && sudo apt upgrade"
+  alias yr="sudo apt remove"
+esac
+
 # }}}
 
 # Standard PATH modifications {{{
