@@ -13,7 +13,7 @@
     }
   },
   "snippets.userSnippetsDirectory": "~/.vim/my-snippets/UltiSnips",
-  "python.formatting.provider": "yapf",
+  "python.formatting.provider": "black",
   "python.formatting.blackArgs": ["-l", "79"],
   "java.home": "/usr/lib/jvm/java-8-openjdk"
 }
