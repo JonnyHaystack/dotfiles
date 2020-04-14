@@ -9,7 +9,7 @@ export QT_QPA_PLATFORMTHEME=gtk2
 export LOCKER="$HOME/scripts/i3/lock -i $HOME/Pictures/wallpaper.png"
 export TORRENT_SERVER="10.0.1.102:9091"
 export CPU_THERMAL_ZONE=
-export POLBYAR_FS_ROOT=/home
+export POLYBAR_FS_ROOT=/home
 
 # Make sure dpms blanking is disabled on login
 xset dpms 0 0
