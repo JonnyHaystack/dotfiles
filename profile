@@ -7,7 +7,7 @@ export EDITOR=nvim
 export WINIT_HIDPI_FACTOR=1
 export QT_QPA_PLATFORMTHEME=gtk2
 export LOCKER="$HOME/scripts/i3/lock -i $HOME/Pictures/wallpaper.png"
-export TORRENT_SERVER="192.168.1.102:9091"
+export TORRENT_SERVER="10.0.1.102:9091"
 export CPU_THERMAL_ZONE=
 export POLBYAR_FS_ROOT=/home
 
