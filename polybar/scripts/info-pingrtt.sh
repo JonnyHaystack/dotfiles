@@ -1,6 +1,6 @@
 #!/bin/sh
 
-HOST=google.com
+HOST=1.1.1.1
 
 if ! ping=$(ping -n -c 1 -W 1 $HOST 2> /dev/null); then
     echo "%{u#f44336}%{+u}%{F#666}%{F-}  ms"
