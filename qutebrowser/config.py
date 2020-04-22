@@ -3,64 +3,108 @@ import os
 # My configuration
 
 # Aliases
-c.aliases['fill'] = ('spawn --userscript qute-bitwarden -t --auto-lock 10800')
-c.aliases['json'] = ('spawn --userscript format_json')
+c.aliases["fill"] = "spawn --userscript qute-bitwarden -t --auto-lock 10800"
+c.aliases["json"] = "spawn --userscript format_json"
+c.aliases["readable"] = "spawn --userscript readability"
 
 # Bindings
-# LastPass fill
-config.bind('<Ctrl-F>', 'fill')
-config.bind('<Ctrl-F>', 'fill', mode='insert')
+# Password fill
+config.bind("<Ctrl-F>", "fill")
+config.bind("<Ctrl-F>", "fill", mode="insert")
 # mpv
-config.bind('<Alt-M>', 'spawn mpv --input-ipc-server=/tmp/mpvsocket {url}')
-config.bind(';m', 'hint links spawn mpv --input-ipc-server=/tmp/mpvsocket '
-        '{hint-url}')
-config.bind(';M', 'hint --rapid links userscript mpv-playlist')
+config.bind("<Alt-M>", "spawn mpv --input-ipc-server=/tmp/mpvsocket {url}")
+config.bind(
+    ";m",
+    "hint links spawn mpv --input-ipc-server=/tmp/mpvsocket " "{hint-url}",
+)
+config.bind(";M", "hint --rapid links userscript mpv-playlist")
 # Give tab
-config.bind('gD', 'set-cmd-text -s :tab-give')
+config.bind("gD", "set-cmd-text -s :tab-give")
 # Open in private window
 # Ctrl+Shift+N opens a private window on homepage
-config.bind(',p', 'set-cmd-text -s :open -p')
+config.bind(",p", "set-cmd-text -s :open -p")
 # Open link in private tab with ;p
-config.bind(';p', 'hint links run open -p {hint-url}')
+config.bind(";p", "hint links run open -p {hint-url}")
 # dmenu-open
-config.bind(',o', 'spawn --userscript dmenu-open')
-config.bind(',O', 'spawn --userscript dmenu-open --tab')
+config.bind(",o", "spawn --userscript dmenu-open")
+config.bind(",O", "spawn --userscript dmenu-open --tab")
 # Remove bookmark
-config.bind('cM', 'bookmark-del')
+config.bind("cM", "bookmark-del")
 # Remote add torrent
-torrent_server = os.environ.get('TORRENT_SERVER')
-config.bind('tf', 'hint links spawn --userscript torrent-add '
-        '%s {hint-url}' % torrent_server)
-config.bind(';T', 'hint --rapid links spawn --userscript torrent-add '
-        '%s {hint-url}' % torrent_server)
+torrent_server = os.environ.get("TORRENT_SERVER")
+config.bind(
+    "tf",
+    "hint links spawn --userscript torrent-add %s {hint-url}" % torrent_server,
+)
+config.bind(
+    ";T",
+    "hint --rapid links spawn --userscript torrent-add "
+    "%s {hint-url}" % torrent_server,
+)
 # Open selected form field in editor
-config.bind('<Ctrl-I>', 'open-editor')
-config.bind('<Ctrl-I>', 'open-editor', mode='insert')
+config.bind("<Ctrl-I>", "open-editor")
+config.bind("<Ctrl-I>", "open-editor", mode="insert")
 # Save current window as
-config.bind('ws', 'set-cmd-text -s :session-save -o')
+config.bind("ws", "set-cmd-text -s :session-save -o")
 # Restore window
-config.bind('wr', 'set-cmd-text -s :session-load -t')
+config.bind("wr", "set-cmd-text -s :session-load -t")
 # Delete saved session
-config.bind('wd', 'set-cmd-text -s :session-delete ')
-# Toggle adblock
-config.bind(',h', 'config-cycle -t -p content.host_blocking.enabled')
+config.bind("wd", "set-cmd-text -s :session-delete ")
 
+"""Per-site toggles"""
+per_site_toggles = {
+    "n": "content.notifications true false ask",
+    "m": "content.mute",
+    "g": "content.geolocation, true false ask",
+    "v": "content.media_capture true false ask",
+    "j": "content.javascript.enabled",
+    "s": "content.ssl_strict true false ask",
+}
+toggle_url_patterns = {
+    "u": "{url}",
+    "h": "*://{url:host}/*",
+    "H": "*://*.{url:host}/*",
+}
+for option_key, option in per_site_toggles.items():
+    for pattern_key, pattern in toggle_url_patterns.items():
+        config.bind(
+            f"t{option_key.lower()}{pattern_key}",
+            f"config-cycle -p -t -u {pattern} {option}",
+        )
+        config.bind(
+            f"t{option_key.upper()}{pattern_key}",
+            f"config-cycle -p -u {pattern} {option}",
+        )
+
+# Toggle 3rd party cookies
+config.bind(",c", "config-cycle -t -p content.cookies.accept all no-3rdparty")
+# Toggle adblock
+config.bind(",h", "config-cycle -t -p content.host_blocking.enabled")
+# Toggle TOR proxy
+config.bind(
+    ",t", "config-cycle -t -p content.proxy system socks://localhost:9050/"
+)
+
+# Request new TOR identity
+config.bind(
+    ",nt", "spawn --userscript tor_identity conjoinedshelvingprominentstardom"
+)
 
 # Tab title format
-c.tabs.title.format = '{private}{audio}{index}: {current_title}'
+c.tabs.title.format = "{private}{audio}{index}: {perc}{current_title}"
 
 # Editor command
-c.editor.command = [os.environ.get('TERMINAL'), '-e', 'nvim', '{}']
+c.editor.command = [os.environ.get("TERMINAL"), "-e", "nvim", "{}"]
 
 # Tab title padding
-c.tabs.padding = {'top': 3, 'bottom': 3, 'left': 5, 'right': 5}
+c.tabs.padding = {"top": 3, "bottom": 3, "left": 5, "right": 5}
 
 # Smooth scrolling
 c.scrolling.smooth = True
 
 # Always restore open sites when qutebrowser is reopened
 c.auto_save.session = True
-c.session.default_name = 'default'
+c.session.default_name = "default"
 
 # Lazy restore
 c.session.lazy_restore = True
@@ -68,32 +112,36 @@ c.session.lazy_restore = True
 # Stop hints from disappearing when page is loading
 c.hints.leave_on_load = False
 
-# Enable JavaScript clipboard access
+# Privacy settings
 c.content.javascript.can_access_clipboard = False
+c.content.autoplay = False
+c.content.cookies.accept = "no-3rdparty"
 
 # Fonts
-c.fonts.completion.category = '10pt monospace'
-c.fonts.completion.entry = '10pt monospace'
-c.fonts.debug_console = '10pt monospace'
-c.fonts.downloads = '10pt monospace'
-c.fonts.hints = '10pt monospace'
-c.fonts.keyhint = '9pt monospace'
-c.fonts.messages.error = '10pt monospace'
-c.fonts.messages.info = '8pt monospace'
-c.fonts.messages.warning = '8pt monospace'
-c.fonts.prompts = '11pt sans-serif'
-c.fonts.statusbar = '11pt monospace'
-c.fonts.tabs = '10pt monospace'
+c.fonts.completion.category = "10pt monospace"
+c.fonts.completion.entry = "10pt monospace"
+c.fonts.debug_console = "10pt monospace"
+c.fonts.downloads = "10pt monospace"
+c.fonts.hints = "10pt monospace"
+c.fonts.keyhint = "9pt monospace"
+c.fonts.messages.error = "10pt monospace"
+c.fonts.messages.info = "8pt monospace"
+c.fonts.messages.warning = "8pt monospace"
+c.fonts.prompts = "11pt sans-serif"
+c.fonts.statusbar = "11pt monospace"
+c.fonts.tabs = "10pt monospace"
 
 # HiDPI configuration
 c.qt.highdpi = True
 # c.zoom.default = 65
 
 # Dvorak hint characters
-c.hints.chars = 'aoeuidhtn'
+c.hints.chars = "aoeuidhtn"
 
 # Enable DRM content (qt5-webengine-widevine from AUR must be installed)
-c.qt.args = ['ppapi-widevine-path=/usr/lib/qt/plugins/ppapi/libwidevinecdmadapter.so']
+c.qt.args = [
+    "ppapi-widevine-path=/usr/lib/qt/plugins/ppapi/libwidevinecdmadapter.so"
+]
 
 
 # base16-qutebrowser (https://github.com/theova/base16-qutebrowser)
