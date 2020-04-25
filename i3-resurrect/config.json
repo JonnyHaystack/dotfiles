@@ -7,6 +7,9 @@
     {
       "class": "Dolphin-emu",
       "title": "Dolphin NetPlay Setup"
+    },
+    {
+      "class": "firefox"
     }
   ],
   "window_swallow_criteria": {
