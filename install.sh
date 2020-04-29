@@ -124,6 +124,9 @@ ln -sf $DIR/gitconfig $HOME/.gitconfig
 remove_non_dirlink $HOME/.config/qt5ct
 ln -sfn $DIR/qt5ct $HOME/.config/qt5ct
 
+# gtk-3.0 (lxappearance)
+ln -sf "$DIR/gtk-3.0/settings.ini" "$HOME/.config/gtk-3.0/settings.ini"
+
 # plasma
 mkdir -p $HOME/.config/plasma-workspace/env/
 ln -sf $DIR/plasma/set_window_manager.sh \
