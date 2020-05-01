@@ -51,6 +51,7 @@ ln -sf $DIR/scripts/slip-gui $HOME/bin/slip-gui
 ln -sf $DIR/scripts/nordvpn-toggle.sh $HOME/bin/nordvpn-toggle
 ln -sf $DIR/scripts/getmacs.exp $HOME/bin/getmacs
 ln -sf $DIR/scripts/getport.sh $HOME/bin/getport
+ln -sf $DIR/scripts/wcpdf.sh $HOME/bin/wcpdf
 
 # desktop shortcuts
 mkdir -p $HOME/.local/share/applications/
