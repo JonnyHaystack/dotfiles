@@ -246,6 +246,7 @@ Plug 'tmhedberg/simpylfold'
 Plug 'Raimondi/delimitMate'
 Plug 'wellle/targets.vim'
 Plug 'lervag/vimtex'
+Plug 'rhysd/vim-grammarous'
 Plug 'honza/vim-snippets'
 Plug 'lambdalisue/suda.vim'
 if has ('nvim')
