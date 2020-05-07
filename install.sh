@@ -35,7 +35,7 @@ ln -sf $DIR/scripts/rofi-lpass.sh $HOME/bin/rofi-lpass
 ln -sf $DIR/scripts/bwmenu $HOME/bin/bwmenu
 ln -sf $DIR/scripts/rofi-calculator.sh $HOME/bin/rofi-calculator
 ln -sf $DIR/scripts/rofi-file-browser.sh $HOME/bin/rofi-file-browser
-ln -sf $DIR/scripts/rofimoji/rofimoji.py $HOME/bin/rofimoji
+ln -sf $DIR/scripts/rofimoji/picker/rofimoji.py $HOME/bin/rofimoji
 ln -sf $DIR/scripts/rofi-tmux.sh $HOME/bin/rofi-tmux
 ln -sf $DIR/scripts/i3-resurrect-dmenu.sh $HOME/bin/i3-resurrect-dmenu
 ln -sf $DIR/scripts/open_url_in_instance.sh $HOME/bin/qutebrowser
