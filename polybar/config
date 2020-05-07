@@ -33,15 +33,11 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = NotoSans-Regular:size=13;3
-font-1 = unifont:size=11;0
-font-2 = FontAwesome5FreeRegular:size=13;3
-font-3 = FontAwesome5FreeBrands:size=13;3
-font-4 = FontAwesome5FreeSolid:size=13;3
-font-5 = NotoSans-Regular:size=13;2
-font-6 = MaterialIcons:size=15;2
-font-7 = Termsynu:size=13:antialias=false;3
-font-8 = siji:pixelsize=13;4
+font-0 = "Noto Sans Regular:size=13;3"
+font-1 = "Noto Sans Regular:size=13;2"
+font-2 = "FontAwesome5FreeRegular:size=13;3"
+font-3 = "FontAwesome5FreeBrands:size=13;3"
+font-4 = "FontAwesome5FreeSolid:size=13;3"
 
 modules-left = i3
 modules-center = mpd
@@ -208,9 +204,9 @@ bar-progress-width = 6
 bar-progress-indicator = |
 bar-progress-fill = ─
 bar-progress-empty = ─
-bar-progress-indicator-font = 8
-bar-progress-fill-font = 8
-bar-progress-empty-font = 8
+bar-progress-indicator-font = 2
+bar-progress-fill-font = 2
+bar-progress-empty-font = 2
 toggle-on-foreground = ${colors.foreground}
 toggle-off-foreground = ${colors.foreground-alt}
 icon-prev-foreground = ${colors.foreground}
@@ -310,11 +306,11 @@ bar-volume-foreground-8 = #5AD937
 bar-volume-foreground-9 = #38D638
 bar-volume-gradient = false
 bar-volume-indicator = |
-bar-volume-indicator-font = 8
+bar-volume-indicator-font = 2
 bar-volume-fill = ─
-bar-volume-fill-font = 8
+bar-volume-fill-font = 2
 bar-volume-empty = ─
-bar-volume-empty-font = 8
+bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
