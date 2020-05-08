@@ -10,3 +10,6 @@
 [submodule "scripts/slip"]
 	path = scripts/slip
 	url = https://github.com/JonnyHaystack/slip.git
+[submodule "scripts/rofi-applets"]
+	path = scripts/rofi-applets
+	url = https://github.com/adi1090x/rofi
