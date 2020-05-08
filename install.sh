@@ -31,9 +31,7 @@ ln -sf $DIR/lib $HOME/lib
 
 remove_non_dirlink $HOME/scripts
 ln -sfn $DIR/scripts $HOME/scripts
-ln -sf $DIR/scripts/rofimoji/picker/rofimoji.py $HOME/bin/rofimoji
 ln -sf $DIR/scripts/diff-so-fancy/diff-so-fancy $HOME/bin/diff-so-fancy
-ln -sf $DIR/scripts/byzanz-gui/byzanz-gui $HOME/bin/byzanz-gui
 ln -sf $DIR/scripts/slip/slip $HOME/bin/slip
 
 # desktop shortcuts
