@@ -27,8 +27,7 @@ ROFI_OPTIONS=()
 DEDUP_MARK="(+)"
 
 # Source helper functions
-DIR="$(dirname "$(readlink -f "$0")")"
-source "$DIR/lib-bwmenu"
+source "~/lib/lib-bwmenu"
 
 # source the hash file to gain access to the BitWarden CLI
 # Pre fetch all the items

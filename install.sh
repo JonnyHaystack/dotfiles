@@ -26,6 +26,9 @@ mkdir -p $HOME/.config/
 mkdir -p $HOME/bin/
 ln -sf $DIR/bin/* $HOME/bin/
 
+remove_non_dirlink $HOME/lib
+ln -sf $DIR/lib $HOME/lib
+
 remove_non_dirlink $HOME/scripts
 ln -sfn $DIR/scripts $HOME/scripts
 ln -sf $DIR/scripts/rofimoji/picker/rofimoji.py $HOME/bin/rofimoji
