@@ -24,7 +24,7 @@ mkdir -p $HOME/.config/
 
 # scripts
 mkdir -p $HOME/bin/
-ln -sf $DIR/* $HOME/bin/
+ln -sf $DIR/bin/* $HOME/bin/
 
 remove_non_dirlink $HOME/scripts
 ln -sfn $DIR/scripts $HOME/scripts
