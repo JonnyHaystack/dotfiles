@@ -1,8 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 shopt -s nullglob
 for g in /sys/kernel/iommu_groups/*; do
     echo "IOMMU Group ${g##*/}:"
     for d in $g/devices/*; do
+        if [[ -e "$d"/reset ]]; then
+          echo -n "[RESET]"
+        fi;
         echo -e "\t$(lspci -nns ${d##*/})"
     done;
 done;
