@@ -10,9 +10,6 @@
 [submodule "scripts/diff-so-fancy"]
 	path = scripts/diff-so-fancy
 	url = https://github.com/so-fancy/diff-so-fancy.git
-[submodule "scripts/byzanz-gui"]
-	path = scripts/byzanz-gui
-	url = https://github.com/JonnyHaystack/byzanz-gui.git
 [submodule "scripts/slip"]
 	path = scripts/slip
 	url = https://github.com/JonnyHaystack/slip.git
