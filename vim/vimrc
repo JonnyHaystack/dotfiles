@@ -214,7 +214,8 @@ if has('nvim')
   " Extensions to always install
   let g:coc_global_extensions = [
     \ 'coc-vimtex',
-    \ 'coc-snippets'
+    \ 'coc-snippets',
+    \ 'coc-marketplace'
     \ ]
 
   " }}}
