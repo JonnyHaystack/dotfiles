@@ -27,7 +27,7 @@ mkdir -p $HOME/bin/
 ln -sf $DIR/bin/* $HOME/bin/
 
 remove_non_dirlink $HOME/lib
-ln -sf $DIR/lib $HOME/lib
+ln -sfn $DIR/lib $HOME/lib
 
 remove_non_dirlink $HOME/scripts
 ln -sfn $DIR/scripts $HOME/scripts
