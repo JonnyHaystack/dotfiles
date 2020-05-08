@@ -1,16 +1,15 @@
 #!/usr/bin/env bash
 
 confirm_menu() {
-  rofi=$1
-  prompt=$2
-  uptime=$(uptime -p | sed -e 's/up //g')
+  local rofi=$1
+  local prompt=$2
 
-  yes="Yes"
-  no="No"
+  local yes=$3
+  local no=$4
 
-  options="$yes\n$no"
+  local options="$yes\n$no"
 
-  chosen="$(echo -e "$options" | $rofi -dmenu)"
+  local chosen="$(echo -e "$options" | $rofi -p "$prompt" -dmenu)"
 
   case $chosen in
     $yes)
@@ -20,4 +19,6 @@ confirm_menu() {
       return 1
       ;;
   esac
+
+  return 1
 }

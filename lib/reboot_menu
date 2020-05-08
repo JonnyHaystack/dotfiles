@@ -1,21 +1,21 @@
 #!/usr/bin/env bash
 
 reboot_menu() {
-  rofi=$1
-  uptime=$(uptime -p | sed -e 's/up //g')
+  local rofi=$1
+  local uptime=$(uptime -p | sed -e 's/up //g')
 
   #reboot="  "
-  reboot="  "
-  windows="  "
-  uefi="  "
+  local reboot="  "
+  local windows="  "
+  local uefi="  "
   #uefi="  "
   #uefi="  "
   #uefi="  "
   #uefi="  "
 
-  options="$reboot\n$windows\n$uefi"
+  local options="$reboot\n$windows\n$uefi"
 
-  chosen="$(echo -e "$options" | $rofi -p "UP - $uptime" -dmenu)"
+  local chosen="$(echo -e "$options" | $rofi -p "UP - $uptime" -dmenu)"
 
   case $chosen in
     $reboot)
