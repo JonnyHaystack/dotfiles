@@ -23,35 +23,15 @@ git submodule update
 mkdir -p $HOME/.config/
 
 # scripts
-mkdir -p $HOME/scripts/
 mkdir -p $HOME/bin/
-remove_non_dirlink $HOME/scripts/i3
-ln -sfn $DIR/scripts/i3 $HOME/scripts/i3
-ln -sf $DIR/scripts/dmenu-custom.sh $HOME/bin/dmenu-custom
-ln -sf $DIR/scripts/dmenu-lpass.sh $HOME/bin/dmenu-lpass
-ln -sf $DIR/scripts/networkmanager_dmenu \
-  $HOME/bin/networkmanager_dmenu
-ln -sf $DIR/scripts/rofi-lpass.sh $HOME/bin/rofi-lpass
-ln -sf $DIR/scripts/bwmenu $HOME/bin/bwmenu
-ln -sf $DIR/scripts/rofi-calculator.sh $HOME/bin/rofi-calculator
-ln -sf $DIR/scripts/rofi-file-browser.sh $HOME/bin/rofi-file-browser
+ln -sf $DIR/* $HOME/bin/
+
+remove_non_dirlink $HOME/scripts
+ln -sfn $DIR/scripts $HOME/scripts
 ln -sf $DIR/scripts/rofimoji/picker/rofimoji.py $HOME/bin/rofimoji
-ln -sf $DIR/scripts/rofi-tmux.sh $HOME/bin/rofi-tmux
-ln -sf $DIR/scripts/i3-resurrect-dmenu.sh $HOME/bin/i3-resurrect-dmenu
-ln -sf $DIR/scripts/open_url_in_instance.sh $HOME/bin/qutebrowser
-ln -sf $DIR/scripts/screenshot.sh $HOME/bin/screenshot
-ln -sf $DIR/scripts/pynvim_install.sh $HOME/bin/pynvim_install
-ln -sf $DIR/scripts/pyline.py $HOME/bin/pyline
-ln -sf $DIR/scripts/try.sh $HOME/bin/try
-ln -sf $DIR/scripts/bward $HOME/bin/bward
 ln -sf $DIR/scripts/diff-so-fancy/diff-so-fancy $HOME/bin/diff-so-fancy
 ln -sf $DIR/scripts/byzanz-gui/byzanz-gui $HOME/bin/byzanz-gui
 ln -sf $DIR/scripts/slip/slip $HOME/bin/slip
-ln -sf $DIR/scripts/slip-gui $HOME/bin/slip-gui
-ln -sf $DIR/scripts/nordvpn-toggle.sh $HOME/bin/nordvpn-toggle
-ln -sf $DIR/scripts/getmacs.exp $HOME/bin/getmacs
-ln -sf $DIR/scripts/getport.sh $HOME/bin/getport
-ln -sf $DIR/scripts/wcpdf.sh $HOME/bin/wcpdf
 
 # desktop shortcuts
 mkdir -p $HOME/.local/share/applications/
