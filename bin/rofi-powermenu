@@ -39,9 +39,7 @@ case $chosen in
     fi
     ;;
   $lock)
-    if confirm_menu "$rofi_command" "Confirm lock" "  " "  "; then
-      $LOCKER
-    fi
+    $LOCKER
     ;;
   $suspend)
     if ! pacman_running; then
