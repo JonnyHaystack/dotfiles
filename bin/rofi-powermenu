@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+
+## Author : Aditya Shakya (adi1090x)
+## Mail : adi1090x@gmail.com
+## Github : @adi1090x
+## Reddit : @adi1090x
+
+source ~/lib/confirm_menu
+source ~/lib/pacman_running
+source ~/lib/reboot_menu
+
+rofi_command="rofi -theme ~/scripts/rofi-applets/themes/powermenu -kb-row-up k,h -kb-row-down j,l"
+uptime=$(uptime -p | sed -e 's/up //g')
+
+# Options
+shutdown="  襤"
+#reboot="  ﰇ"
+reboot="  "
+lock="  "
+suspend="  鈴"
+logout="  "
+
+# Variable passed to rofi
+options="$shutdown\n$reboot\n$lock\n$suspend\n$logout"
+
+chosen="$(echo -e "$options" | $rofi_command -p "UP - $uptime" -dmenu -selected-row 2)"
+
+case $chosen in
+  $shutdown)
+    if ! pacman_running; then
+      if confirm_menu "$rofi_command" "Confirm shutdown" "  " "  "; then
+        systemctl poweroff -i
+      fi
+    fi
+    ;;
+  $reboot)
+    if ! pacman_running; then
+      reboot_menu "$rofi_command"
+    fi
+    ;;
+  $lock)
+    if confirm_menu "$rofi_command" "Confirm lock" "  " "  "; then
+      $LOCKER
+    fi
+    ;;
+  $suspend)
+    if ! pacman_running; then
+      mpc -q pause
+      $LOCKER
+      sleep 1
+      systemctl suspend
+    fi
+    ;;
+  $logout)
+    if ! pacman_running; then
+      if confirm_menu "$rofi_command" "Confirm logout" "  " "  "; then
+        i3-msg exit
+      fi
+    fi
+    ;;
+esac
