@@ -11,7 +11,7 @@ fi
 updates="$updates_arch | $updates_aur"
 
 if [ "$updates_arch" -gt 0 ] || [ "$updates_aur" -gt 0 ]; then
-    echo "%{F#f9dd04}  $updates%{F-}"
+    echo "%{F#ffeb3b}  $updates%{F-}"
 else
     echo ""
 fi
