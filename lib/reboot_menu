@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+reboot_menu() {
+  rofi=$1
+  uptime=$(uptime -p | sed -e 's/up //g')
+
+  #reboot="  "
+  reboot="  "
+  windows="  "
+  uefi="  "
+  #uefi="  "
+  #uefi="  "
+  #uefi="  "
+  #uefi="  "
+
+  options="$reboot\n$windows\n$uefi"
+
+  chosen="$(echo -e "$options" | $rofi -p "UP - $uptime" -dmenu)"
+
+  case $chosen in
+    $reboot)
+      systemctl reboot
+      ;;
+    $windows)
+      systemctl reboot --boot-loader-entry=auto-windows
+      ;;
+    $uefi)
+      systemctl reboot --boot-loader-entry=auto-reboot-to-firmware-setup
+      ;;
+  esac
+}

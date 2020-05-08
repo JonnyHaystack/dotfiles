@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+pacman_running() {
+  if [ -f "/var/lib/pacman/db.lck" ]; then
+    notify-send "Operation cancelled" "Package manager is running!"
+    return 0
+  else
+    return 1
+  fi
+}

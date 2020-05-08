@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+confirm_menu() {
+  rofi=$1
+  prompt=$2
+  uptime=$(uptime -p | sed -e 's/up //g')
+
+  yes="Yes"
+  no="No"
+
+  options="$yes\n$no"
+
+  chosen="$(echo -e "$options" | $rofi -dmenu)"
+
+  case $chosen in
+    $yes)
+      return 0
+      ;;
+    $no)
+      return 1
+      ;;
+  esac
+}
