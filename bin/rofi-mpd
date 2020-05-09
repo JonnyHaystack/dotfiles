@@ -50,16 +50,16 @@ fi
 chosen="$(echo -e "$options" | $rofi_command -p "$current" -dmenu $active $urgent -selected-row 1)"
 case $chosen in
     $previous)
-        mpc -q prev && notify-send -u low -t 1800 " $(mpc current)"
+        mpc -q prev
         ;;
     $play_pause)
-        mpc -q toggle && notify-send -u low -t 1800 " $(mpc current)"
+        mpc -q toggle
         ;;
     $stop)
         mpc -q stop
         ;;
     $next)
-        mpc -q next && notify-send -u low -t 1800 " $(mpc current)"
+        mpc -q next
         ;;
     $tog_repeat)
         mpc -q repeat
