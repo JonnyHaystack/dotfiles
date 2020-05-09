@@ -34,10 +34,11 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = "Noto Sans Regular:size=13;3"
-font-1 = "Noto Sans Regular:size=13;2"
-font-2 = "FontAwesome5FreeRegular:size=13;3"
-font-3 = "FontAwesome5FreeBrands:size=13;3"
-font-4 = "FontAwesome5FreeSolid:size=13;3"
+font-1 = "Noto Sans Regular:size=10;2"
+font-2 = "Noto Sans Regular:size=11;3"
+font-3 = "FontAwesome5FreeRegular:size=13;3"
+font-4 = "FontAwesome5FreeBrands:size=13;3"
+font-5 = "FontAwesome5FreeSolid:size=13;3"
 
 modules-left = i3
 modules-center = mpd
@@ -168,35 +169,19 @@ label-urgent-padding = 2
 
 [module/mpd]
 type = internal/mpd
-format-online = <label-song>   <icon-single>  <icon-prev>  <icon-seekb>   <icon-stop>   <toggle>   <icon-seekf>  <icon-next>   <bar-progress>
+format-online = <label-song>   <bar-progress>
 format-stopped =
 
-label-song = %title% - %artist%
+label-song = %artist% - %title%
+label-song-font = 3
 
-icon-single = 
-icon-prev = 
-icon-seekb = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-seekf = 
-icon-next = 
-bar-progress-width = 6
-bar-progress-indicator = |
+bar-progress-width = 8
+bar-progress-indicator = 
 bar-progress-fill = ─
 bar-progress-empty = ─
 bar-progress-indicator-font = 2
 bar-progress-fill-font = 2
 bar-progress-empty-font = 2
-toggle-on-foreground = ${colors.foreground}
-toggle-off-foreground = ${colors.foreground-alt}
-icon-prev-foreground = ${colors.foreground}
-icon-seekb-foreground = ${colors.foreground}
-icon-stop-foreground = ${colors.foreground}
-icon-play-foreground = ${colors.foreground}
-icon-pause-foreground = ${colors.foreground}
-icon-seekf-foreground = ${colors.foreground}
-icon-next-foreground = ${colors.foreground}
 bar-progress-fill-foreground = ${colors.more-degraded}
 
 label-song-maxlen = 25
