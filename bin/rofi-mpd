@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-rofi_command="rofi -theme themes/mpd -kb-row-up k,h -kb-row-down j,l"
+rofi_command="rofi -theme themes/mpd -kb-row-up k,h -kb-row-down j,l -kb-accept-entry space,Return"
 
 # Gets the current status of mpd (for us to parse it later on)
 status="$(mpc status)"

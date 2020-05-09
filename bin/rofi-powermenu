@@ -9,7 +9,7 @@ source ~/lib/confirm_menu
 source ~/lib/pacman_running
 source ~/lib/reboot_menu
 
-rofi_command="rofi -theme themes/powermenu -kb-row-up k,h -kb-row-down j,l"
+rofi_command="rofi -theme themes/powermenu -kb-row-up k,h -kb-row-down j,l -kb-accept-entry space,Return"
 uptime=$(uptime -p | sed -e 's/up //g')
 
 # Options
