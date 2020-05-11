@@ -33,9 +33,9 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = "Noto Sans Regular:size=13;3"
-font-1 = "Noto Sans Regular:size=10;2"
-font-2 = "Noto Sans Regular:size=11;3"
+font-0 = "NotoSans-Regular:size=13;3"
+font-1 = "NotoSans-Regular:size=10;2"
+font-2 = "NotoSans-Regular:size=11;3"
 font-3 = "FontAwesome5FreeRegular:size=13;3"
 font-4 = "FontAwesome5FreeBrands:size=13;3"
 font-5 = "FontAwesome5FreeSolid:size=13;3"
