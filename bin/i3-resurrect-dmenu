@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ACTIONS=("Restore" "Save" "Delete")
-TARGETS=("Programs" "Layout" "Both")
+TARGETS=("Both" "Programs" "Layout")
 DMENU="dmenu -i"
 
 prompt="i3-resurrect"
