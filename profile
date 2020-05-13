@@ -11,6 +11,9 @@ export TORRENT_SERVER="10.0.1.102:9091"
 export CPU_THERMAL_ZONE=
 export POLYBAR_FS_ROOT=/home
 
+# Set path for NPM global package installations
+export NODE_PATH="$HOME/.npm/lib/node_modules"
+
 # Make sure dpms blanking is disabled on login
 xset dpms 0 0
 
