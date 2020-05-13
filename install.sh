@@ -107,6 +107,7 @@ remove_non_dirlink $HOME/.config/qt5ct
 ln -sfn $DIR/qt5ct $HOME/.config/qt5ct
 
 # gtk-3.0 (lxappearance)
+mkdir -p $HOME/.config/gtk-3.0/
 ln -sf "$DIR/gtk-3.0/settings.ini" "$HOME/.config/gtk-3.0/settings.ini"
 
 # plasma
