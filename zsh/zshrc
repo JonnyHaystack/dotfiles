@@ -103,7 +103,7 @@ alias tn="tmux new"
 alias ta="tmux a"
 
 # todo.txt aliases
-alias tdl="todo.sh ls"
+alias tdl="todo.sh ls | sort -h"
 alias tdla="todo.sh lsa"
 alias tda="todo.sh a"
 alias tdc="todo.sh do"
