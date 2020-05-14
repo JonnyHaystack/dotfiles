@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+cat -v /proc/$(xprop _NET_WM_PID | awk '{print $3}')/cmdline
