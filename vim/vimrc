@@ -263,4 +263,6 @@ Plug 'vim-scripts/django.vim'
 Plug 'nikvdp/ejs-syntax'
 Plug 'isruslan/vim-es6'
 Plug 'glench/vim-jinja2-syntax'
+Plug 'sheerun/vim-polyglot'
+Plug 'tiagofumo/dart-vim-flutter-layout'
 call plug#end()
