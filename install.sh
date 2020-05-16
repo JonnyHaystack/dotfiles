@@ -48,6 +48,9 @@ cp -n $DIR/profile $HOME/.profile
 # default keyboard remappings
 cp -n $DIR/Xmodmap $HOME/.Xmodmap
 
+# Compose mappings
+ln -sf $DIR/XCompose $HOME/.XCompose
+
 # vim
 remove_non_dirlink $HOME/.vim
 ln -sfn $DIR/vim $HOME/.vim
