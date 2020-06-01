@@ -1,6 +1,6 @@
 #!/bin/sh
 
-HOST=1.1.1.1
+HOST=9.9.9.9
 
 if ! ping=$(ping -n -c 1 -W 1 $HOST 2> /dev/null); then
     echo "%{u#ef5350}%{+u}%{F#666}%{F-}  ms"
