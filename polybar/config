@@ -42,7 +42,7 @@ font-5 = "FontAwesome5FreeSolid:size=13;3"
 
 modules-left = i3
 modules-center = mpd
-modules-right = updates-arch-combined vpn-openvpn-isrunning info-todotxt filesystem memory cpu info-pingrtt battery pulseaudio temperature date screenshot lock
+modules-right = updates-arch-combined vpn-openvpn-isrunning info-todotxt filesystem memory cpu temperature info-pingrtt battery pulseaudio date screenshot lock
 
 wm-restack = i3
 
