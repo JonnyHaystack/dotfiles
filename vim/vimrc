@@ -1,7 +1,7 @@
 " General config stuff
 set autoindent softtabstop=2 shiftwidth=2 expandtab
 set backspace=indent,eol,start
-set number
+set number relativenumber
 set colorcolumn=81
 set showmatch
 filetype plugin indent on
@@ -265,5 +265,4 @@ Plug 'nikvdp/ejs-syntax'
 Plug 'isruslan/vim-es6'
 Plug 'glench/vim-jinja2-syntax'
 Plug 'sheerun/vim-polyglot'
-Plug 'tiagofumo/dart-vim-flutter-layout'
 call plug#end()
