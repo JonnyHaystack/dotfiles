@@ -58,6 +58,7 @@ width = 1
 height = 40
 
 # Offset so it is above the taskbar
+offset-x = 40%
 offset-y = 36
 
 # Bottom left to imitate gnome-shells systray

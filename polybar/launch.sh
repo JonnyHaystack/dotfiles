@@ -27,5 +27,4 @@ done
 echo "Polybar launched..."
 
 # Use hideIt.sh script to hide taskbar unless hovered on.
-bottom_left=$(xrandr | grep -w primary | awk -F'[x+ ]' '{print $6"x"$5+$7-36}')
-exec hideIt.sh -w --name '^Polybar tray window$' --region "$bottom_left"+10+-40
+exec hideIt.sh -S -w --name '^Polybar tray window$' --direction bottom -p 0
