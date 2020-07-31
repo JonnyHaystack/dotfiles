@@ -224,9 +224,6 @@ endif
 " }}}
 
 
-" Load matchit.vim
-:source ~/.vim/macros/matchit/plugin/matchit.vim
-
 " Load starsearch.vim
 :source ~/.vim/macros/starsearch/plugin/starsearch.vim
 
@@ -237,6 +234,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'vim-scripts/visualrepeat'
 Plug 'tpope/vim-unimpaired'
+Plug 'andymass/vim-matchup'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
