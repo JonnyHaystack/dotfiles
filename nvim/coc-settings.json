@@ -15,5 +15,8 @@
   "snippets.userSnippetsDirectory": "~/.vim/my-snippets/UltiSnips",
   "python.formatting.provider": "black",
   "python.formatting.blackArgs": ["-l", "79"],
-  "java.home": "/usr/lib/jvm/java-8-openjdk"
+  "java.import.maven.enabled": true,
+  "java.signatureHelp.enabled": true,
+  "java.maven.downloadSources": true,
+  "java.configuration.updateBuildConfiguration": "automatic"
 }
