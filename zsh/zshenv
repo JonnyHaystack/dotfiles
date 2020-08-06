@@ -1,9 +1,12 @@
-# Add locally installed programs to execution path
-if [[ $PATH != *"/.local/bin"* ]]; then
-  export PATH=${HOME}/.local/bin:$PATH
-fi
-if [[ $PATH != *"${HOME}/bin"* ]]; then
-  export PATH=${HOME}/bin:$PATH
+# Add user programs to execution path
+if [[ $PATH != *"$HOME/bin"* ]]; then
+  export PATH=$HOME/bin:$PATH
+  export PATH=$HOME/.local/bin:$PATH
+  export PATH="$PATH:$HOME/.cargo/bin"
+  export PATH="$PATH:$HOME/.npm/bin"
+
+  # Set path for NPM global package installations
+  export NODE_PATH="$HOME/.npm/lib/node_modules"
 fi
 
 # Set locale

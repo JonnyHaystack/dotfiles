@@ -1,19 +1,12 @@
-# Set PATH so it includes user's private bin directories
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+source ~/.zshenv
 
 export TERMINAL=alacritty
-export EDITOR=nvim
 export WINIT_X11_SCALE_FACTOR=1
 export QT_QPA_PLATFORMTHEME=qt5ct
 export LOCKER="$HOME/scripts/i3/lock -i $HOME/Pictures/wallpaper.png"
 export TORRENT_SERVER="10.0.1.102:9091"
 export CPU_THERMAL_ZONE=
 export POLYBAR_FS_ROOT=/home
-
-# Set path for NPM global package installations
-export NODE_PATH="$HOME/.npm/lib/node_modules"
-export PATH="$PATH:${HOME}/.npm/bin"
 
 # Make sure dpms blanking is disabled on login
 xset dpms 0 0 0
