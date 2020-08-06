@@ -70,6 +70,9 @@ ln -sfn $DIR/yapf $HOME/.config/yapf
 # .inputrc
 ln -sf $DIR/inputrc $HOME/.inputrc
 
+# .npmrc
+ln -sf $DIR/npm/npmrc $HOME/.npmrc
+
 # tmux
 mkdir -p $HOME/.tmux/
 ln -sf $DIR/tmux/tmux.conf $HOME/.tmux/tmux.conf
