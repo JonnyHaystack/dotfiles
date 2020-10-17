@@ -3,6 +3,8 @@
 	name = Jonathan Haylett
 [push]
 	default = simple
+[pull]
+	rebase = false
 [merge]
 	tool = fugitive
 [mergetool "fugitive"]
