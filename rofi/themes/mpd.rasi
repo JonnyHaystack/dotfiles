@@ -17,7 +17,7 @@
   icon-font:                            "Hurmit Nerd Font Mono 32";
   icon-font-small:                      "Hurmit Nerd Font Mono 24";
 
-  option-6-listview-spacing:            10px;
+  option-6-listview-spacing:             10px;
 
   menu-window-padding:                   5px 15px;
   menu-inputbar-margin:                  10px 0px;
@@ -59,9 +59,6 @@
 
 /* ########### */
 
-* {
-  font: @text-font;
-}
 #window {
   padding: @menu-window-padding;
   children: [ inputbar, horibox ];
@@ -75,6 +72,7 @@ textbox-prompt-colon {
   padding: @menu-prompt-padding;
   border: 2px;
   border-color: @accent;
+  font: @text-font;
 }
 #prompt {
   margin: @menu-prompt-margin;
