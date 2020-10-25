@@ -4,7 +4,7 @@
 winId=""
 findTimeOut=0.5
 polybarHeight=32
-maxOpacity=1
+maxOpacity="-x 2 2"
 
 # Find an open rofi window
 rofi_window_find(){
