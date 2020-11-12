@@ -20,7 +20,7 @@
     indicate_hidden = yes
  
     # Display indicators for URLs (U) and actions (A).
-    show_indicators = yes
+    show_indicators = no
 
     # Alignment of message text.
     alignment = center
