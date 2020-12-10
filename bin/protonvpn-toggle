@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+protonvpn_status=$(protonvpn s | grep Status | head -n 1)
+if [[ $protonvpn_status == *"Connected"* ]]; then
+  sudo protonvpn d
+else
+  sudo protonvpn c -f
+fi

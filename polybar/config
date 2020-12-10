@@ -86,9 +86,9 @@ interval = 600
 
 [module/vpn-openvpn-isrunning]
 type = custom/script
-exec = ~/polybar-scripts/vpn-nordvpn-isrunning.sh
+exec = ~/polybar-scripts/vpn-protonvpn-isrunning.sh
 interval = 5
-click-left = ~/bin/nordvpn-toggle
+click-left = ~/bin/protonvpn-toggle
 
 [module/info-todotxt]
 type = custom/script
