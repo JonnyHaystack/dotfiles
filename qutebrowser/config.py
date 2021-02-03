@@ -1,6 +1,7 @@
 import os
 
-# My configuration
+# Do not load config from GUI
+config.load_autoconfig(False)
 
 # Aliases
 c.aliases["fill"] = "spawn --userscript qute-bitwarden -t --auto-lock 10800"
