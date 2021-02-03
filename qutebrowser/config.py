@@ -80,7 +80,7 @@ for option_key, option in per_site_toggles.items():
 # Toggle 3rd party cookies
 config.bind(",c", "config-cycle -t -p content.cookies.accept all no-3rdparty")
 # Toggle adblock
-config.bind(",h", "config-cycle -t -p content.host_blocking.enabled")
+config.bind(",h", "config-cycle -t -p content.blocking.enabled")
 # Toggle TOR proxy
 config.bind(
     ",t", "config-cycle -t -p content.proxy system socks://localhost:9050/"
