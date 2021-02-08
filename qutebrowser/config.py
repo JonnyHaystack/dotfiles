@@ -43,8 +43,8 @@ config.bind(
     "%s {hint-url}" % torrent_server,
 )
 # Open selected form field in editor
-config.bind("<Ctrl-I>", "open-editor")
-config.bind("<Ctrl-I>", "open-editor", mode="insert")
+config.bind("<Ctrl-I>", "edit-text")
+config.bind("<Ctrl-I>", "edit-text", mode="insert")
 # Save current window as
 config.bind("ws", "set-cmd-text -s :session-save -o")
 # Restore window
