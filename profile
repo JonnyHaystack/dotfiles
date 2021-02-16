@@ -17,7 +17,7 @@ export QT_IM_MODULE=ibus
 xset dpms 0 0 0
 
 # Keyboard configuration
-setxkbmap -layout us,gb -variant dvorak-alt-intl, -option \
+setxkbmap -layout us,gb -variant dvorak-alt-intl, \
   -option grp:alt_shift_toggle \
   -option compose:rctrl
 xmodmap ~/.Xmodmap
