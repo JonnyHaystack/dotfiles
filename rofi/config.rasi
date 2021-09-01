@@ -1,0 +1,5 @@
+configuration {
+    theme: "~/.config/rofi/themes/default.rasi";
+    modi: "ssh,drun";
+    kb-screenshot: "Alt+s";
+}

@@ -1,7 +1,6 @@
 configuration {
     display-drun: "❯";
     show-icons: true;
-    lines: 8;
 }
 
 * {
@@ -9,6 +8,7 @@ configuration {
     padding: 5px 10px;
     color: #ffffff;
     background-color: #00000000;
+    lines: 8;
 }
 
 window {
