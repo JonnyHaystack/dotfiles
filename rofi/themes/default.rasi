@@ -32,6 +32,6 @@ listview {
     spacing: -0.5em;
 }
 
-#element selected {
+element-text selected {
     text-color: #5294e2;
 }
