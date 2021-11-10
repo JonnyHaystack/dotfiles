@@ -1,17 +1,4 @@
 {
-  "languageserver": {
-    "clangd": {
-      "command": "clangd",
-      "rootPatterns": [
-        "compile_flags.txt",
-        "compile_commands.json",
-        ".vim/",
-        ".git/",
-        ".hg/"
-      ],
-      "filetypes": ["c", "cpp", "objc", "objcpp"]
-    }
-  },
   "snippets.userSnippetsDirectory": "~/.vim/my-snippets/UltiSnips",
   "python.formatting.provider": "black",
   "python.formatting.blackArgs": ["-l", "79"],
