@@ -5,4 +5,10 @@ filename=~/Pictures/Screenshots/img-$(date +%Y-%m-%d)-$(ls \
   ~/Pictures/Screenshots/img* | wc -l).png
 
 maim --hidecursor -s "$filename" && notify-send -i screenie 'Screenshot' "$filename"
+status=$?
+
+if [ $status -gt 0 ]; then
+  scrot -s -e "mv \$f $filename"
+fi
+
 xclip -selection clipboard -t image/png "$filename"
