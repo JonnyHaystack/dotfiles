@@ -25,6 +25,9 @@ set foldenable
 set foldmethod=syntax
 set foldlevel=0
 
+" View settings
+set viewoptions=cursor,folds,slash,unix
+
 " Font
 set guifont=Menlo\ Regular:h18
 
@@ -249,6 +252,7 @@ Plug 'rhysd/vim-grammarous'
 Plug 'honza/vim-snippets'
 Plug 'lambdalisue/suda.vim'
 Plug 'thosakwe/vim-flutter'
+Plug 'vim-scripts/restore_view.vim'
 if has ('nvim')
   Plug 'w0rp/ale'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
