@@ -10,6 +10,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 #HISTORY_IGNORE="(mv *|cp *|ls|ls *|ll|ll *|la|la *|cd|cd *)"
 ZSH_AUTOSUGGEST_HISTORY_IGNORE="?(#c90,)"
+ZSH_AUTOSUGGEST_COMPLETION_IGNORE="?(#c90,)"
 
 # No duplicates in command history
 setopt HIST_IGNORE_DUPS
