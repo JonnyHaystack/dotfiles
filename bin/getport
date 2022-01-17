@@ -2,6 +2,8 @@
 
 host="$1"
 
+ping -c1 "$host" > /dev/null
+
 mac=$(arp "$host" | tail -n 1 | awk '{print $3}')
 
 read -sp "Enter password: " password

@@ -3,7 +3,7 @@
 set switch_ip "10.0.1.5"
 set user "admin"
 set password [lindex $argv 0]
-set timeout 1
+set timeout 2
 spawn ssh $user@$switch_ip
 match_max 100000
 expect -exact "\r$user@$switch_ip's password: "
