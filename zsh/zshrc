@@ -111,6 +111,12 @@ alias tdc="todo.sh do"
 
 # }}}
 
+# git aliases {{{
+
+alias gstatus="ls -lrtd \$(git status --porcelain | grep '^.[?M]' | sed 's/^.. //')"
+
+# }}}
+
 # Package manager aliases {{{
 
 if [ -f /etc/os-release ]; then
