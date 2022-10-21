@@ -1,4 +1,12 @@
 {
+  "languageserver": {
+    "nix": {
+      "command": "rnix-lsp",
+      "filetypes": [
+        "nix"
+      ]
+    }
+  },
   "snippets.userSnippetsDirectory": "~/.vim/my-snippets/UltiSnips",
   "python.formatting.provider": "black",
   "python.formatting.blackArgs": ["-l", "79"],
