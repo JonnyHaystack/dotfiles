@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Terminate already running bar instances
-killall -q polybar
+for p in $(pgrep polybar); do kill $p; done
 ps -ef | grep 'hideIt.sh' | grep -v grep | awk '{print $2}' | xargs -r kill -9
 
 # Wait until the processes have been shut down
@@ -14,7 +14,7 @@ export MONITORS
 PRIMARY_MONITOR=$(xrandr | grep " primary " | awk '{ print$1 }' | tail -1)
 echo Primary monitor: $PRIMARY_MONITOR
 
-# Launch Polybar, using default config location ~/.config/polybar/config
+# Launch Polybar, using default config location ~/.config/polybar/config.ini
 export MONITOR=$PRIMARY_MONITOR
 polybar systray &
 for i in "${MONITORS[@]}"

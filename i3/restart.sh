@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Clear config. Unlike rm this should work on symlinks.
 echo "" > $HOME/.config/i3/config

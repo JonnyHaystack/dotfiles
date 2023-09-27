@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Get monitor configuration
 MONITORS=$(xrandr | grep " connected " | awk '{ print$1 }' | paste -d\; -s -)
