@@ -12,7 +12,14 @@ set hlsearch
 set encoding=utf-8
 
 " Indentation settings for different filetypes
-autocmd FileType c,cpp,javascript,java,lua setlocal shiftwidth=4 softtabstop=4
+autocmd FileType c,cpp,javascript,java,lua,xml setlocal shiftwidth=4 softtabstop=4
+
+" Smart relative line numbering
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+augroup END
 
 " Perform spell check in tex file
 augroup spellcheck
@@ -148,6 +155,8 @@ if has('nvim')
   " }}}
 
   " coc.nvim config {{{
+
+  let g:coc_disable_startup_warning = 1
 
   " Use <c-space> to trigger completion
   inoremap <silent><expr> <C-space> coc#refresh()
