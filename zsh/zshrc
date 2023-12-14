@@ -193,15 +193,8 @@ _gen_fzf_default_opts
 # Auto-Install Zinit {{{
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-
-if [[ ! -f ${ZINIT_HOME}/zinit.zsh ]]; then
-    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}${ZINIT_REPO}%F{220})…%f"
-    command mkdir -p "${ZINIT_HOME}" && command chmod g-rwX "${ZINIT_HOME}"
-    command git clone https://github.com/${ZINIT_REPO} "${ZINIT_HOME}" && \\
-        print -P "%F{33} %F{34}Installation successful.%f%b" || \\
-        print -P "%F{160} The clone has failed.%f%b"
-fi
-
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
