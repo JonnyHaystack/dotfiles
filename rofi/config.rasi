@@ -1,6 +1,8 @@
 configuration {
     modi: "ssh,drun";
     kb-screenshot: "Alt+s";
+    display-drun: "❯";
+    show-icons: true;
 }
 
 @theme "~/.config/rofi/themes/default.rasi"

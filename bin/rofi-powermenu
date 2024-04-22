@@ -39,12 +39,12 @@ case $chosen in
     fi
     ;;
   $lock)
-    $LOCKER
+    eval ${LOCKER}
     ;;
   $suspend)
     if ! pacman_running; then
       mpc -q pause
-      $LOCKER
+      eval ${LOCKER}
       sleep 1
       systemctl suspend
     fi

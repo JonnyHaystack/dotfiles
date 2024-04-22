@@ -8,7 +8,7 @@ ps -ef | grep 'hideIt.sh' | grep -v grep | awk '{print $2}' | xargs -r kill -9
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Get monitor configuration
-MONITORS=$(xrandr | grep " connected " | awk '{ print$1 }' | paste -d\; -s -)
+MONITORS=$(xrandr --listactivemonitors | tail +2 | awk '{print $4}' | paste -d\; -s -)
 IFS=';' read -r -a MONITORS <<< "$MONITORS"
 export MONITORS
 PRIMARY_MONITOR=$(xrandr | grep " primary " | awk '{ print$1 }' | tail -1)

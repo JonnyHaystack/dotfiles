@@ -66,12 +66,12 @@ insidewrong=6134327f
 keyhl=e77cdb7f
 bshl=582da37f
 
-LOCK_BASE_CMD="i3lock -i '$OUTPUT_IMG' --veriftext='' --wrongtext='' \
---noinputtext='' --insidecolor=$inside --ringcolor='$ring' \
---insidevercolor='$insidever' --ringvercolor='$ringver' \
---insidewrongcolor='$insidewrong' --ringwrongcolor='$ringwrong' \
---keyhlcolor='$keyhl' --bshlcolor='$bshl' --linecolor=00000000 \
---separatorcolor=0000007f --radius 130 --ring-width 3"
+LOCK_BASE_CMD="i3lock -i '$OUTPUT_IMG' --verif-text='' --wrong-text='' \
+--noinput-text='' --inside-color=$inside --ring-color='$ring' \
+--insidever-color='$insidever' --ringver-color='$ringver' \
+--insidewrong-color='$insidewrong' --ringwrong-color='$ringwrong' \
+--keyhl-color='$keyhl' --bshl-color='$bshl' --line-color=00000000 \
+--separator-color=0000007f --radius 130 --ring-width 3"
 if [ "$lock_args" ]; then
         LOCK_ARGS="$lock_args"  # Passed command
 else

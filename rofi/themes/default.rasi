@@ -1,7 +1,7 @@
-configuration {
-    display-drun: "❯";
-    show-icons: true;
-}
+//configuration {
+    //display-drun: "❯";
+    //show-icons: true;
+//}
 
 * {
     font: "Roboto Medium 12";
