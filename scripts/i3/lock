@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #Constants
 DISPLAY_RE="([0-9]+)x([0-9]+)\\+([0-9]+)\\+([0-9]+)" # Regex to find display dimensions
@@ -40,12 +40,13 @@ OUTPUT_IMG_HEIGHT=0 # Decide size to cover all screens
 
 # Enable DPMS on lock
 on_lock() {
-    xset +dpms dpms 5
+    xset +dpms dpms 60
 }
 
 # Disable DPMS on unlock
 on_unlock() {
     xset dpms 0 0 0
+    xmodmap ~/.Xmodmap
 }
 
 # Make sure if the script is killed, DPMS settings are still reverted
