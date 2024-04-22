@@ -20,6 +20,9 @@ setopt HIST_FIND_NO_DUPS
 # Prevent commands beginning with a space from appearing in history
 setopt HIST_IGNORE_SPACE
 
+# Append commands to history immediately after execution
+setopt INC_APPEND_HISTORY
+
 # }}}
 
 # Key bindings {{{
