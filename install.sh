@@ -40,7 +40,7 @@ ln -sf $DIR/desktop/* $HOME/.local/share/applications/
 
 # fonts
 mkdir -p $HOME/.fonts/
-ln -sf $DIR/fonts/* $HOME/.fonts/
+ln -sf $DIR/fonts/* $HOME/.local/share/fonts/
 
 # default .profile
 cp -n $DIR/profile $HOME/.profile
