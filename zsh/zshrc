@@ -1,3 +1,5 @@
+#zmodload zsh/zprof
+
 # Load aliases
 if [ -f ~/.zsh_aliases ]; then
   . ~/.zsh_aliases
@@ -146,6 +148,10 @@ debian|raspbian|ubuntu)
   alias ys="apt search"
   alias yu="sudo apt update && sudo apt upgrade"
   alias yr="sudo apt remove"
+  ;;
+nixos)
+  alias ys="nix --extra-experimental-features 'nix-command flakes' search nixpkgs"
+  ;;
 esac
 
 # }}}
@@ -212,6 +218,8 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
+ZINIT[COMPINIT_OPTS]="-i -C -w"
+
 # Plugins {{{
 
 # Prompt
@@ -227,7 +235,9 @@ zinit ice wait"0" lucid atload"_zsh_autosuggest_start"
 zinit light zsh-users/zsh-autosuggestions
 
 # Syntax highlighting - should be the last plugin loaded!
-zinit ice lucid atinit"zpcompinit; zpcdreplay"
+zinit ice lucid atinit"zicompinit; zicdreplay"
 zinit light zdharma-continuum/fast-syntax-highlighting
 
 # }}}
+
+#zprof
