@@ -236,15 +236,13 @@ endif
 " }}}
 
 
-" Load starsearch.vim
-:source ~/.vim/macros/starsearch/plugin/starsearch.vim
-
 " Plugin list
 call plug#begin()
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'vim-scripts/visualrepeat'
+Plug 'vim-scripts/visualstar.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'andymass/vim-matchup'
 Plug 'easymotion/vim-easymotion'

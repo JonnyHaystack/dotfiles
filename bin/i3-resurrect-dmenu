@@ -2,7 +2,7 @@
 
 ACTIONS=("Restore" "Save" "Delete")
 TARGETS=("Both" "Programs" "Layout")
-DMENU="dmenu -i"
+DMENU="rofi -i -dmenu"
 
 prompt="i3-resurrect"
 action=$(printf "%s\n" ${ACTIONS[@]} | $DMENU -p $prompt)
