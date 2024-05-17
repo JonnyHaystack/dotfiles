@@ -1,8 +1,9 @@
 [global]
     font = "Droid Sans 9"
+
     # For a complete reference see http://developer.gnome.org/pango/stable/PangoMarkupFormat.html
     # If markup is not allowed, those tags will be stripped out of the message.
-    allow_markup = yes
+    markup = full
  
     # The format of the message. Possible variables are:
     #   %a  appname
@@ -20,15 +21,11 @@
     indicate_hidden = yes
  
     # Display indicators for URLs (U) and actions (A).
-    show_indicators = no
+    show_indicators = yes
 
     # Alignment of message text.
     alignment = center
- 
-    # The frequency with wich text that is longer than the notification
-    # window allows bounces back and forth.
-    # This option conflicts with 'word_wrap'.
-    bounce_freq = 0
+    vertical_alignment = center
  
     # Show age of message if message is older than show_age_threshold seconds.
     # set to -1 to disable
@@ -40,8 +37,6 @@
     # Ignore newlines '\n' in notifications
     ignore_newline = no
  
-    geometry = "260x20-15+28"
-    corner_radius = 0
     # The transparency of the window. range: [0; 100]
     # This option will only work if a compositing windowmanager is present (e.g. xcompmgr, compiz, etc..)
     transparency = 10
@@ -66,39 +61,45 @@
  
     # Notification popped up from history will be made sticky.
     sticky_history = yes
+
+    ### Context Menu and Actions ###
  
+    # dmenu path
+    dmenu = rofi -dmenu -p dunst:
+ 
+    # Browser for opening urls in context menu
+    browser = xdg-open
+ 
+    ### Geometry ###
+
+    corner_radius = 3
+
     # If the line height is smaller than the font height, it will get raised to
     # the font height. This adds empty space above and under the text.
     line_height = 10
+
+    frame_width = 0
  
-    # Draw a line of 'separator_height' pixel height between two notifications.
-    # Set to 0 to disable
-    separator_height = 10
+    # gap_size replaces separator and it works better
+    gap_size = 10
+    #separator_height = 10
+    #separator_color = "#00000000"
  
-    # Padding between text and separator
-    padding = 10
- 
-    # Horizontal padding
-    horizontal_padding = 10
- 
-    separator_color = "#00000000"
- 
-    startup_notification = false
- 
-    # dmenu path
-    dmenu = /usr/bin/dmenu -p dunst:
- 
-    # browser for opening urls in context menu
-    browser = /usr/bin/qutebrowser
+    # Padding between text and border
+    padding = 16
+    horizontal_padding = 16
+
+    ### Icons ###
  
     # Align icons left/right/off
+    enable_recursive_icon_lookup = true
+    icon_theme = "Papirus-Dark"
     icon_position = left
-
-    icon_folders = /usr/share/icons/Papirus/32x32/status:/usr/share/icons/Papirus/32x32/devices
-
+    #icon_folders = /usr/share/icons/Papirus/32x32/status:/usr/share/icons/Papirus/32x32/devices
     max_icon_size = 90
 
-[shortcuts]
+    ### Keybinds ###
+
     # Available modifiers are 'ctrl', 'mod1' (the alt-key), 'mod2', 'mod3' and
     # 'mod4' (windows-key)
  
@@ -114,6 +115,11 @@
  
     # Context menu
     context = ctrl+shift+period
+
+    ### Mouse binds ###
+    mouse_left_click = close_current
+    mouse_right_click = do_action
+    mouse_middle_click = close_all
  
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
@@ -125,9 +131,9 @@
 [urgency_normal]
     background = "#2f343f"
     foreground = "#EEFFFF"
-    timeout = 5
+    timeout = 15
  
 [urgency_critical]
     background = "#2f343f"
     foreground = "#EEFFFF"
-    timeout = 5
+    timeout = 30
