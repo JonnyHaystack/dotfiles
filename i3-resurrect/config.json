@@ -9,14 +9,36 @@
       "title": "Dolphin NetPlay Setup"
     },
     {
+      "class": "Joplin",
+      "command": "joplin"
+    },
+    {
       "class": "firefox"
+    },
+    {
+      "class": "thunderbird",
+      "command": "thunderbird"
+    },
+    {
+      "class": "quassel",
+      "command": "quasselclient"
+    },
+    {
+      "class": ".blueman-manager-wrapped",
+      "command": "blueman-manager"
+    },
+    {
+      "class": "Pavucontrol",
+      "command": "pavucontrol"
     }
   ],
   "window_swallow_criteria": {
     "Ario": ["class", "instance"],
     "TelegramDesktop": ["class", "instance"],
     "discord": ["class", "instance", "title"],
-    "Guake": []
+    "Guake": [],
+    "thunderbird": ["class", "instance"],
+    "quassel": ["class", "instance"]
   },
   "terminals": [
     "Gnome-terminal",
