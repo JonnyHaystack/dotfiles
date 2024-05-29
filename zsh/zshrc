@@ -32,7 +32,7 @@ setopt INC_APPEND_HISTORY
 # Use vi key bindings
 bindkey -v
 # Bind jj to enter normal mode
-bindkey "jj" vi-cmd-mode
+#bindkey "jj" vi-cmd-mode
 
 # Case insensitive completions
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'

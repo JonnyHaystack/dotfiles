@@ -76,7 +76,7 @@ nnoremap <silent> <F3> :setlocal spell! spelllang=en_gb<CR>
 nnoremap <silent> <Leader>zz :let &scrolloff=24-&scrolloff<CR>
 
 " Enter normal mode convenient binding
-inoremap jj <ESC>
+"inoremap jj <ESC>
 
 " Use gc to swap current character with the next without changing cursor
 " position.

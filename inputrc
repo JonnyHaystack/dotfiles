@@ -41,7 +41,7 @@ TAB: menu-complete
 # Binding for exiting normal mode with jj
 # Remap ESC to use my double 'i' keypress to toggle insert or movement
 # mode.
-$if mode=vi
-    set keymap vi-insert
-    "jj": vi-movement-mode
-$endif
+#$if mode=vi
+#    set keymap vi-insert
+#    "jj": vi-movement-mode
+#$endif
