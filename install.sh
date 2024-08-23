@@ -94,8 +94,8 @@ $HOME/.fzf/install --all
 
 # alacritty
 mkdir -p $HOME/.config/alacritty/
-ln -sf $DIR/alacritty/alacritty.yml \
-  $HOME/.config/alacritty/alacritty.yml
+ln -sf $DIR/alacritty/alacritty.toml \
+  $HOME/.config/alacritty/alacritty.toml
 
 # termite
 mkdir -p $HOME/.config/termite/
