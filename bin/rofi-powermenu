@@ -40,13 +40,14 @@ case $chosen in
     fi
     ;;
   $lock)
-    eval ${LOCKER}
+    betterlockscreen -l
+    #eval ${LOCKER}
     ;;
   $suspend)
     if ! pacman_running; then
       mpc -q pause
-      eval ${LOCKER}
-      sleep 1
+      #eval ${LOCKER}
+      #sleep 1
       systemctl suspend
     fi
     ;;
