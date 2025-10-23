@@ -1,4 +1,4 @@
-#!/usr/bin/expect
+#!/usr/bin/env expect
 
 set switch_ip "10.0.1.5"
 set user "admin"
